@@ -1,0 +1,80 @@
+name: Validate and deploy
+on:
+  pull_request:
+  push:
+    branches: [master, main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        base: ['/Dental-Care-Guide', '/']
+    env:
+      BASE_PATH: ${{ matrix.base }}
+      ASTRO_TELEMETRY_DISABLED: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium firefox webkit
+      - run: npm run validate
+      - run: npm run test:e2e
+      - name: Performance checks
+        run: |
+          npm run preview -- --ignore-lock --host 127.0.0.1 --port 4387 &
+          preview_pid=$!
+          trap 'kill "$preview_pid"' EXIT
+          for attempt in {1..30}; do
+            curl --fail --silent "http://127.0.0.1:4387${BASE_PATH%/}/en/" > /dev/null && break
+            sleep 1
+          done
+          npm run test:performance
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: verification-${{ strategy.job-index }}
+          path: |
+            playwright-report/
+            artifacts/lighthouse/
+      - uses: actions/upload-pages-artifact@v3
+        if: matrix.base == '/Dental-Care-Guide' && github.event_name != 'pull_request'
+        with:
+          path: dist
+  deploy:
+    if: github.event_name != 'pull_request' && github.ref_name == github.event.repository.default_branch
+    needs: validate
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
+      - name: Verify published pages and assets
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          curl --fail --retry 5 --retry-delay 5 "${PAGE_URL}en/" -o /tmp/home.html
+          curl --fail --retry 5 --retry-delay 5 "${PAGE_URL}de/learn/understanding-teeth/" -o /tmp/lesson.html
+          curl --fail --retry 5 --retry-delay 5 "${PAGE_URL}favicon.svg" -o /tmp/favicon.svg
+          node --input-type=module <<'JS'
+          import { readFileSync } from 'node:fs';
+          const html = readFileSync('/tmp/lesson.html', 'utf8');
+          for (const [, asset] of html.matchAll(/(?:src|href)="([^" ]+\.(?:js|css))"/g)) {
+            const response = await fetch(new URL(asset, process.env.PAGE_URL));
+            if (!response.ok) throw new Error(`Asset failed: ${response.status} ${asset}`);
+          }
+          JS

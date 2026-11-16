@@ -1,0 +1,38 @@
+---
+import { ui } from '../i18n/ui';
+import type { Locale } from '../i18n/locales';
+interface Props {
+  locale: Locale;
+}
+const t = ui(Astro.props.locale);
+---
+
+<section
+  class="learning-progress"
+  data-learning-progress
+  hidden
+  aria-label={t.progress}
+>
+  <div class="progress-heading">
+    <span data-progress-count data-template={t.progressCount}></span>
+    <span class="muted text-small">{t.saved}</span>
+  </div>
+  <progress
+    data-learning-meter
+    max="6"
+    value="0"
+    aria-label={t.progress}
+  ></progress>
+  <button class="text-button" data-reset-progress>
+    {t.reset}
+  </button>
+  <span
+    class="sr-only"
+    aria-live="polite"
+    data-reset-status
+    data-message={t.resetDone}
+  ></span>
+</section>
+<script>
+  import '../features/learning/progress';
+</script>

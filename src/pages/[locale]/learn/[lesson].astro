@@ -1,0 +1,121 @@
+---
+import { getCollection, render } from 'astro:content';
+import SiteLayout from '../../../layouts/SiteLayout.astro';
+import Diagram from '../../../components/diagrams/Diagram.astro';
+import Progress from '../../../components/Progress.astro';
+import { ui } from '../../../i18n/ui';
+import { localeUrl } from '../../../lib/urls';
+import { lessonIds, type DiagramId } from '../../../data/course';
+import { sources } from '../../../data/sources';
+export async function getStaticPaths() {
+  return (await getCollection('lessons')).map((entry) => ({
+    params: { locale: entry.data.locale, lesson: entry.data.lessonId },
+    props: { entry },
+  }));
+}
+const { entry } = Astro.props;
+const { data } = entry;
+const { Content } = await render(entry);
+const locale = data.locale;
+const t = ui(locale);
+const index = lessonIds.indexOf(data.lessonId);
+const lessonDiagrams: DiagramId[] =
+  data.lessonId === 'when-problems-progress'
+    ? ['dark-spots', 'when-problems-progress', 'lesion-depth']
+    : [data.lessonId];
+---
+
+<SiteLayout
+  locale={locale}
+  title={data.title}
+  description={data.description}
+  path={`learn/${data.lessonId}/`}
+  section="learn"
+>
+  <article
+    class="container lesson-page page-space"
+    data-lesson-id={data.lessonId}
+  >
+    <div class="reading">
+      <a class="back-link" href={localeUrl(locale, 'learn/')}>
+        ← {t.overview}
+      </a>
+      <p class="eyebrow">
+        {t.lesson} {new Intl.NumberFormat(locale).format(index + 1)} / 6
+      </p>
+      <h1>{data.title}</h1>
+      <p class="lead">{data.question}</p>
+      <div class="prose">
+        <Content />
+      </div>
+    </div>
+    {lessonDiagrams.map((diagramId) => (
+      <Diagram locale={locale} diagramId={diagramId} />
+    ))}
+    <div class="reading">
+      <aside class="example">
+        <p class="eyebrow">{t.example}</p>
+        <p>{data.example}</p>
+      </aside>
+      <aside class="takeaway">
+        <p class="eyebrow">{t.takeaway}</p>
+        <p>{data.takeaway}</p>
+      </aside>
+      <details>
+        <summary>{t.curious}</summary>
+        <p>{data.curious}</p>
+      </details>
+      <button
+        class="button mark-read"
+        data-mark-read
+        data-label={t.markRead}
+        data-done={t.markedRead}
+        hidden
+      >
+        {t.markRead}
+      </button>
+      <p data-storage-warning hidden role="status">
+        {t.storageNotice}
+      </p>
+      <Progress locale={locale} />
+      <nav class="lesson-pagination" aria-label={t.learn}>
+        {index > 0 && (
+          <a href={localeUrl(locale, `learn/${lessonIds[index - 1]}/`)}>
+            ← {t.previous}
+          </a>
+        )}
+        {index < 5 ? (
+          <a href={localeUrl(locale, `learn/${lessonIds[index + 1]}/`)}>
+            {t.next} →
+          </a>
+        ) : (
+          <a href={localeUrl(locale, 'practice/')}>{t.practice} →</a>
+        )}
+      </nav>
+      <section class="lesson-sources">
+        <h2>{t.lessonSources}</h2>
+        <ul>
+          {data.sourceIds.map((id: string) => {
+            const source = sources.find((item) => item.id === id)!;
+            return (
+              <li>
+                <a href={source.url}>
+                  {source.publisher}: {source.titles[locale]}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+        <p class="text-small muted">
+          {t.updated}:{' '}
+          <time datetime={data.updated}>
+            {new Intl.DateTimeFormat(locale, {
+              dateStyle: 'long',
+              timeZone: 'UTC',
+            }).format(new Date(data.updated))}
+          </time>
+        </p>
+      </section>
+    </div>
+  </article>
+</SiteLayout>

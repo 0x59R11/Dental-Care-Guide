@@ -1,0 +1,67 @@
+---
+interface Props {
+  diagramId: 'dark-spots' | 'lesion-depth';
+}
+const { diagramId } = Astro.props;
+const depth = diagramId === 'lesion-depth';
+---
+
+{[0, 1, 2, 3].map((stage) => (
+  <g
+    data-region={stage}
+    transform={`translate(${(stage % 2) * 180 + 8},${Math.floor(stage / 2) * 135 + 5})`}
+  >
+    <rect width="164" height="122" rx="16" class="stage" />
+    <text x="15" y="26">
+      {stage + 1}
+    </text>
+    <path
+      d="M35 100Q18 59 36 37Q49 24 77 37Q105 24 119 37Q137 59 120 100Z"
+      class="enamel"
+    />
+    <path
+      d="M45 100Q32 62 46 49Q60 41 77 49Q94 41 108 49Q122 62 110 100Z"
+      class="dentin"
+    />
+    <path
+      d="M62 100V78Q51 61 64 59L77 67L90 59Q103 61 92 78V100Z"
+      class="pulp"
+    />
+    <path
+      d="M65 34 77 41 89 34"
+      fill="none"
+      stroke="var(--text)"
+      stroke-width="3"
+    />
+    {(depth || stage > 0) && (
+      <>
+        <path
+          d={
+            depth && stage >= 2
+              ? `M67 39L87 39L94 ${stage === 3 ? 78 : 58}L77 ${stage === 3 ? 85 : 64}L60 ${stage === 3 ? 78 : 58}Z`
+              : 'M70 41L84 41L86 46L77 47L68 46Z'
+          }
+          fill="var(--amber)"
+          stroke="var(--text)"
+          stroke-dasharray="3 2"
+        />
+        {((depth && stage > 0) || (!depth && stage === 2)) && (
+          <path
+            d="M68 35L77 49L86 35"
+            fill="var(--surface)"
+            stroke="var(--text)"
+            stroke-width="2"
+          />
+        )}
+        {!depth && stage === 3 && (
+          <path
+            d="M67 39Q77 46 87 39"
+            fill="none"
+            stroke="var(--text)"
+            stroke-width="4"
+          />
+        )}
+      </>
+    )}
+  </g>
+))}

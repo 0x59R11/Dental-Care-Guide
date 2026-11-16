@@ -1,0 +1,94 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import PageIntro from '../../components/PageIntro.astro';
+import Icon from '../../components/Icon.astro';
+import { locales, type Locale } from '../../i18n/locales';
+import { ui } from '../../i18n/ui';
+import { localeUrl } from '../../lib/urls';
+import { getRecommendations } from '../../lib/content';
+import { routineGroups } from '../../data/course';
+import { sources } from '../../data/sources';
+export function getStaticPaths() {
+  return locales.map((locale) => ({ params: { locale } }));
+}
+const locale = Astro.params.locale as Locale;
+const t = ui(locale);
+const cards = getRecommendations(locale);
+---
+
+<SiteLayout
+  locale={locale}
+  title={t.practice}
+  description={t.practiceIntro}
+  path="practice/"
+  section="practice"
+>
+  <div class="container page-space">
+    <PageIntro
+      eyebrow={t.practice}
+      title={t.practiceTitle}
+      description={t.practiceIntro}
+    />
+    <nav class="routine-nav" aria-label={t.routineNav}>
+      {routineGroups.map((group) => (
+        <a href={`#${group}`}>{t[group]}</a>
+      ))}
+    </nav>
+    {routineGroups.map((group, index) => (
+      <section id={group} class="routine-section">
+        <div class="section-heading">
+          <span class="icon-tile">
+            <Icon name={['sun', 'drop', 'moon', 'shield'][index]} size={28} />
+          </span>
+          <div>
+            <h2>{t[group]}</h2>
+            <p class="muted">{t[`${group}Note`]}</p>
+          </div>
+        </div>
+        <div class="practice-grid">
+          {cards
+            .filter((card) => card.group === group)
+            .map((card) => (
+              <article class="card practice-card" id={card.id}>
+                <h3>{card.title}</h3>
+                <p>{card.instruction}</p>
+                <details>
+                  <summary>{t.why}</summary>
+                  <p>{card.why}</p>
+                  <ul class="text-small">
+                    {card.sourceIds.map((id) => {
+                      const source = sources.find(
+                        (source) => source.id === id,
+                      )!;
+                      return (
+                        <li>
+                          <a href={source.url}>
+                            {source.publisher}: {source.titles[locale]}
+                          </a>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </details>
+                <a
+                  class="related-link"
+                  href={localeUrl(locale, `learn/${card.lessonId}/`)}
+                >
+                  {t.related} →
+                </a>
+              </article>
+            ))}
+        </div>
+      </section>
+    ))}
+    <aside class="principle">
+      <div>
+        <h2>{t.practiceEnd}</h2>
+        <p>{t.practiceEndText}</p>
+        <a class="button" href={localeUrl(locale, 'test/')}>
+          {t.test} →
+        </a>
+      </div>
+    </aside>
+  </div>
+</SiteLayout>

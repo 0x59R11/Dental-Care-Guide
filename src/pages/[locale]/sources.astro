@@ -1,0 +1,64 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import PageIntro from '../../components/PageIntro.astro';
+import { locales, languageNames, type Locale } from '../../i18n/locales';
+import { ui } from '../../i18n/ui';
+import { sources } from '../../data/sources';
+export function getStaticPaths() {
+  return locales.map((locale) => ({ params: { locale } }));
+}
+const locale = Astro.params.locale as Locale;
+const t = ui(locale);
+---
+
+<SiteLayout
+  locale={locale}
+  title={t.sources}
+  description={t.sourcesIntro}
+  path="sources/"
+>
+  <div class="container page-space">
+    <PageIntro
+      eyebrow={t.sources}
+      title={t.sourcesTitle}
+      description={t.sourcesIntro}
+    />
+    <div class="reading source-content">
+      <h2>{t.editorialTitle}</h2>
+      <p>{t.editorialText}</p>
+      <h2>{t.evidenceTitle}</h2>
+      <p>{t.evidenceText}</p>
+      <ol class="source-list">
+        {sources.map((source) => (
+          <li id={source.id}>
+            <a href={source.url}>{source.titles[locale]}</a>
+            <p class="text-small muted">
+              {source.publisher} · {t.sourceLanguage}:{' '}
+              <span lang={source.language}>
+                {languageNames[source.language]}
+              </span>
+            </p>
+          </li>
+        ))}
+      </ol>
+      <h2>{t.personalTitle}</h2>
+      <p>{t.personalText}</p>
+      <p>{t.disclaimer}</p>
+      <p>
+        {t.updated}:{' '}
+        <time datetime="2026-11-14">
+          {new Intl.DateTimeFormat(locale, {
+            dateStyle: 'long',
+            timeZone: 'UTC',
+          }).format(new Date('2026-11-14'))}
+        </time>
+      </p>
+      <p class="text-small">
+        {t.license}{' '}
+        <a href="https://creativecommons.org/licenses/by/4.0/">
+          Creative Commons Attribution 4.0
+        </a>
+      </p>
+    </div>
+  </div>
+</SiteLayout>

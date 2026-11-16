@@ -1,0 +1,128 @@
+[
+  {
+    "id": "brush-with-fluoride",
+    "group": "morning",
+    "title": "Fluorid gehört zur Routine",
+    "instruction": "Putze zweimal täglich etwa zwei Minuten mit Fluoridzahnpasta: vor dem Schlafengehen und zu einem anderen Zeitpunkt, etwa morgens. Prüfe den Fluoridgehalt auf der Packung.",
+    "why": "Putzen entfernt Beläge. Fluorid vermindert Mineralverlust und unterstützt die Remineralisation. Diese allgemeine Routine richtet sich an Jugendliche und Erwachsene; beachte persönliche Empfehlungen deines zahnärztlichen Teams. Auf Zahnpasta bezeichnet ppm den Fluoridgehalt in Teilen pro Million; der NHS empfiehlt Erwachsenen mindestens 1.350 ppm. Beachte die Altersangaben auf der Packung und persönliche zahnärztliche Empfehlungen.",
+    "lessonId": "prevention",
+    "sourceIds": ["ada-care", "nhs-brushing"]
+  },
+  {
+    "id": "brush-gently",
+    "group": "morning",
+    "title": "Sanft putzen, alle Flächen erreichen",
+    "instruction": "Verwende eine weiche Bürste mit wenig Druck. Reinige Außen-, Innen- und Kauflächen und achte auf den Zahnfleischrand. Folge bei einer elektrischen Bürste der Anleitung, statt kräftig zu schrubben.",
+    "why": "Gründlichkeit ist ebenso wichtig wie die Dauer. Starkes Schrubben kann das Zahnfleisch schädigen und zum Verschleiß beitragen. Lass dir eine passende Technik zeigen.",
+    "lessonId": "prevention",
+    "sourceIds": ["ada-care", "nhs-brushing"]
+  },
+  {
+    "id": "spit-dont-rinse",
+    "group": "morning",
+    "title": "Überschüssige Zahnpasta ausspucken",
+    "instruction": "Spucke überschüssige Zahnpasta nach dem Putzen aus. Spüle nicht sofort mit Wasser oder Mundspülung nach und schlucke die Zahnpasta nicht.",
+    "why": "Sofortiges Nachspülen entfernt zurückgebliebenes Fluorid. Wenn dir eine Mundspülung empfohlen wurde, frage nach dem passenden Zeitpunkt. Sie ersetzt das Putzen nicht.",
+    "lessonId": "saliva-and-fluoride",
+    "sourceIds": ["nhs-brushing"]
+  },
+  {
+    "id": "reduce-sugar",
+    "group": "day",
+    "title": "Weniger Zucker und ständiges Nippen",
+    "instruction": "Reduziere zuckerhaltige Lebensmittel und Getränke insgesamt. Verteile kleine Bissen oder Schlucke nicht über den ganzen Tag; zu einer Mahlzeit entstehen weniger einzelne Zuckerexpositionen.",
+    "why": "Bakterien im Zahnbelag bilden aus Zucker Säuren. Menge und Häufigkeit sind wichtig. Das ist eine flexible Gewohnheit, kein verbindlicher Essensplan für alle.",
+    "lessonId": "sugar-food-and-acids",
+    "sourceIds": ["who", "german-guideline"]
+  },
+  {
+    "id": "limit-acid-exposure",
+    "group": "day",
+    "title": "Säurehaltige Getränke nicht lange im Mund behalten",
+    "instruction": "Begrenze häufige säurehaltige Getränke, auch zuckerfreie. Spüle sie nicht im Mund herum und trinke sie nicht schluckweise über Stunden.",
+    "why": "Getränkesäuren können direkt auf Zahnsubstanz wirken und Erosion fördern. Das unterscheidet sich von Karies durch bakterielle Säuren. Zuckerfrei bedeutet nicht säurefrei.",
+    "lessonId": "sugar-food-and-acids",
+    "sourceIds": ["ada-erosion"]
+  },
+  {
+    "id": "choose-water",
+    "group": "day",
+    "title": "Wähle einfaches Wasser",
+    "instruction": "Halte Wasser bereit und wähle es statt eines zucker- oder säurehaltigen Getränks. Trinke regelmäßig entsprechend deinem Bedarf.",
+    "why": "Wasser unterstützt die Flüssigkeitsversorgung und kann Speisereste wegspülen. Es ersetzt weder das Putzen noch alle Schutzfunktionen des Speichels. Anhaltende Mundtrockenheit solltest du abklären lassen.",
+    "lessonId": "saliva-and-fluoride",
+    "sourceIds": ["ada-care", "ada-dry-mouth"]
+  },
+  {
+    "id": "optional-gum",
+    "group": "day",
+    "title": "Zuckerfreier Kaugummi ist eine Ergänzung",
+    "instruction": "Wenn Kauen angenehm für dich ist, kann zuckerfreier Kaugummi nach dem Essen nützlich sein. Du kannst darauf verzichten; er ersetzt weder Putzen noch die Reinigung der Zahnzwischenräume.",
+    "why": "Kauen regt Speichel an, der Säuren abpuffert und Mineralien liefert. Kaugummi und bestimmte Süßstoffe sind nicht unverzichtbar und garantieren keinen Schutz vor Karies.",
+    "lessonId": "saliva-and-fluoride",
+    "sourceIds": ["ada-gum"]
+  },
+  {
+    "id": "after-acids",
+    "group": "day",
+    "title": "Nach Säure mit Wasser spülen",
+    "instruction": "Spüle nach sauren Speisen oder Getränken mit Wasser. Vermeide kräftiges Schrubben. Besprich bei Erosion oder häufiger Säureeinwirkung den Putzzeitpunkt und deine Routine mit deinem Zahnarzt.",
+    "why": "Säure kann die Oberfläche erweichen. Die Empfehlungen hängen von der Einwirkung und der Person ab; eine genaue Wartezeit gilt nicht für alle. Weniger häufige Säurekontakte und sanftes Putzen mit Fluorid sind hilfreicher als ein universeller Countdown.",
+    "lessonId": "sugar-food-and-acids",
+    "sourceIds": ["ada-erosion"]
+  },
+  {
+    "id": "clean-between-teeth",
+    "group": "evening",
+    "title": "Reinige die Zahnzwischenräume",
+    "instruction": "Reinige täglich mit Zahnseide oder einer passend großen Interdentalbürste. Führe das Hilfsmittel sanft; zwänge keine Bürste durch enge Lücken und lasse Zahnseide nicht ins Zahnfleisch schnappen. Lass dich zur Größe und Technik beraten.",
+    "why": "Die Zahnbürste erreicht nicht alle Flächen zwischen den Zähnen. Zusätzliche Reinigung kann Beläge und Zahnfleischentzündung verringern. Die Evidenz unterscheidet sich je nach Hilfsmittel und Ergebnis; kein Gerät garantiert Schutz vor Karies oder Zahnfleischerkrankungen.",
+    "lessonId": "prevention",
+    "sourceIds": ["ada-care", "cochrane-interdental"]
+  },
+  {
+    "id": "brush-before-bed",
+    "group": "evening",
+    "title": "Putze vor dem Schlafengehen",
+    "instruction": "Reinige alle Zahnflächen vor dem Schlafengehen etwa zwei Minuten sanft mit Fluoridzahnpasta. Spucke den Überschuss aus, ohne sofort nachzuspülen.",
+    "why": "Im Schlaf fließt gewöhnlich weniger Speichel. Beläge zu entfernen und Fluorid auf den Zähnen zu belassen macht das letzte Putzen besonders wichtig.",
+    "lessonId": "prevention",
+    "sourceIds": ["nhs-brushing", "ada-dry-mouth"]
+  },
+  {
+    "id": "finish-food-first",
+    "group": "evening",
+    "title": "Erst fertig essen, dann zuletzt putzen",
+    "instruction": "Plane das letzte Putzen nach dem letzten Essen oder Getränk außer Wasser. Wenn du danach Durst hast, wähle Wasser.",
+    "why": "Ein Snack oder süßes Getränk nach dem Putzen liefert den Bakterien neue Nahrung. Du brauchst keinen starren Zeitplan: Mache das Putzen zum Abschluss deiner Essens- und Getränkeroutine.",
+    "lessonId": "sugar-food-and-acids",
+    "sourceIds": ["nhs-brushing", "ada-care"]
+  },
+  {
+    "id": "personal-checkups",
+    "group": "long-term",
+    "title": "Vereinbare passende Kontrollabstände",
+    "instruction": "Vereinbare Vorsorgeuntersuchungen und besprich die Abstände anhand deiner Vorgeschichte, aktueller Befunde und persönlichen Risiken.",
+    "why": "Manche Probleme beginnen ohne Schmerzen. Frühe Erkennung kann die Versorgung erleichtern. Ein einziger Kontrollabstand passt nicht für alle, und Untersuchungen ersetzen keine tägliche Pflege.",
+    "lessonId": "when-problems-progress",
+    "sourceIds": ["ada-care", "nidcr-decay"]
+  },
+  {
+    "id": "discuss-dry-mouth",
+    "group": "long-term",
+    "title": "Sprich anhaltende Veränderungen an",
+    "instruction": "Berichte deinem zahnärztlichen Team von anhaltender Mundtrockenheit, wiederkehrender Empfindlichkeit, Zahnfleischbluten oder anderen Veränderungen. Nenne deine Medikamente; setze verordnete Mittel nicht eigenständig ab.",
+    "why": "Speichel schützt die Zähne. Anhaltende Beschwerden können verschiedene Ursachen haben. Eine Untersuchung hilft, die Pflege anzupassen, statt sich auf eine Selbstdiagnose zu verlassen.",
+    "lessonId": "saliva-and-fluoride",
+    "sourceIds": ["ada-dry-mouth", "ada-care"]
+  },
+  {
+    "id": "get-care-when-needed",
+    "group": "long-term",
+    "title": "Erkenne die Grenzen der häuslichen Pflege",
+    "instruction": "Lass ein sichtbares Loch oder anhaltende Schmerzen zahnärztlich untersuchen. Bei Infektionsverdacht, besonders mit Schwellung oder Fieber, brauchst du dringend zahnärztliche Hilfe. Atem- oder Schluckbeschwerden mit Schwellung erfordern sofortige medizinische Notfallhilfe.",
+    "why": "Speichel, Zahnpasta und Vitamine ersetzen keine fehlende Zahnsubstanz und behandeln keinen Abszess. Tägliche Pflege bleibt wichtig, doch eine Behandlung kann notwendig sein. Nutze bei Atem- oder Schluckproblemen den örtlichen Rettungsdienst.",
+    "lessonId": "when-problems-progress",
+    "sourceIds": ["nhs-abscess", "nidcr-decay"]
+  }
+]

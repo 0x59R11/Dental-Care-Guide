@@ -1,0 +1,30 @@
+---
+import '../styles/global.css';
+import { locales, languageNames } from '../i18n/locales';
+import { ui } from '../i18n/ui';
+import { localeUrl } from '../lib/urls';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>404 · Dental Care</title>
+  </head>
+  <body>
+    <main class="container entry-page">
+      <h1>404</h1>
+      <div class="lesson-grid">
+        {locales.map((locale) => (
+          <section class="card" lang={locale}>
+            <h2>{ui(locale).notFound}</h2>
+            <p>{ui(locale).notFoundText}</p>
+            <a href={localeUrl(locale)}>{languageNames[locale]} →</a>
+          </section>
+        ))}
+      </div>
+    </main>
+  </body>
+</html>

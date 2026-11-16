@@ -1,0 +1,147 @@
+---
+import '../styles/global.css';
+import Icon from '../components/Icon.astro';
+import { ui } from '../i18n/ui';
+import { locales, languageNames, type Locale } from '../i18n/locales';
+import { localeUrl, withBase } from '../lib/urls';
+interface Props {
+  locale: Locale;
+  title: string;
+  description?: string;
+  path?: string;
+  section?: string;
+}
+const { locale, title, description, path = '', section } = Astro.props;
+const t = ui(locale);
+const canonical = new URL(localeUrl(locale, path), Astro.site);
+const storagePrefix = `dental-care:${import.meta.env.BASE_URL}:v1:`;
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#f6f5f0" />
+    <title>{title} · {t.brand}</title>
+    <meta name="description" content={description || t.homeDescription} />
+    <link rel="canonical" href={canonical} />
+    {locales.map((language) => (
+      <link
+        rel="alternate"
+        hreflang={language}
+        href={new URL(localeUrl(language, path), Astro.site)}
+      />
+    ))}
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href={new URL(localeUrl('en', path), Astro.site)}
+    />
+    <meta property="og:title" content={`${title} · ${t.brand}`} />
+    <meta
+      property="og:description"
+      content={description || t.homeDescription}
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <link rel="icon" href={withBase('favicon.svg')} type="image/svg+xml" />
+    <script is:inline define:vars={{ storagePrefix }}>
+      try {
+        const preference = JSON.parse(
+          localStorage.getItem(storagePrefix + 'theme') || '"system"',
+        );
+        if (preference === 'light' || preference === 'dark')
+          document.documentElement.dataset.theme = preference;
+      } catch {}
+    </script>
+  </head>
+  <body>
+    <a href="#main" class="skip-link">
+      {t.skip}
+    </a>
+    <header class="site-header">
+      <div class="header-inner container">
+        <a class="brand" href={localeUrl(locale)}>
+          <span class="brand-mark">
+            <Icon name="tooth" size={25} />
+          </span>
+          <span>{t.brand}</span>
+        </a>
+        <nav class="module-nav" aria-label={t.navigation}>
+          {(['learn', 'practice', 'test'] as const).map((item, index) => (
+            <a
+              href={localeUrl(locale, `${item}/`)}
+              aria-current={section === item ? 'page' : undefined}
+            >
+              <span class="nav-number" aria-hidden="true">
+                0{index + 1}
+              </span>
+              {t[item]}
+            </a>
+          ))}
+        </nav>
+        <div class="header-settings">
+          <label class="select-control language-control">
+            <Icon name="globe" size={17} />
+            <span class="sr-only">{t.language}</span>
+            <select
+              id="language-select"
+              data-route={path}
+              data-base={import.meta.env.BASE_URL}
+            >
+              {locales.map((language) => (
+                <option
+                  value={language}
+                  selected={language === locale}
+                  lang={language}
+                >
+                  {languageNames[language]}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label class="select-control theme-control">
+            <Icon name="sun" size={17} />
+            <span class="sr-only">{t.theme}</span>
+            <select id="theme-select">
+              <option value="system">{t.system}</option>
+              <option value="light">{t.light}</option>
+              <option value="dark">{t.dark}</option>
+            </select>
+          </label>
+        </div>
+      </div>
+    </header>
+    <noscript>
+      <nav class="no-js-languages container" aria-label={t.language}>
+        {locales.map((language) => (
+          <a href={localeUrl(language, path)} lang={language}>
+            {languageNames[language]}
+          </a>
+        ))}
+      </nav>
+    </noscript>
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
+    <footer class="site-footer container">
+      <div class="footer-top">
+        <a class="brand" href={localeUrl(locale)}>
+          <Icon name="tooth" size={24} />
+          {t.brand}
+        </a>
+        <p>{t.footerText}</p>
+        <a href={localeUrl(locale, 'sources/')}>
+          {t.sources} <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+      <p class="disclaimer">{t.disclaimer}</p>
+      <p class="privacy">{t.privacy}</p>
+    </footer>
+    <script>
+      import '../features/preferences';
+    </script>
+  </body>
+</html>

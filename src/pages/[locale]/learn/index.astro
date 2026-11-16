@@ -1,0 +1,65 @@
+---
+import SiteLayout from '../../../layouts/SiteLayout.astro';
+import PageIntro from '../../../components/PageIntro.astro';
+import Progress from '../../../components/Progress.astro';
+import { locales, type Locale } from '../../../i18n/locales';
+import { ui } from '../../../i18n/ui';
+import { localeUrl } from '../../../lib/urls';
+import { getLessons } from '../../../lib/content';
+export function getStaticPaths() {
+  return locales.map((locale) => ({ params: { locale } }));
+}
+const locale = Astro.params.locale as Locale;
+const t = ui(locale);
+const lessons = await getLessons(locale);
+---
+
+<SiteLayout
+  locale={locale}
+  title={t.learn}
+  description={t.lessonsDescription}
+  path="learn/"
+  section="learn"
+>
+  <div class="container page-space">
+    <PageIntro
+      eyebrow={t.learn}
+      title={t.lessonsTitle}
+      description={t.lessonsDescription}
+    />
+    <Progress locale={locale} />
+    <div class="lesson-grid">
+      {lessons.map(({ data }, index) => (
+        <article class="lesson-card card">
+          <span class="lesson-number">
+            {String(index + 1).padStart(2, '0')}
+          </span>
+          <div>
+            <p class="text-small muted">
+              {t.lesson} {new Intl.NumberFormat(locale).format(index + 1)} / 6{' '}
+              <span
+                class="complete-badge"
+                data-completed-lesson={data.lessonId}
+                hidden
+              >
+                ✓ {t.completed}
+              </span>
+            </p>
+            <h2>
+              <a href={localeUrl(locale, `learn/${data.lessonId}/`)}>
+                {data.title}
+              </a>
+            </h2>
+            <p>{data.description}</p>
+            <a
+              class="text-small"
+              href={localeUrl(locale, `learn/${data.lessonId}/`)}
+            >
+              {t.readLesson} →
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</SiteLayout>

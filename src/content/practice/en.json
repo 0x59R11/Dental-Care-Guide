@@ -1,0 +1,128 @@
+[
+  {
+    "id": "brush-with-fluoride",
+    "group": "morning",
+    "title": "Make fluoride part of your routine",
+    "instruction": "Brush twice a day for about two minutes with fluoride toothpaste: before bed and at another time, such as the morning. Check the label for fluoride.",
+    "why": "Brushing removes plaque, while fluoride helps reduce mineral loss and supports mineral recovery. This routine is general guidance for teenagers and adults; follow any personal advice from your dental team. On adult toothpaste labels, ppm means parts per million of fluoride; NHS guidance recommends at least 1,350 ppm for adults. Follow age-appropriate packaging and personal dental advice.",
+    "lessonId": "prevention",
+    "sourceIds": ["ada-care", "nhs-brushing"]
+  },
+  {
+    "id": "brush-gently",
+    "group": "morning",
+    "title": "Be gentle and cover every surface",
+    "instruction": "Use a soft-bristled brush and light pressure. Clean the outer, inner, and chewing surfaces, paying attention to the gumline. With a powered brush, follow its instructions rather than scrubbing.",
+    "why": "Coverage matters as much as the clock. Hard scrubbing is not a substitute for thorough cleaning and may damage gums or contribute to wear. Ask a dental professional to show a technique that suits you.",
+    "lessonId": "prevention",
+    "sourceIds": ["ada-care", "nhs-brushing"]
+  },
+  {
+    "id": "spit-dont-rinse",
+    "group": "morning",
+    "title": "Spit out the excess",
+    "instruction": "After brushing, spit out excess toothpaste. Avoid rinsing immediately with water or mouthwash, and do not swallow the toothpaste.",
+    "why": "Rinsing straight away washes off the concentrated fluoride left by toothpaste. If you use mouthwash on professional advice, ask when to use it; it is not a replacement for brushing.",
+    "lessonId": "saliva-and-fluoride",
+    "sourceIds": ["nhs-brushing"]
+  },
+  {
+    "id": "reduce-sugar",
+    "group": "day",
+    "title": "Reduce sugar and repeated sipping",
+    "instruction": "Reduce sugary foods and drinks overall. If you have them, avoid spreading small bites or sips across the whole day; having them with a meal can help reduce separate exposures.",
+    "why": "Plaque bacteria can turn sugars into acids. Both the amount of sugar and the frequency of exposure matter. This is a flexible habit, not a rule that everyone must follow the same meal schedule.",
+    "lessonId": "sugar-food-and-acids",
+    "sourceIds": ["who", "german-guideline"]
+  },
+  {
+    "id": "limit-acid-exposure",
+    "group": "day",
+    "title": "Keep acidic drinks from lingering",
+    "instruction": "Limit frequent acidic drinks, including sugar-free ones. Avoid swishing them around your mouth or sipping them for hours.",
+    "why": "Acids in drinks can act directly on teeth and contribute to erosion. This differs from cavities caused by acids produced by bacteria. A sugar-free label does not tell you whether a drink is acidic.",
+    "lessonId": "sugar-food-and-acids",
+    "sourceIds": ["ada-erosion"]
+  },
+  {
+    "id": "choose-water",
+    "group": "day",
+    "title": "Choose plain water",
+    "instruction": "Keep plain water available and choose it instead of a sugary or acidic drink. Drink regularly according to your needs.",
+    "why": "Water supports hydration and can help clear food residues. It does not replace brushing or all the protective functions of saliva. Persistent dryness deserves a conversation with a dental or medical professional.",
+    "lessonId": "saliva-and-fluoride",
+    "sourceIds": ["ada-care", "ada-dry-mouth"]
+  },
+  {
+    "id": "optional-gum",
+    "group": "day",
+    "title": "Sugar-free gum is optional",
+    "instruction": "If chewing is comfortable for you, sugar-free gum after a meal can be a useful extra. You can skip it; it never replaces brushing or interdental cleaning.",
+    "why": "Chewing stimulates saliva, which helps buffer acids and supplies minerals. There is no need to treat gum or a particular sweetener as essential, and claims of guaranteed cavity prevention go too far.",
+    "lessonId": "saliva-and-fluoride",
+    "sourceIds": ["ada-gum"]
+  },
+  {
+    "id": "after-acids",
+    "group": "day",
+    "title": "After something acidic, rinse with water",
+    "instruction": "Rinse with plain water after acidic food or drink. Avoid aggressive scrubbing. If erosion or repeated acid exposure is a concern, ask your dentist about brushing timing and your routine.",
+    "why": "Acid can soften tooth surfaces, but advice depends on the exposure and the person. There is no exact waiting time that everyone must follow. Reducing frequent acid exposure and maintaining gentle fluoride brushing are more useful than a universal countdown.",
+    "lessonId": "sugar-food-and-acids",
+    "sourceIds": ["ada-erosion"]
+  },
+  {
+    "id": "clean-between-teeth",
+    "group": "evening",
+    "title": "Clean between your teeth",
+    "instruction": "Clean between teeth daily with floss or a suitably sized interdental brush. Guide the tool gently; do not force a brush through a tight gap or snap floss into the gum. Ask for help choosing the fit and technique.",
+    "why": "A toothbrush does not reach every surface between teeth. Interdental cleaning can help control plaque and gum inflammation. Evidence varies by tool and outcome, so no device guarantees protection against cavities or gum disease.",
+    "lessonId": "prevention",
+    "sourceIds": ["ada-care", "cochrane-interdental"]
+  },
+  {
+    "id": "brush-before-bed",
+    "group": "evening",
+    "title": "Brush before you go to bed",
+    "instruction": "Give all tooth surfaces a careful, gentle clean with fluoride toothpaste for about two minutes before bed. Spit out the excess without immediately rinsing.",
+    "why": "Saliva flow usually falls during sleep. Cleaning away plaque and leaving fluoride on your teeth makes the final brushing an important part of your routine.",
+    "lessonId": "prevention",
+    "sourceIds": ["nhs-brushing", "ada-dry-mouth"]
+  },
+  {
+    "id": "finish-food-first",
+    "group": "evening",
+    "title": "Finish eating before the final brushing",
+    "instruction": "Plan your final brushing after your last food or drink other than water. Afterwards, choose plain water if you are thirsty.",
+    "why": "A snack or sugary drink after brushing supplies new fuel for plaque bacteria. You do not need a rigid evening timetable: aim to make brushing the last part of your food-and-drink routine.",
+    "lessonId": "sugar-food-and-acids",
+    "sourceIds": ["nhs-brushing", "ada-care"]
+  },
+  {
+    "id": "personal-checkups",
+    "group": "long-term",
+    "title": "Agree a checkup schedule that fits you",
+    "instruction": "Arrange preventive dental examinations and discuss how often to return based on your dental history, current findings, and individual risks.",
+    "why": "Some problems begin without pain. Finding them early can make care simpler and help prevent further damage. A single examination interval is not right for everyone, and checkups do not replace daily care.",
+    "lessonId": "when-problems-progress",
+    "sourceIds": ["ada-care", "nidcr-decay"]
+  },
+  {
+    "id": "discuss-dry-mouth",
+    "group": "long-term",
+    "title": "Mention persistent changes",
+    "instruction": "Tell your dental team about persistent dry mouth, recurring sensitivity, bleeding gums, or other changes. Mention medicines you take; do not stop prescribed medicine on your own.",
+    "why": "Saliva protects teeth, and persistent symptoms can have several causes. A professional assessment can identify what needs attention and adapt your care instead of relying on a home diagnosis.",
+    "lessonId": "saliva-and-fluoride",
+    "sourceIds": ["ada-dry-mouth", "ada-care"]
+  },
+  {
+    "id": "get-care-when-needed",
+    "group": "long-term",
+    "title": "Know when home care is not enough",
+    "instruction": "Arrange dental care for a visible hole or ongoing pain. Seek urgent dental help for suspected infection, especially with swelling or fever. Trouble breathing or swallowing with swelling needs immediate emergency help.",
+    "why": "Saliva, toothpaste, and vitamins cannot regrow missing tooth structure or treat an abscess. Good daily care still matters, but professional treatment may be necessary. Use your local emergency services when breathing or swallowing is affected.",
+    "lessonId": "when-problems-progress",
+    "sourceIds": ["nhs-abscess", "nidcr-decay"]
+  }
+]

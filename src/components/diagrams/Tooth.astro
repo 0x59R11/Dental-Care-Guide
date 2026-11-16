@@ -1,0 +1,62 @@
+---
+interface Props {
+  decorative?: boolean;
+  title?: string;
+}
+const { decorative = true, title } = Astro.props;
+---
+
+<svg
+  class="tooth-svg"
+  viewBox="0 0 360 360"
+  role={decorative ? undefined : 'img'}
+  aria-hidden={decorative ? 'true' : undefined}
+  aria-label={title}
+>
+  <circle cx="180" cy="180" r="158" class="tooth-halo" />
+  <path
+    d="M45 188 Q90 165 125 187 Q180 208 235 187 Q280 165 315 188 L315 288 Q180 320 45 288Z"
+    class="gum"
+  />
+  <path
+    data-region="3"
+    d="M105 168 L113 237 Q116 315 137 316 Q151 316 159 250 Q166 217 180 217 Q194 217 201 250 Q209 316 223 316 Q244 315 247 237 L255 168Z"
+    class="root"
+  />
+  <path
+    data-region="0"
+    d="M104 190 C83 150 81 99 106 72 C132 46 151 67 180 69 C209 67 228 46 254 72 C279 99 277 150 256 190 Q180 210 104 190Z"
+    class="enamel"
+  />
+  <path
+    data-region="1"
+    d="M119 179 C101 140 104 100 123 90 C143 78 164 92 180 91 C196 92 217 78 237 90 C256 100 259 140 241 179 L232 244 Q226 285 219 290 L207 232 Q198 202 180 201 Q162 202 153 232 L141 290 Q134 285 128 244Z"
+    class="dentin"
+  />
+  <path
+    data-region="2"
+    d="M146 163 Q129 124 146 114 Q159 105 180 119 Q201 105 214 114 Q231 124 214 163 Q203 185 203 210 L219 285 L197 219 Q190 189 180 188 Q170 189 163 219 L141 285 L157 210 Q157 185 146 163Z"
+    class="pulp"
+  />
+  <path
+    d="M180 140v48m-39 108 20-77m58 77-20-77"
+    fill="none"
+    class="nerve"
+    stroke-width="3"
+    stroke-linecap="round"
+  />
+  {!decorative &&
+    [
+      [111, 83],
+      [127, 159],
+      [181, 150],
+      [234, 254],
+    ].map(([x, y], index) => (
+      <g class="diagram-marker">
+        <circle cx={x} cy={y} r="13" />
+        <text x={x} y={y + 4} text-anchor="middle">
+          {index + 1}
+        </text>
+      </g>
+    ))}
+</svg>

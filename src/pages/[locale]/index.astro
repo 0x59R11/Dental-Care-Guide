@@ -1,0 +1,118 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import PageIntro from '../../components/PageIntro.astro';
+import Icon from '../../components/Icon.astro';
+import Tooth from '../../components/diagrams/Tooth.astro';
+import { locales, type Locale } from '../../i18n/locales';
+import { ui } from '../../i18n/ui';
+import { localeUrl } from '../../lib/urls';
+export function getStaticPaths() {
+  return locales.map((locale) => ({ params: { locale } }));
+}
+const locale = Astro.params.locale as Locale;
+const t = ui(locale);
+const modules = [
+  {
+    path: 'learn',
+    icon: 'book',
+    title: t.learn,
+    description: t.learnDescription,
+    meta: t.learnMeta,
+    action: t.openLearn,
+  },
+  {
+    path: 'practice',
+    icon: 'leaf',
+    title: t.practice,
+    description: t.practiceDescription,
+    meta: t.practiceMeta,
+    action: t.openPractice,
+  },
+  {
+    path: 'test',
+    icon: 'quiz',
+    title: t.test,
+    description: t.testDescription,
+    meta: t.testMeta,
+    action: t.openTest,
+  },
+];
+---
+
+<SiteLayout locale={locale} title={t.brand}>
+  <div class="container">
+    <section class="home-intro">
+      <PageIntro
+        eyebrow={t.guide}
+        title={t.heroTitle}
+        description={t.heroDescription}
+      >
+        <div class="actions">
+          <a class="button" href={localeUrl(locale, 'learn/')}>
+            {t.start}
+            <Icon />
+          </a>
+          <a class="subtle-link" href={localeUrl(locale, 'practice/')}>
+            {t.quickCare}
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+        <a
+          class="resume"
+          data-resume
+          data-learn-url={localeUrl(locale, 'learn/')}
+          hidden
+          href={localeUrl(locale, 'learn/')}
+        >
+          {t.continue} →
+        </a>
+        <p class="meta-row">
+          <span>
+            <Icon name="clock" size={16} />
+            {t.time}
+          </span>
+          <span>{t.selfPaced}</span>
+          <span>{t.noAccount}</span>
+        </p>
+      </PageIntro>
+      <div class="home-illustration">
+        <Tooth />
+        <p>{t.tagline}</p>
+      </div>
+    </section>
+    <section class="modules-section">
+      <p class="eyebrow">{t.modulesEyebrow}</p>
+      <h2>{t.modulesTitle}</h2>
+      <p class="muted">{t.modulesDescription}</p>
+      <div class="module-grid">
+        {modules.map((module, index) => (
+          <article class={`module-card module-${index}`}>
+            <div class="card-top">
+              <span class="icon-tile">
+                <Icon name={module.icon} size={28} />
+              </span>
+              <span class="card-number">0{index + 1}</span>
+            </div>
+            <h3>{module.title}</h3>
+            <p>{module.description}</p>
+            <p class="text-small muted">{module.meta}</p>
+            <a href={localeUrl(locale, `${module.path}/`)}>
+              {module.action}
+              <Icon size={20} />
+            </a>
+          </article>
+        ))}
+      </div>
+    </section>
+    <aside class="principle">
+      <Icon name="shield" size={36} />
+      <div>
+        <h2>{t.principleTitle}</h2>
+        <p>{t.principleText}</p>
+      </div>
+    </aside>
+  </div>
+  <script>
+    import '../../features/learning/progress';
+  </script>
+</SiteLayout>

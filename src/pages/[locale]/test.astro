@@ -1,0 +1,159 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import PageIntro from '../../components/PageIntro.astro';
+import { locales, type Locale } from '../../i18n/locales';
+import { ui } from '../../i18n/ui';
+import { getQuizCopy, getLessons } from '../../lib/content';
+import { localeUrl } from '../../lib/urls';
+import { questions } from '../../data/quiz';
+export function getStaticPaths() {
+  return locales.map((locale) => ({ params: { locale } }));
+}
+const locale = Astro.params.locale as Locale;
+const t = ui(locale);
+const copy = getQuizCopy(locale);
+const lessons = await getLessons(locale);
+---
+
+<SiteLayout
+  locale={locale}
+  title={t.test}
+  description={t.quizIntro}
+  path="test/"
+  section="test"
+>
+  <div class="container page-space quiz-page">
+    <PageIntro eyebrow={t.test} title={t.quizTitle} description={t.quizIntro} />
+    <noscript>
+      <div class="card">
+        <p>{t.noJsQuiz}</p>
+        <a href={localeUrl(locale, 'learn/')}>{t.learn}</a> ·{' '}
+        <a href={localeUrl(locale, 'practice/')}>{t.practice}</a>
+      </div>
+    </noscript>
+    <section data-quiz hidden>
+      <p class="text-small muted">{t.quizNote}</p>
+      <p data-quiz-storage hidden role="status">
+        {t.storageNotice}
+      </p>
+      <p data-restored hidden role="status">
+        {t.restored}
+      </p>
+      <div data-quiz-content class="card quiz-panel">
+        <button class="button" data-start>
+          {t.quizStart} →
+        </button>
+      </div>
+      {questions.map((question, index) => {
+        const text = copy[question.id];
+        return (
+          <template data-question-template={index}>
+            <p class="eyebrow">
+              {t.question} {new Intl.NumberFormat(locale).format(index + 1)} /{' '}
+              {new Intl.NumberFormat(locale).format(questions.length)}
+            </p>
+            <progress
+              max={questions.length}
+              value={index + 1}
+              aria-label={t.question}
+            ></progress>
+            <form>
+              <fieldset>
+                <legend>
+                  <span tabindex="-1" data-question-heading>
+                    {text.prompt}
+                  </span>
+                </legend>
+                <div class="quiz-options">
+                  {question.optionIds.map((id) => (
+                    <label>
+                      <input type="radio" name="answer" value={id} />
+                      <span>{text.options[id]}</span>
+                    </label>
+                  ))}
+                </div>
+              </fieldset>
+              <button type="submit" class="button" data-check disabled>
+                {t.check}
+              </button>
+            </form>
+            <div data-feedback hidden role="status">
+              <h2
+                data-verdict
+                data-correct={t.correct}
+                data-incorrect={t.incorrect}
+              ></h2>
+              <p>
+                <strong>{t.correctAnswer}:</strong>{' '}
+                {text.options[question.correctOptionId]}
+              </p>
+              <p>{text.explanation}</p>
+              <a href={localeUrl(locale, `learn/${question.lessonId}/`)}>
+                {t.related} →
+              </a>
+            </div>
+            <button class="button" data-next hidden>
+              {index === questions.length - 1 ? t.seeResults : t.nextQuestion} →
+            </button>
+          </template>
+        );
+      })}
+      <template data-results-template>
+        <h2 tabindex="-1" data-results-heading>
+          {t.resultTitle}
+        </h2>
+        <p class="result-score" data-score data-template={t.resultSummary}></p>
+        <div data-topics>
+          <h3>{t.reviewTitle}</h3>
+          <p>{t.reviewDescription}</p>
+          <ul>
+            {lessons.map(({ data }) => (
+              <li data-review-lesson={data.lessonId}>
+                <a href={localeUrl(locale, `learn/${data.lessonId}/`)}>
+                  {data.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <p data-all-correct hidden>
+          {t.allCorrect}
+        </p>
+        <details>
+          <summary>{t.answerReview}</summary>
+          <ol class="answer-review">
+            {questions.map((question, index) => {
+              const text = copy[question.id];
+              return (
+                <li>
+                  <h3>{text.prompt}</h3>
+                  <p>
+                    {t.yourAnswer}:{' '}
+                    <strong
+                      data-review-answer={index}
+                      data-options={JSON.stringify(text.options)}
+                    ></strong>
+                  </p>
+                  <p>
+                    {t.correctAnswer}:{' '}
+                    <strong>{text.options[question.correctOptionId]}</strong>
+                  </p>
+                  <p>{text.explanation}</p>
+                  <a href={localeUrl(locale, `learn/${question.lessonId}/`)}>
+                    {t.related} →
+                  </a>
+                </li>
+              );
+            })}
+          </ol>
+        </details>
+        <button class="button" data-retry>
+          {t.retry}
+        </button>
+      </template>
+    </section>
+  </div>
+  <script>
+    import '../../features/quiz/controller';
+  </script>
+</SiteLayout>

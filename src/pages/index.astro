@@ -1,0 +1,68 @@
+---
+import '../styles/global.css';
+import { locales, languageNames } from '../i18n/locales';
+import { ui } from '../i18n/ui';
+import { localeUrl, withBase } from '../lib/urls';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dental Care · Choose your language</title>
+    <meta
+      name="description"
+      content="An illustrated dental care guide in English, Russian, Ukrainian, and German."
+    />
+    <link rel="icon" href={withBase('favicon.svg')} />
+    <link rel="canonical" href={new URL(withBase(), Astro.site)} />
+  </head>
+  <body>
+    <main class="container entry-page">
+      <h1>Dental Care</h1>
+      <div class="lesson-grid">
+        {locales.map((locale) => (
+          <section lang={locale} class="card">
+            <h2>
+              <a href={localeUrl(locale)} data-entry-language={locale}>
+                {languageNames[locale]}
+              </a>
+            </h2>
+            <p>{ui(locale).heroDescription}</p>
+          </section>
+        ))}
+      </div>
+    </main>
+    <script>
+      import { preferredLocale } from '../i18n/locales';
+      import {
+        browserStorage,
+        readStored,
+        writeStored,
+        storagePrefix,
+      } from '../lib/storage';
+      import { localeUrl } from '../lib/urls';
+      const storage = browserStorage('localStorage');
+      document
+        .querySelectorAll<HTMLAnchorElement>('[data-entry-language]')
+        .forEach((link) =>
+          link.addEventListener('click', () =>
+            writeStored(
+              storage,
+              storagePrefix + 'language',
+              link.dataset.entryLanguage,
+            ),
+          ),
+        );
+      location.replace(
+        localeUrl(
+          preferredLocale(
+            readStored(storage, storagePrefix + 'language'),
+            navigator.languages,
+          ),
+        ),
+      );
+    </script>
+  </body>
+</html>
