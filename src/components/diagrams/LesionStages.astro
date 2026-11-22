@@ -12,9 +12,12 @@ const depth = diagramId === 'lesion-depth';
     transform={`translate(${(stage % 2) * 180 + 8},${Math.floor(stage / 2) * 135 + 5})`}
   >
     <rect width="164" height="122" rx="16" class="stage" />
-    <text x="15" y="26">
-      {stage + 1}
-    </text>
+    <g class="diagram-marker">
+      <circle cx="17" cy="19" r="12" />
+      <text x="17" y="23" text-anchor="middle">
+        {stage + 1}
+      </text>
+    </g>
     <path
       d="M35 100Q18 59 36 37Q49 24 77 37Q105 24 119 37Q137 59 120 100Z"
       class="enamel"
@@ -26,6 +29,13 @@ const depth = diagramId === 'lesion-depth';
     <path
       d="M62 100V78Q51 61 64 59L77 67L90 59Q103 61 92 78V100Z"
       class="pulp"
+    />
+    <path
+      d="m40 58 11 4m-8 15 12-2m58-17-11 4m8 15-12-2"
+      fill="none"
+      stroke="var(--illustration-line)"
+      stroke-width="1.5"
+      opacity="0.5"
     />
     <path
       d="M65 34 77 41 89 34"

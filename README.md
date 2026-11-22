@@ -55,19 +55,20 @@ Stop any previously started preview before changing the base. Restore the reposi
 - `src/content/quiz/{locale}.json`: prompts, four options and answer explanations.
 - `src/data/quiz.ts`: invariant question IDs, lesson links, difficulty/scenario metadata, correct option IDs and quiz version.
 - `src/i18n/ui.ts` and `diagrams.ts`: interface and explanatory diagram wording.
-- `src/components/diagrams/`: shared, theme-aware SVG geometry and native-button interactions.
+- `src/components/diagrams/`: shared, theme-aware educational SVG geometry and native-button interactions.
+- `src/components/illustrations/`: original decorative care motifs and typed lesson/routine scenes.
 - `src/data/sources.ts`: stable source registry and localized display descriptions.
 - `docs/editorial-review.md`: claim table, qualifications, terminology, review checklist and maintenance process.
 
 Keep lesson, question, option and recommendation IDs stable across languages. Update all four versions together. To add a language, add it to the locale configuration and Astro configuration, supply every content file and dictionary, extend source titles and tests, and perform an editorial and browser review. Never use silent English fallbacks.
 
-Each lesson supplies its title, opening question, example, takeaway, optional deeper explanation, sources and actual update date. The shared route renders the MDX prose and diagram, then the example and takeaway. Original SVGs are schematic, without fabricated measurements or fixed disease timelines. All explanations remain available without JavaScript.
+Each lesson supplies its title, opening question, example, takeaway, optional deeper explanation, sources and actual update date. MDX places each diagram beside the relevant explanation. The shared route derives section links from lesson headings, then renders the example, takeaway, and named neighboring lesson links. Original SVGs are schematic, without fabricated measurements or fixed disease timelines. All explanations remain available without JavaScript.
 
 When question meaning, options or correctness changes, increment `quizVersion` to invalidate incompatible attempts. Changes to wording alone need not discard attempts. Run checks after every content update; automated tests cannot establish translation quality or medical accuracy.
 
 ## Preferences and privacy
 
-Namespaced keys use `dental-care:<deployment-base>:v1:` so other GitHub Pages projects do not collide. Local storage contains the manual language, theme (`system`, `light`, `dark`) and learning state (completed IDs and last lesson). Lesson completion is explicit; reset is available on Learn and lesson pages. Progress is shared across languages. Session storage contains only the current quiz attempt in this tab, including selected and checked answers and the shuffled option order for each question. Option order stays stable through reloads and language changes; retry generates fresh permutations. Question order remains fixed. Retry clears the attempt; no long-term quiz history is kept. Malformed or inaccessible storage is tolerated and interactions continue in memory.
+Namespaced keys use `dental-care:<deployment-base>:v1:` so other GitHub Pages projects do not collide. Local storage contains the manual language, theme (`system`, `light`, `dark`) and learning state (completed IDs and last lesson). Lesson completion is explicit; reset is available on Learn and lesson pages. Home and Learn offer a resume link to the last visited lesson. Progress is shared across languages. Session storage contains only the current quiz attempt in this tab, including selected and checked answers and the shuffled option order for each question. Option order stays stable through reloads and language changes; retry generates fresh permutations. Question order remains fixed. Retry clears the attempt; no long-term quiz history is kept. Malformed or inaccessible storage is tolerated and interactions continue in memory.
 
 Only the unprefixed entry uses saved language, then the first supported browser language, then English. The switcher preserves the current route and anchor. System theme follows OS changes; an explicit theme is applied in the head before paint.
 

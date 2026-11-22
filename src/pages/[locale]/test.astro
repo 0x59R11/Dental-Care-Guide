@@ -1,5 +1,6 @@
 ---
 import SiteLayout from '../../layouts/SiteLayout.astro';
+import Illustration from '../../components/illustrations/Illustration.astro';
 import PageIntro from '../../components/PageIntro.astro';
 import { locales, type Locale } from '../../i18n/locales';
 import { ui } from '../../i18n/ui';
@@ -23,7 +24,16 @@ const lessons = await getLessons(locale);
   section="test"
 >
   <div class="container page-space quiz-page">
-    <PageIntro eyebrow={t.test} title={t.quizTitle} description={t.quizIntro} />
+    <div class="intro-with-art">
+      <PageIntro
+        eyebrow={t.test}
+        title={t.quizTitle}
+        description={t.quizIntro}
+      />
+      <div class="intro-art">
+        <Illustration variant="quiz" />
+      </div>
+    </div>
     <noscript>
       <div class="card">
         <p>{t.noJsQuiz}</p>
@@ -99,11 +109,14 @@ const lessons = await getLessons(locale);
         );
       })}
       <template data-results-template>
+        <div class="result-art">
+          <Illustration variant="results" />
+        </div>
         <h2 tabindex="-1" data-results-heading>
           {t.resultTitle}
         </h2>
         <p class="result-score" data-score data-template={t.resultSummary}></p>
-        <div data-topics>
+        <div data-topics class="review-topics">
           <h3>{t.reviewTitle}</h3>
           <p>{t.reviewDescription}</p>
           <ul>

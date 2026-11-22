@@ -1,7 +1,10 @@
 ---
 import SiteLayout from '../../layouts/SiteLayout.astro';
 import PageIntro from '../../components/PageIntro.astro';
-import Icon from '../../components/Icon.astro';
+import Illustration from '../../components/illustrations/Illustration.astro';
+import CareMotif, {
+  type CareMotif as Motif,
+} from '../../components/illustrations/CareMotif.astro';
 import { locales, type Locale } from '../../i18n/locales';
 import { ui } from '../../i18n/ui';
 import { localeUrl } from '../../lib/urls';
@@ -14,6 +17,22 @@ export function getStaticPaths() {
 const locale = Astro.params.locale as Locale;
 const t = ui(locale);
 const cards = getRecommendations(locale);
+const careMotifs: Record<string, Motif> = {
+  'brush-with-fluoride': 'paste',
+  'brush-gently': 'brush',
+  'spit-dont-rinse': 'paste',
+  'reduce-sugar': 'snack',
+  'limit-acid-exposure': 'drink',
+  'choose-water': 'water',
+  'optional-gum': 'drop',
+  'after-acids': 'water',
+  'clean-between-teeth': 'floss',
+  'brush-before-bed': 'brush',
+  'finish-food-first': 'moon',
+  'personal-checkups': 'calendar',
+  'discuss-dry-mouth': 'drop',
+  'get-care-when-needed': 'calendar',
+};
 ---
 
 <SiteLayout
@@ -30,16 +49,19 @@ const cards = getRecommendations(locale);
       description={t.practiceIntro}
     />
     <nav class="routine-nav" aria-label={t.routineNav}>
-      {routineGroups.map((group) => (
-        <a href={`#${group}`}>{t[group]}</a>
+      {routineGroups.map((group, index) => (
+        <a href={`#${group}`}>
+          <span aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+          {t[group]}
+        </a>
       ))}
     </nav>
-    {routineGroups.map((group, index) => (
+    {routineGroups.map((group) => (
       <section id={group} class="routine-section">
         <div class="section-heading">
-          <span class="icon-tile">
-            <Icon name={['sun', 'drop', 'moon', 'shield'][index]} size={28} />
-          </span>
+          <div class="routine-art">
+            <Illustration variant={group} />
+          </div>
           <div>
             <h2>{t[group]}</h2>
             <p class="muted">{t[`${group}Note`]}</p>
@@ -50,7 +72,16 @@ const cards = getRecommendations(locale);
             .filter((card) => card.group === group)
             .map((card) => (
               <article class="card practice-card" id={card.id}>
-                <h3>{card.title}</h3>
+                <div class="practice-card-heading">
+                  <svg
+                    class="practice-motif"
+                    viewBox="0 0 100 100"
+                    aria-hidden="true"
+                  >
+                    <CareMotif kind={careMotifs[card.id]} />
+                  </svg>
+                  <h3>{card.title}</h3>
+                </div>
                 <p>{card.instruction}</p>
                 <details>
                   <summary>{t.why}</summary>

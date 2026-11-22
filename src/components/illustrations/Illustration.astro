@@ -1,0 +1,99 @@
+---
+import CareMotif, { type CareMotif as Motif } from './CareMotif.astro';
+import type { LessonId, RoutineGroup } from '../../data/course';
+type Variant =
+  LessonId | RoutineGroup | 'hero' | 'quiz' | 'results' | 'sources';
+interface Props {
+  variant: Variant;
+}
+const { variant } = Astro.props;
+const scenes: Record<Variant, [Motif, Motif, Motif]> = {
+  hero: ['tooth', 'brush', 'paste'],
+  'understanding-teeth': ['tooth', 'book', 'drop'],
+  'how-cavities-develop': ['tooth', 'snack', 'drop'],
+  'sugar-food-and-acids': ['snack', 'water', 'tooth'],
+  'saliva-and-fluoride': ['drop', 'paste', 'tooth'],
+  'when-problems-progress': ['tooth', 'calendar', 'book'],
+  prevention: ['brush', 'floss', 'paste'],
+  morning: ['brush', 'sun', 'paste'],
+  day: ['water', 'sun', 'snack'],
+  evening: ['floss', 'moon', 'brush'],
+  'long-term': ['calendar', 'tooth', 'book'],
+  quiz: ['book', 'tooth', 'sun'],
+  results: ['book', 'calendar', 'tooth'],
+  sources: ['book', 'drop', 'tooth'],
+};
+const [main, left, right] = scenes[variant];
+---
+
+<svg
+  class={`care-illustration illustration-${variant}`}
+  viewBox="0 0 400 280"
+  aria-hidden="true"
+>
+  <path
+    d="M56 149C43 66 125 18 216 28c88 10 148 61 130 140-18 79-99 100-178 83C100 237 65 205 56 149Z"
+    fill="var(--soft)"
+  />
+  <circle cx="302" cy="66" r="37" fill="var(--amber)" />
+  <path
+    d="M45 236q146 27 310 0"
+    fill="none"
+    stroke="var(--line)"
+    stroke-width="2"
+    stroke-linecap="round"
+  />
+  <g transform="rotate(-12 91 160)">
+    <rect x="34" y="101" width="105" height="124" rx="22" fill="var(--blue)" />
+    <CareMotif kind={left} x={38} y={110} size={95} />
+  </g>
+  <g transform="rotate(9 310 173)">
+    <rect x="269" y="123" width="96" height="110" rx="22" fill="var(--peach)" />
+    <CareMotif kind={right} x={271} y={128} size={91} />
+  </g>
+  <CareMotif kind={main} x={109} y={46} size={190} />
+  {variant === 'understanding-teeth' && (
+    <g transform="translate(109 46) scale(1.9)">
+      <path
+        d="M50 28C36 19 24 25 25 38c1 16 11 20 12 36l3-17q10-19 20 0l3 17c1-16 11-20 12-36 1-13-11-19-25-10Z"
+        class="dentin"
+      />
+      <path
+        d="M50 37C36 28 33 40 41 48l-1 16q10-22 20 0l-1-16c8-8 5-20-9-11Z"
+        class="pulp"
+      />
+    </g>
+  )}
+  {variant === 'how-cavities-develop' && (
+    <g fill="var(--dentin)" stroke="var(--illustration-line)" stroke-width="2">
+      <ellipse cx="185" cy="108" rx="7" ry="4" transform="rotate(25 185 108)" />
+      <ellipse
+        cx="203"
+        cy="112"
+        rx="7"
+        ry="4"
+        transform="rotate(-20 203 112)"
+      />
+      <ellipse cx="220" cy="107" rx="7" ry="4" />
+    </g>
+  )}
+  {variant === 'when-problems-progress' && (
+    <g stroke="var(--illustration-line)" stroke-width="4" fill="none">
+      <circle
+        cx="239"
+        cy="124"
+        r="31"
+        fill="var(--surface)"
+        fill-opacity="0.65"
+      />
+      <path d="m262 147 28 28" stroke-width="11" stroke-linecap="round" />
+      <path d="M220 115q9-9 20-4" />
+    </g>
+  )}
+  <path
+    d="m112 55 3 10 10 3-10 3-3 10-3-10-10-3 10-3ZM329 93l2 7 7 2-7 2-2 7-2-7-7-2 7-2Z"
+    fill="var(--accent)"
+  />
+  <circle cx="77" cy="83" r="4" fill="var(--illustration-peach)" />
+  <circle cx="256" cy="246" r="4" fill="var(--accent)" />
+</svg>

@@ -1,0 +1,175 @@
+---
+export type CareMotif =
+  | 'tooth'
+  | 'brush'
+  | 'paste'
+  | 'water'
+  | 'drink'
+  | 'floss'
+  | 'calendar'
+  | 'book'
+  | 'sun'
+  | 'moon'
+  | 'drop'
+  | 'snack';
+interface Props {
+  kind: CareMotif;
+  x?: number;
+  y?: number;
+  size?: number;
+}
+const { kind, x = 0, y = 0, size = 100 } = Astro.props;
+---
+
+<g transform={`translate(${x} ${y}) scale(${size / 100})`} class="care-motif">
+  {kind === 'tooth' && (
+    <>
+      <path
+        d="M50 19C33 8 15 14 16 36c1 17 11 23 13 40 2 18 11 17 14 2l3-17c1-7 7-7 8 0l3 17c3 15 12 16 14-2 2-17 12-23 13-40C85 14 67 8 50 19Z"
+        fill="var(--enamel)"
+      />
+      <path d="M30 28q8-5 17 0M27 38l2 9" class="motif-detail" />
+      <path
+        d="m71 6 2 6 6 2-6 2-2 6-2-6-6-2 6-2Z"
+        fill="var(--dentin)"
+        stroke="none"
+      />
+    </>
+  )}
+  {kind === 'brush' && (
+    <>
+      <path d="M42 40h12v46a6 6 0 0 1-12 0Z" fill="var(--illustration-blue)" />
+      <rect x="40" y="10" width="18" height="37" rx="8" fill="var(--enamel)" />
+      {[18, 25, 32, 39].map((y) => (
+        <path d={`M48 ${y}h15`} class="motif-detail" />
+      ))}
+      <path d="M48 62v15" class="motif-detail" />
+      <path
+        d="m75 39 2 7 7 2-7 2-2 7-2-7-7-2 7-2Z"
+        fill="var(--dentin)"
+        stroke="none"
+      />
+    </>
+  )}
+  {kind === 'paste' && (
+    <>
+      <path d="m28 15 5 61h34l5-61Z" fill="var(--enamel)" />
+      <path d="M31 32h38l-2 28H33Z" fill="var(--illustration-peach)" />
+      <path d="M27 14h46M29 20h42" class="motif-detail" />
+      <rect
+        x="36"
+        y="76"
+        width="28"
+        height="14"
+        rx="3"
+        fill="var(--illustration-blue)"
+      />
+      <path d="m42 45 6 6 11-12" class="motif-detail" />
+    </>
+  )}
+  {(kind === 'water' || kind === 'drink') && (
+    <>
+      <path d="m23 24 6 63h42l6-63Z" fill="var(--enamel)" />
+      <path
+        d="m26 48 4 38h40l4-38q-12 6-24 0t-24 0Z"
+        fill={
+          kind === 'drink'
+            ? 'var(--illustration-peach)'
+            : 'var(--illustration-blue)'
+        }
+      />
+      <path d="M33 58l2 19" class="motif-detail" />
+      {kind === 'drink' ? (
+        <path d="m52 57 8-45h18" class="motif-detail" />
+      ) : (
+        <path d="M58 9v7M72 10l-4 7" class="motif-detail" />
+      )}
+      <circle cx="61" cy="65" r="3" fill="var(--enamel)" stroke="none" />
+    </>
+  )}
+  {kind === 'floss' && (
+    <>
+      <path
+        d="M47 29C16 12 66-2 76 18c10 21-10 21-10 34"
+        class="motif-detail"
+      />
+      <rect
+        x="20"
+        y="32"
+        width="51"
+        height="57"
+        rx="15"
+        fill="var(--illustration-peach)"
+      />
+      <path d="M21 49h49M39 32v-6h14v6" class="motif-detail" />
+      <circle cx="46" cy="67" r="10" fill="var(--enamel)" />
+    </>
+  )}
+  {kind === 'calendar' && (
+    <>
+      <rect x="15" y="21" width="70" height="66" rx="10" fill="var(--enamel)" />
+      <path
+        d="M15 39h70V31q0-10-10-10H25q-10 0-10 10Z"
+        fill="var(--illustration-peach)"
+      />
+      <path d="M32 14v16M68 14v16m-34 31 10 10 22-23" class="motif-detail" />
+    </>
+  )}
+  {kind === 'book' && (
+    <>
+      <path
+        d="M50 26Q30 12 9 21v62q22-9 41 5 19-14 41-5V21q-21-9-41 5Z"
+        fill="var(--enamel)"
+      />
+      <path
+        d="M50 26v62M20 36q10-2 19 4m-19 9q10-2 19 4m-19 9q10-2 19 4"
+        class="motif-detail"
+      />
+      <path d="M63 37h15v24l-7-5-8 5Z" fill="var(--illustration-peach)" />
+    </>
+  )}
+  {kind === 'sun' && (
+    <>
+      <circle cx="50" cy="50" r="24" fill="var(--dentin)" />
+      <path
+        d="M50 9v9m0 64v9M9 50h9m64 0h9M21 21l7 7m44 44 7 7M21 79l7-7m44-44 7-7"
+        class="motif-detail"
+      />
+    </>
+  )}
+  {kind === 'moon' && (
+    <>
+      <path
+        d="M60 12a38 38 0 1 0 28 55A35 35 0 0 1 60 12Z"
+        fill="var(--dentin)"
+      />
+      <path
+        d="m77 17 3 9 9 3-9 3-3 9-3-9-9-3 9-3Z"
+        fill="var(--enamel)"
+        stroke="none"
+      />
+    </>
+  )}
+  {kind === 'drop' && (
+    <>
+      <path
+        d="M50 10C42 28 20 47 20 62a30 30 0 0 0 60 0C80 47 58 28 50 10Z"
+        fill="var(--illustration-blue)"
+      />
+      <path d="M32 59q-3 13 10 18" class="motif-detail" />
+    </>
+  )}
+  {kind === 'snack' && (
+    <g transform="rotate(-18 50 50)">
+      <path
+        d="m28 37-17-9 3 20-3 20 17-9m44-22 17-9-3 20 3 20-17-9"
+        fill="var(--illustration-peach)"
+      />
+      <rect x="27" y="28" width="46" height="43" rx="13" fill="var(--dentin)" />
+      <path
+        d="m38 30 17 39m-6-39 17 35M14 48h12m48 0h12"
+        class="motif-detail"
+      />
+    </g>
+  )}
+</g>

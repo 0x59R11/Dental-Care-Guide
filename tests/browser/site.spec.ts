@@ -4,6 +4,72 @@ import { questions } from '../../src/data/quiz';
 import { locales } from '../../src/i18n/locales';
 import { lessonIds } from '../../src/data/course';
 
+test('illustrated guide supports section navigation and resuming from Learn', async ({
+  page,
+}) => {
+  await page.goto('en/learn/');
+  await expect(page.locator('[data-resume]')).toBeHidden();
+  await page.goto('en/learn/saliva-and-fluoride/');
+  const sectionLink = page.locator('.lesson-contents a').last();
+  const fragment = await sectionLink.getAttribute('href');
+  await sectionLink.click();
+  expect(new URL(page.url()).hash).toBe(fragment);
+  await expect(page.locator(fragment!)).toBeInViewport();
+  await expect(page.locator('.lesson-pagination .next-lesson')).toContainText(
+    'When dental problems progress',
+  );
+  await page.getByRole('button', { name: 'Mark as read', exact: true }).click();
+  await page.goto('en/learn/');
+  await expect(page.locator('[data-resume]')).toHaveAttribute(
+    'href',
+    /saliva-and-fluoride\/$/,
+  );
+  await expect(page.locator('[data-progress-count]')).toContainText('1 of 6');
+  await page.locator('[data-resume]').click();
+  await expect(page).toHaveURL(/saliva-and-fluoride\/$/);
+  await page.goto('de/learn/');
+  await expect(page.locator('[data-resume]')).toHaveAttribute(
+    'href',
+    /de\/learn\/saliva-and-fluoride\/$/,
+  );
+  await page.locator('[data-reset-progress]').click();
+  await expect(page.locator('[data-resume]')).toBeHidden();
+});
+
+test('every localized lesson has working section links and inline diagrams without JavaScript', async ({
+  browser,
+  baseURL,
+}) => {
+  const context = await browser.newContext({
+    javaScriptEnabled: false,
+    baseURL,
+  });
+  const page = await context.newPage();
+  for (const locale of locales) {
+    for (const lesson of lessonIds) {
+      await page.goto(`${locale}/learn/${lesson}/`);
+      const links = page.locator('.lesson-contents a');
+      expect(await links.count()).toBeGreaterThanOrEqual(3);
+      for (const link of await links.all()) {
+        const fragment = await link.getAttribute('href');
+        const target = page.locator(
+          `[id=${JSON.stringify(fragment!.slice(1))}]`,
+        );
+        await expect(target).toHaveCount(1);
+        await expect(target).toHaveText((await link.textContent())!);
+      }
+      await expect(page.locator('.lesson-content [data-diagram]')).toHaveCount(
+        lesson === 'when-problems-progress' ? 3 : 1,
+      );
+      await expect(
+        page.locator('.lesson-content > [data-diagram] ~ h2').first(),
+      ).toBeVisible();
+      await expect(page.locator('.static-label').first()).toBeVisible();
+    }
+  }
+  await context.close();
+});
+
 test('full learning, practice and keyboard quiz journey', async ({ page }) => {
   await page.goto('en/');
   await page
@@ -137,7 +203,7 @@ test('progress, theme, resume and route anchor preferences', async ({
   await page.locator('#theme-select').selectOption('light');
   await expect(page.locator('body')).toHaveCSS(
     'background-color',
-    'rgb(246, 245, 240)',
+    'rgb(250, 248, 242)',
   );
 });
 

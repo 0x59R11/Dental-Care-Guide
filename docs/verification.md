@@ -9,6 +9,40 @@
 - Lighthouse passes for both bases: Performance **99–100**, Accessibility **100**, Best Practices **100**, and SEO **100** across the four representative pages. Reports are saved in ignored `artifacts/lighthouse-pages/` and `artifacts/lighthouse-root/`. The production subpath build is restored after verification.
 - Updated the README with repository and published-site URLs, remote setup, Pages settings, and workflow instructions. Existing uncommitted work was preserved. No push, GitHub settings change, or deployment was performed; live workflow execution and published-site checks remain unverified.
 
+## UI refresh — 2026-11-16
+
+### Changes
+
+- Added 14 original SVG scene variants for Home, the six lessons, four routines, quiz, results and sources. Practice cards use shared care-object motifs. Meaningful illustrations remain visible on mobile and adapt to both themes.
+- Improved the eight educational diagrams, including care objects for prevention, tissue sections for branching outcomes, and recognizable drinks for exposure patterns. Labels and explanations remain localized HTML. Decorative illustrations are hidden from assistive technology.
+- Added headings to the previously unsectioned lessons and moved all diagrams into their relevant MDX sections. The route derives section navigation from rendered headings and displays destination titles in previous/next links.
+- Added resume navigation to Learn, stronger active navigation and completion indicators, clearer practice-card hierarchy, and styled quiz feedback and review links. Routes, IDs, storage formats, scoring, question content and quiz version are unchanged.
+- Compared all 24 lesson bodies with the prior revision after removing headings and component markup: every existing prose paragraph and qualification is unchanged. Frontmatter, practice recommendations, quiz wording and source references are unchanged. Added headings and interface copy exist in all four languages.
+
+### Automated and visual verification
+
+- All **45 unit/content tests pass**. Formatting and Astro/TypeScript checks pass with zero diagnostics; `git diff --check` is clean.
+- Root (`/`) and repository-subpath (`/Dental-Care-Guide/`) builds each generate **46 pages** and pass internal-link, fragment, asset and gzip-budget checks. The default subpath build is restored. Root verification in this refresh covers generated output; browser checks use the repository subpath.
+- **67 browser checks passed across completed runs: 27 Chromium, 20 Firefox and 20 WebKit.** Fourteen engine-specific skips are intentional: exhaustive accessibility and screenshot cases run in Chromium. A combined run was interrupted during WebKit; its separate full rerun passed all 20 applicable checks. Final illustration refinements also passed a focused Chromium accessibility and screenshot rerun.
+- New browser coverage checks section destinations in every localized lesson without JavaScript, inline diagram placement, named next lessons, and resuming/resetting from Learn across languages. Existing checks cover keyboard quiz completion, shuffled answer recovery, blocked storage, themes, localized routines and no-JavaScript reading.
+- Accessibility and enlarged-text sweeps pass at 320px in all four languages and both themes. Screenshots cover Home, Learn, Practice, Quiz, Sources, all educational diagram types, feedback, results and a full mobile lesson. Desktop/light and mobile/dark scenes were visually inspected; educational diagrams were also inspected in the opposite combinations.
+- Final refinements distinguish plain water from other drinks and use a wrapped-sweet motif for sugar-related artwork. Dark-theme outlines retain detail against pale object fills. No new dependencies or external assets were added.
+
+### Mobile Lighthouse and size budgets
+
+| Page                      | Performance | Accessibility | Best practices | SEO |
+| ------------------------- | ----------: | ------------: | -------------: | --: |
+| English Home              |         100 |           100 |            100 | 100 |
+| German progression lesson |         100 |           100 |            100 | 100 |
+| Ukrainian Practice        |         100 |           100 |            100 | 100 |
+| Russian Quiz              |         100 |           100 |            100 | 100 |
+
+Reports are in ignored `artifacts/lighthouse/`. Maximum page JavaScript is **2,898 bytes gzip**; shared CSS is **4,812 bytes gzip**, below the unchanged 30/50KB JavaScript and 25KB CSS limits.
+
+Local verification used system Chrome and temporary Playwright Firefox/WebKit binaries under `/tmp/dental-browsers`. WebKit runtime libraries were extracted under `/tmp`; no system packages were installed. Browser launch and local-server checks required execution outside the filesystem sandbox.
+
+This is a local repository change; no deployment was performed. Automated accessibility and screenshot review do not constitute manual screen-reader listening or a learner usability trial. Existing human editorial review requirements are unchanged.
+
 ## Previous verification — 2026-11-15
 
 Verification date: **2026-11-15**. These are engineering and implementation-review results, not clinical endorsement or independent translation sign-off.

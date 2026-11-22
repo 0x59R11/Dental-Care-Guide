@@ -1,11 +1,11 @@
 ---
 import { getCollection, render } from 'astro:content';
 import SiteLayout from '../../../layouts/SiteLayout.astro';
-import Diagram from '../../../components/diagrams/Diagram.astro';
+import { getLessons } from '../../../lib/content';
 import Progress from '../../../components/Progress.astro';
 import { ui } from '../../../i18n/ui';
 import { localeUrl } from '../../../lib/urls';
-import { lessonIds, type DiagramId } from '../../../data/course';
+import { lessonIds } from '../../../data/course';
 import { sources } from '../../../data/sources';
 export async function getStaticPaths() {
   return (await getCollection('lessons')).map((entry) => ({
@@ -15,14 +15,12 @@ export async function getStaticPaths() {
 }
 const { entry } = Astro.props;
 const { data } = entry;
-const { Content } = await render(entry);
+const { Content, headings } = await render(entry);
 const locale = data.locale;
 const t = ui(locale);
 const index = lessonIds.indexOf(data.lessonId);
-const lessonDiagrams: DiagramId[] =
-  data.lessonId === 'when-problems-progress'
-    ? ['dark-spots', 'when-problems-progress', 'lesion-depth']
-    : [data.lessonId];
+const lessons = await getLessons(locale);
+const sections = headings.filter((heading) => heading.depth === 2);
 ---
 
 <SiteLayout
@@ -45,13 +43,20 @@ const lessonDiagrams: DiagramId[] =
       </p>
       <h1>{data.title}</h1>
       <p class="lead">{data.question}</p>
-      <div class="prose">
-        <Content />
-      </div>
+      <nav class="lesson-contents" aria-label={t.onThisPage}>
+        <p class="eyebrow">{t.onThisPage}</p>
+        <ol>
+          {sections.map((heading) => (
+            <li>
+              <a href={`#${heading.slug}`}>{heading.text}</a>
+            </li>
+          ))}
+        </ol>
+      </nav>
     </div>
-    {lessonDiagrams.map((diagramId) => (
-      <Diagram locale={locale} diagramId={diagramId} />
-    ))}
+    <div class="prose lesson-content">
+      <Content />
+    </div>
     <div class="reading">
       <aside class="example">
         <p class="eyebrow">{t.example}</p>
@@ -81,15 +86,23 @@ const lessonDiagrams: DiagramId[] =
       <nav class="lesson-pagination" aria-label={t.learn}>
         {index > 0 && (
           <a href={localeUrl(locale, `learn/${lessonIds[index - 1]}/`)}>
-            ← {t.previous}
+            <span>← {t.previous}</span>
+            <strong>{lessons[index - 1].data.title}</strong>
           </a>
         )}
         {index < 5 ? (
-          <a href={localeUrl(locale, `learn/${lessonIds[index + 1]}/`)}>
-            {t.next} →
+          <a
+            class="next-lesson"
+            href={localeUrl(locale, `learn/${lessonIds[index + 1]}/`)}
+          >
+            <span>{t.next} →</span>
+            <strong>{lessons[index + 1].data.title}</strong>
           </a>
         ) : (
-          <a href={localeUrl(locale, 'practice/')}>{t.practice} →</a>
+          <a class="next-lesson" href={localeUrl(locale, 'practice/')}>
+            <span>{t.practice} →</span>
+            <strong>{t.openPractice}</strong>
+          </a>
         )}
       </nav>
       <section class="lesson-sources">

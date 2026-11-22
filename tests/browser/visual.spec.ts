@@ -1,4 +1,23 @@
 import { test } from '@playwright/test';
+import { questions } from '../../src/data/quiz';
+
+test('illustrated page layouts', async ({ page, browserName }) => {
+  test.skip(browserName !== 'chromium');
+  for (const [locale, width, theme] of [
+    ['en', 1280, 'light'],
+    ['de', 320, 'dark'],
+  ] as const) {
+    await page.setViewportSize({ width, height: 900 });
+    for (const route of ['', 'learn/', 'practice/', 'test/', 'sources/']) {
+      await page.goto(`${locale}/${route}`);
+      await page.locator('#theme-select').selectOption(theme);
+      await page.screenshot({
+        path: `artifacts/refresh-${locale}-${theme}-${route.replace('/', '') || 'home'}.png`,
+        fullPage: true,
+      });
+    }
+  }
+});
 test('layout inspection', async ({ page, browserName }) => {
   test.skip(browserName !== 'chromium');
   await page.goto('en/');
@@ -33,6 +52,16 @@ test('expanded diagrams and quiz visual inspection', async ({
         path: `artifacts/${locale}-${theme}-diagram-${index}.png`,
       });
     }
+    for (const lesson of [
+      'prevention',
+      'sugar-food-and-acids',
+      'saliva-and-fluoride',
+    ]) {
+      await page.goto(`${locale}/learn/${lesson}/`);
+      await page
+        .locator('[data-diagram]')
+        .screenshot({ path: `artifacts/${locale}-${theme}-${lesson}.png` });
+    }
   }
   await page.setViewportSize({ width: 320, height: 780 });
   await page.goto('uk/learn/how-cavities-develop/');
@@ -46,4 +75,13 @@ test('expanded diagrams and quiz visual inspection', async ({
   await page
     .locator('[data-quiz-content]')
     .screenshot({ path: 'artifacts/quiz-feedback-mobile.png' });
+  for (const question of questions.slice(1)) {
+    await page.locator('[data-next]').click();
+    await page.locator(`input[value="${question.correctOptionId}"]`).check();
+    await page.locator('[data-check]').click();
+  }
+  await page.locator('[data-next]').click();
+  await page
+    .locator('[data-quiz-content]')
+    .screenshot({ path: 'artifacts/quiz-results-mobile.png' });
 });

@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Illustration from '../components/illustrations/Illustration.astro';
 import { locales, languageNames } from '../i18n/locales';
 import { ui } from '../i18n/ui';
 import { localeUrl, withBase } from '../lib/urls';
@@ -20,6 +21,9 @@ import { localeUrl, withBase } from '../lib/urls';
   </head>
   <body>
     <main class="container entry-page">
+      <div class="entry-art">
+        <Illustration variant="hero" />
+      </div>
       <h1>Dental Care</h1>
       <div class="lesson-grid">
         {locales.map((locale) => (

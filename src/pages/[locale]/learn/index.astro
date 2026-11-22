@@ -1,6 +1,7 @@
 ---
 import SiteLayout from '../../../layouts/SiteLayout.astro';
 import PageIntro from '../../../components/PageIntro.astro';
+import Illustration from '../../../components/illustrations/Illustration.astro';
 import Progress from '../../../components/Progress.astro';
 import { locales, type Locale } from '../../../i18n/locales';
 import { ui } from '../../../i18n/ui';
@@ -27,13 +28,24 @@ const lessons = await getLessons(locale);
       title={t.lessonsTitle}
       description={t.lessonsDescription}
     />
-    <Progress locale={locale} />
+    <div class="learning-summary">
+      <Progress locale={locale} />
+      <a
+        class="resume button button-secondary"
+        data-resume
+        data-learn-url={localeUrl(locale, 'learn/')}
+        hidden
+        href={localeUrl(locale, 'learn/')}
+      >
+        {t.continue} →
+      </a>
+    </div>
     <div class="lesson-grid">
       {lessons.map(({ data }, index) => (
         <article class="lesson-card card">
-          <span class="lesson-number">
-            {String(index + 1).padStart(2, '0')}
-          </span>
+          <div class="lesson-art">
+            <Illustration variant={data.lessonId} />
+          </div>
           <div>
             <p class="text-small muted">
               {t.lesson} {new Intl.NumberFormat(locale).format(index + 1)} / 6{' '}
@@ -52,7 +64,7 @@ const lessons = await getLessons(locale);
             </h2>
             <p>{data.description}</p>
             <a
-              class="text-small"
+              class="lesson-action"
               href={localeUrl(locale, `learn/${data.lessonId}/`)}
             >
               {t.readLesson} →

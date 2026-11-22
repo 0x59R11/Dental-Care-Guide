@@ -1,4 +1,5 @@
 ---
+import CareMotif from '../illustrations/CareMotif.astro';
 import Tooth from './Tooth.astro';
 import LesionStages from './LesionStages.astro';
 import { diagrams } from '../../i18n/diagrams';
@@ -46,9 +47,12 @@ const t = ui(locale);
                     rx="24"
                     class={`stage stage-${step}`}
                   />
-                  <text x="39" y="30" text-anchor="middle">
-                    {step + 1}
-                  </text>
+                  <g class="diagram-marker">
+                    <circle cx="39" cy="25" r="14" />
+                    <text x="39" y="29" text-anchor="middle">
+                      {step + 1}
+                    </text>
+                  </g>
                   <path d="M7 145H71V178H7Z" class="dentin" />
                   <path d="M7 137H71V149H7Z" class="enamel" />
                   <path
@@ -111,25 +115,29 @@ const t = ui(locale);
           )}
           {diagramId === 'sugar-food-and-acids' && (
             <>
-              <path d="M45 65H320M45 135H320M45 205H320" class="connector" />
+              <path d="M112 65H330M112 145H330M112 225H330" class="connector" />
               {[0, 1, 2].map((row) => (
                 <g data-region={row}>
-                  <text x="17" y={72 + 70 * row}>
-                    {row + 1}
-                  </text>
+                  <g class="diagram-marker">
+                    <circle cx="16" cy={65 + 80 * row} r="13" />
+                    <text x="16" y={69 + 80 * row} text-anchor="middle">
+                      {row + 1}
+                    </text>
+                  </g>
+                  <CareMotif kind="drink" x={32} y={20 + 80 * row} size={76} />
                   {(row === 1
-                    ? [65, 110, 155, 200, 245, 290]
-                    : [65, 90, 115]
+                    ? [125, 164, 203, 242, 281, 320]
+                    : [125, 147, 169]
                   ).map((x) => (
                     <circle
                       cx={x}
-                      cy={65 + row * 70}
+                      cy={65 + row * 80}
                       r="10"
                       class={row === 2 ? 'pulp' : 'dentin'}
                     />
                   ))}
                   {row === 2 && (
-                    <path d="m180 190-12 29h24z m48 0-12 29h24z" class="pulp" />
+                    <path d="m230 210-12 29h24z m48 0-12 29h24z" class="pulp" />
                   )}
                 </g>
               ))}
@@ -137,6 +145,16 @@ const t = ui(locale);
           )}
           {diagramId === 'saliva-and-fluoride' && (
             <>
+              <rect
+                x="16"
+                y="12"
+                width="328"
+                height="242"
+                rx="24"
+                fill="var(--blue)"
+              />
+              <CareMotif kind="drop" x={145} y={45} size={38} />
+              <CareMotif kind="paste" x={182} y={49} size={38} />
               <path d="M30 170H330V240H30Z" class="enamel" />
               {[60, 110, 160, 210, 260, 310].map((x) => (
                 <rect
@@ -170,20 +188,43 @@ const t = ui(locale);
           {diagramId === 'when-problems-progress' && (
             <>
               <path
-                d="M70 135 265 45M70 135H265M70 135 265 225"
+                d="M108 135H163M163 45v180M163 45h67M163 135h67M163 225h67"
                 class="connector"
               />
               {[
-                [55, 135],
-                [290, 45],
-                [290, 135],
-                [290, 225],
+                [12, 92],
+                [234, 2],
+                [234, 92],
+                [234, 182],
               ].map(([x, y], i) => (
-                <g data-region={i}>
-                  <circle cx={x} cy={y} r="32" class={`stage stage-${i}`} />
-                  <text x={x} y={y + 7} text-anchor="middle">
-                    {i + 1}
-                  </text>
+                <g data-region={i} transform={`translate(${x} ${y})`}>
+                  <rect width="112" height="86" rx="16" class="stage" />
+                  <path
+                    d="M31 72Q15 42 32 23q10-9 24-1 14-8 24 1 17 19 1 49Z"
+                    class="enamel"
+                  />
+                  <path
+                    d="M39 72Q26 45 39 34q8-5 17 0 9-5 17 0 13 11 0 38Z"
+                    class="dentin"
+                  />
+                  <path d="M48 72V54q-6-12 8-8 14-4 8 8v18Z" class="pulp" />
+                  <path
+                    d={
+                      i === 1
+                        ? 'M47 21h18l5 24-14 9-14-9Z'
+                        : 'M46 23q10 9 20 0l-4 8H50Z'
+                    }
+                    fill="var(--amber)"
+                    stroke="var(--illustration-line)"
+                    stroke-width="2"
+                    stroke-dasharray="3 2"
+                  />
+                  <g class="diagram-marker">
+                    <circle cx="16" cy="16" r="12" />
+                    <text x="16" y="20" text-anchor="middle">
+                      {i + 1}
+                    </text>
+                  </g>
                 </g>
               ))}
             </>
@@ -191,26 +232,37 @@ const t = ui(locale);
           {diagramId === 'prevention' && (
             <>
               <path
-                d="M75 55 180 135 285 55M75 215 180 135 285 215"
+                d="M70 55 180 135 290 55M70 215 180 135 290 215"
                 class="connector"
               />
               <path
-                d="m180 90 40 15v35c0 25-40 45-40 45s-40-20-40-45v-35z"
+                d="m180 95 35 12v32c0 24-35 42-35 42s-35-18-35-42v-32Z"
                 class="enamel"
               />
-              {[
-                [65, 50],
-                [295, 50],
-                [65, 220],
-                [295, 220],
-              ].map(([x, y], i) => (
-                <g data-region={i}>
-                  <circle cx={x} cy={y} r="30" class={`stage stage-${i}`} />
-                  <text x={x} y={y + 7} text-anchor="middle">
-                    {i + 1}
-                  </text>
-                </g>
-              ))}
+              <CareMotif kind="tooth" x={154} y={109} size={52} />
+              {(['brush', 'paste', 'water', 'calendar'] as const).map(
+                (kind, i) => {
+                  const x = i % 2 === 0 ? 20 : 240;
+                  const y = i < 2 ? 4 : 166;
+                  return (
+                    <g data-region={i} transform={`translate(${x} ${y})`}>
+                      <rect
+                        width="100"
+                        height="100"
+                        rx="25"
+                        class={`stage stage-${i}`}
+                      />
+                      <CareMotif kind={kind} x={15} y={8} size={78} />
+                      <g class="diagram-marker">
+                        <circle cx="12" cy="12" r="12" />
+                        <text x="12" y="16" text-anchor="middle">
+                          {i + 1}
+                        </text>
+                      </g>
+                    </g>
+                  );
+                },
+              )}
             </>
           )}
         </svg>

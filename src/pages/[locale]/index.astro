@@ -2,7 +2,7 @@
 import SiteLayout from '../../layouts/SiteLayout.astro';
 import PageIntro from '../../components/PageIntro.astro';
 import Icon from '../../components/Icon.astro';
-import Tooth from '../../components/diagrams/Tooth.astro';
+import Illustration from '../../components/illustrations/Illustration.astro';
 import { locales, type Locale } from '../../i18n/locales';
 import { ui } from '../../i18n/ui';
 import { localeUrl } from '../../lib/urls';
@@ -14,7 +14,7 @@ const t = ui(locale);
 const modules = [
   {
     path: 'learn',
-    icon: 'book',
+    illustration: 'understanding-teeth',
     title: t.learn,
     description: t.learnDescription,
     meta: t.learnMeta,
@@ -22,7 +22,7 @@ const modules = [
   },
   {
     path: 'practice',
-    icon: 'leaf',
+    illustration: 'morning',
     title: t.practice,
     description: t.practiceDescription,
     meta: t.practiceMeta,
@@ -30,13 +30,13 @@ const modules = [
   },
   {
     path: 'test',
-    icon: 'quiz',
+    illustration: 'quiz',
     title: t.test,
     description: t.testDescription,
     meta: t.testMeta,
     action: t.openTest,
   },
-];
+] as const;
 ---
 
 <SiteLayout locale={locale} title={t.brand}>
@@ -58,7 +58,7 @@ const modules = [
           </a>
         </div>
         <a
-          class="resume"
+          class="resume button button-secondary"
           data-resume
           data-learn-url={localeUrl(locale, 'learn/')}
           hidden
@@ -76,7 +76,7 @@ const modules = [
         </p>
       </PageIntro>
       <div class="home-illustration">
-        <Tooth />
+        <Illustration variant="hero" />
         <p>{t.tagline}</p>
       </div>
     </section>
@@ -87,10 +87,8 @@ const modules = [
       <div class="module-grid">
         {modules.map((module, index) => (
           <article class={`module-card module-${index}`}>
-            <div class="card-top">
-              <span class="icon-tile">
-                <Icon name={module.icon} size={28} />
-              </span>
+            <div class="module-art">
+              <Illustration variant={module.illustration} />
               <span class="card-number">0{index + 1}</span>
             </div>
             <h3>{module.title}</h3>

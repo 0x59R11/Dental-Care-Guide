@@ -67,11 +67,12 @@ function update() {
     button.disabled = complete;
     button.hidden = false;
   }
-  const resume = document.querySelector<HTMLAnchorElement>('[data-resume]');
-  if (resume) {
-    resume.hidden = !state.last;
-    if (state.last) resume.href = `${resume.dataset.learnUrl}${state.last}/`;
-  }
+  document
+    .querySelectorAll<HTMLAnchorElement>('[data-resume]')
+    .forEach((resume) => {
+      resume.hidden = !state.last;
+      if (state.last) resume.href = `${resume.dataset.learnUrl}${state.last}/`;
+    });
 }
 
 document.querySelector('[data-mark-read]')?.addEventListener('click', () => {

@@ -1,5 +1,6 @@
 ---
 import SiteLayout from '../../layouts/SiteLayout.astro';
+import Illustration from '../../components/illustrations/Illustration.astro';
 import PageIntro from '../../components/PageIntro.astro';
 import { locales, languageNames, type Locale } from '../../i18n/locales';
 import { ui } from '../../i18n/ui';
@@ -18,11 +19,16 @@ const t = ui(locale);
   path="sources/"
 >
   <div class="container page-space">
-    <PageIntro
-      eyebrow={t.sources}
-      title={t.sourcesTitle}
-      description={t.sourcesIntro}
-    />
+    <div class="intro-with-art">
+      <PageIntro
+        eyebrow={t.sources}
+        title={t.sourcesTitle}
+        description={t.sourcesIntro}
+      />
+      <div class="intro-art">
+        <Illustration variant="sources" />
+      </div>
+    </div>
     <div class="reading source-content">
       <h2>{t.editorialTitle}</h2>
       <p>{t.editorialText}</p>
