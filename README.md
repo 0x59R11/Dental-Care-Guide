@@ -73,15 +73,17 @@ Only the unprefixed entry uses saved language, then the first supported browser 
 
 ## GitHub Pages deployment
 
+Repository: [0x59r11/Dental-Care-Guide](https://github.com/0x59r11/Dental-Care-Guide). Expected published URL: [https://0x59r11.github.io/Dental-Care-Guide/](https://0x59r11.github.io/Dental-Care-Guide/).
+
 Production defaults in `astro.config.mjs` are `https://0x59r11.github.io` with base `/Dental-Care-Guide`. Override with `SITE_URL` and `BASE_PATH`; all URLs use the same base-aware helpers. Output contains directory-style pages, localized canonicals, reciprocal hreflang links, a sitemap and a multilingual 404 page.
 
 1. Finish the owner review in `docs/editorial-review.md` before the release push.
-2. Add the intended GitHub remote and push the reviewed repository to its default branch.
-3. In repository **Settings → Pages**, choose **GitHub Actions** as the source. Configure the `github-pages` environment as needed.
-4. `.github/workflows/pages.yml` validates both root and subpath builds on pull requests and main/master pushes. All three browser engines and performance checks must pass. Only successful default-branch work deploys with official Pages artifact and deployment actions.
+2. Check `git remote -v`. If `origin` is missing, add it with `git remote add origin git@github.com:0x59r11/Dental-Care-Guide.git`. If it points elsewhere, update it with `git remote set-url origin git@github.com:0x59r11/Dental-Care-Guide.git`.
+3. In repository **Settings → Pages**, choose **GitHub Actions** as the source. Configure the `github-pages` environment to allow deployment from the default branch.
+4. Push the reviewed commits to the default branch (`git push -u origin master` for this checkout). `.github/workflows/pages.yml` validates both root and subpath builds on pull requests and main/master pushes. All three browser engines and performance checks must pass. Only default-branch pushes or manual runs on that branch upload the production subpath artifact and deploy it after both validation jobs succeed. To rerun, select **Actions → Validate and deploy → Run workflow** and choose the default branch. If the default branch is renamed beyond `main` or `master`, update the workflow's push filter.
 5. The deployment job checks the published homepage, a German deep lesson, favicon, JS and CSS. Inspect the Actions result and test a shared deep link manually.
 
-There is no Git remote configured in the supplied local checkout. Configuring a workflow does not publish this directory by itself.
+The workflow uses the built-in `GITHUB_TOKEN` and official Pages setup, artifact and deployment actions; no personal access token or `gh-pages` branch is required. Configuring the workflow locally does not publish the site. The shared footer links to the source repository in all four languages.
 
 For a custom domain, change `SITE_URL`, set `BASE_PATH=/` in the build and test jobs, update which matrix build uploads the artifact, and configure the domain and DNS in GitHub Pages. Add `public/CNAME` if required by your setup. Do not rewrite lesson links. The storage namespace changes with the base; existing browser preferences do not migrate automatically.
 

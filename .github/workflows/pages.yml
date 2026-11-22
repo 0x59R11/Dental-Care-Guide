@@ -37,6 +37,10 @@ jobs:
             curl --fail --silent "http://127.0.0.1:4387${BASE_PATH%/}/en/" > /dev/null && break
             sleep 1
           done
+          if ! curl --fail --silent "http://127.0.0.1:4387${BASE_PATH%/}/en/" > /dev/null; then
+            echo "Production preview did not become ready within 30 seconds." >&2
+            exit 1
+          fi
           npm run test:performance
       - uses: actions/upload-artifact@v4
         if: always()
@@ -45,12 +49,12 @@ jobs:
           path: |
             playwright-report/
             artifacts/lighthouse/
-      - uses: actions/upload-pages-artifact@v3
-        if: matrix.base == '/Dental-Care-Guide' && github.event_name != 'pull_request'
+      - uses: actions/upload-pages-artifact@v4
+        if: matrix.base == '/Dental-Care-Guide' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
         with:
           path: dist
   deploy:
-    if: github.event_name != 'pull_request' && github.ref_name == github.event.repository.default_branch
+    if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
     needs: validate
     runs-on: ubuntu-latest
     permissions:
@@ -60,6 +64,8 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4

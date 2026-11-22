@@ -1,8 +1,19 @@
 # Implementation verification
 
+## GitHub Pages readiness — 2026-11-22
+
+- Added explicit Pages configuration, updated the Pages artifact action, restricted artifact upload and deployment to default-branch pushes/manual runs, and made preview readiness failures explicit. Local checks parsed the workflow, checked shell syntax, confirmed matching upload/deployment guards, and exercised successful and failed preview readiness.
+- Added the repository link to all 44 localized page footers. Browser checks verified the URL, same-tab navigation attribute, keyboard order, both themes, and 320px/1280px widths in all four languages at both deployment bases. German mobile/dark and desktop/light footer screenshots were visually inspected.
+- Formatting, Astro/TypeScript checks, all **45 unit/content tests**, and generated-link/asset/budget checks pass. Root and repository-subpath builds each generate **46 pages**.
+- **67 browser checks pass for each deployment base** across Chromium, Firefox, and WebKit, with 14 intentional engine-specific skips per base. Two initial subpath WebKit checks failed before browser launch because a local library was missing; both passed after restoring the temporary browser dependencies. No system packages were installed.
+- Lighthouse passes for both bases: Performance **99–100**, Accessibility **100**, Best Practices **100**, and SEO **100** across the four representative pages. Reports are saved in ignored `artifacts/lighthouse-pages/` and `artifacts/lighthouse-root/`. The production subpath build is restored after verification.
+- Updated the README with repository and published-site URLs, remote setup, Pages settings, and workflow instructions. Existing uncommitted work was preserved. No push, GitHub settings change, or deployment was performed; live workflow execution and published-site checks remain unverified.
+
+## Previous verification — 2026-11-15
+
 Verification date: **2026-11-15**. These are engineering and implementation-review results, not clinical endorsement or independent translation sign-off.
 
-## Changes verified
+### Changes verified
 
 - Expanded five existing lessons per language, retaining all six lesson IDs and routes. Added explicit teaching about plaque metabolism between meals, dark-spot uncertainty, lesion activity versus cavitation, stabilization, arrest, mineral recovery and possible pulp involvement.
 - Updated the plaque and branching SVGs; added shared dark-spot and lesion-depth schematics. The dark-spot figure explicitly prohibits diagnostic interpretation. All descriptions remain available without JavaScript.
@@ -10,7 +21,7 @@ Verification date: **2026-11-15**. These are engineering and implementation-revi
 - Added per-attempt Fisher–Yates option shuffling with stable option-ID validation and scoring. Saved order survives refresh and language changes; retry creates new permutations. Quiz version 2 invalidates old attempts without changing lesson progress or preferences.
 - Completed English, Russian, Ukrainian and German copy, source labels, diagram descriptions and UI wording. Updated duration estimates and the terminology/claim review.
 
-## Automated checks
+### Automated checks
 
 - **45 unit/content tests passed.** Coverage includes scoring, selection changes, submission locking, review-topic deduplication, deterministic shuffling, retry, recovery and rejection of malformed/old attempts. Content checks enforce question/difficulty/scenario counts, valid lesson/source links, nonempty translations, identical option IDs, valid shared keys and unique localized option text.
 - Prettier formatting checks pass. Astro/TypeScript checks report **0 errors, 0 warnings and 0 hints**. No separate linter is configured.
@@ -21,7 +32,7 @@ Verification date: **2026-11-15**. These are engineering and implementation-revi
 - Axe checks cover all localized page types and lessons in both themes at 320px, enlarged-text reflow, and quiz feedback/results. Every localized question/feedback state is checked for horizontal overflow during completion.
 - All **13 external reference URLs returned HTTP 200** through the standalone source checker. The initial sandbox blocked outbound requests; the network-enabled rerun passed. Link availability alone does not establish scientific accuracy.
 
-## Mobile Lighthouse results
+### Mobile Lighthouse results
 
 The performance script now checks the expanded German progression lesson, including its three diagrams. All targets passed for both deployment bases. Accessibility, Best Practices and SEO were **100 on every measured page**.
 
@@ -34,15 +45,15 @@ The performance script now checks the expanded German progression lesson, includ
 
 Root reports are preserved in `artifacts/lighthouse-root/`; the final subpath reports are in `artifacts/lighthouse/`. The default `/Dental-Care-Guide/` build was restored and `npm run validate` passed after the root checks. No deployment was performed.
 
-## Size budgets
+### Size budgets
 
 Maximum page JavaScript: **2,898 bytes gzip** at the repository base and **2,851 bytes gzip** at root. Shared CSS: **4,001 bytes gzip**. Limits remain 30KB for Learn/Practice JS, 50KB for quiz JS and 25KB for CSS. No runtime dependencies, remote fonts, accounts or backend services were added.
 
-## Visual inspection
+### Visual inspection
 
 Inspected German mobile dark-spot examples, English dark-theme lesion-depth and branching figures, Ukrainian mobile plaque diagrams, and German mobile incorrect-answer feedback. Labels, warnings, explanations and controls are legible and reflow without clipping. Screenshots are produced by `tests/browser/visual.spec.ts` in ignored `artifacts/` files. The diagrams use numbered HTML descriptions as well as color and retain the existing visual style.
 
-## Main changed components
+### Main changed components
 
 | Area                         | Files                                                                                                                                        |
 | ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -54,7 +65,7 @@ Inspected German mobile dark-spot examples, English dark-theme lesion-depth and 
 | Validation                   | `tests/content.test.ts`, `tests/quiz.test.ts`, `tests/browser/site.spec.ts`, `tests/browser/visual.spec.ts`, `scripts/check-performance.mjs` |
 | Documentation                | `README.md`, `docs/editorial-review.md`, this report                                                                                         |
 
-## Environment and remaining review
+### Environment and remaining review
 
 Local browser verification uses system Chrome and Playwright Firefox/WebKit downloaded to `/tmp/dental-browsers`. WebKit needed `libmanette` and `libhidapi-hidraw`; packages were extracted under `/tmp` and copied to the browser bundle's library directory because its launcher overrides `LD_LIBRARY_PATH`. No system packages were installed. CI retains the existing Playwright `install --with-deps` setup.
 
