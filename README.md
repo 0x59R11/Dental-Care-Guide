@@ -53,7 +53,7 @@ Stop any previously started preview before changing the base. Restore the reposi
 - `src/content/lessons/{locale}/*.mdx`: lesson frontmatter and prose, validated by the Astro collection schema.
 - `src/content/practice/{locale}.json`: recommendations, routine groups, source and lesson references.
 - `src/content/quiz/{locale}.json`: prompts, four options and answer explanations.
-- `src/data/quiz.ts`: invariant question IDs, lesson links, difficulty/scenario metadata, correct option IDs and quiz version.
+- `src/data/quiz.ts`: invariant question IDs, lesson links, correct option IDs and quiz version.
 - `src/i18n/ui.ts` and `diagrams.ts`: interface and explanatory diagram wording.
 - `src/components/diagrams/`: shared, theme-aware educational SVG geometry and native-button interactions.
 - `src/components/illustrations/`: original decorative care motifs and typed lesson/routine scenes.
@@ -90,16 +90,16 @@ For a custom domain, change `SITE_URL`, set `BASE_PATH=/` in the build and test 
 
 ## Release review
 
-The latest content update date is 2026-11-15; it does not imply clinical endorsement. Owner review of all four languages, screen-reader checks, and a timed reading trial remain human release checks. Record actual results in `docs/editorial-review.md` and `docs/verification.md`. Review sources annually and after significant guideline changes. The displayed reading times are estimates.
+The latest content update date is 2026-11-22; it does not imply clinical endorsement. Owner review of all four languages, screen-reader checks, and a timed reading trial remain human release checks. Record actual results in `docs/editorial-review.md` and `docs/verification.md`. Review sources annually and after significant guideline changes. The displayed reading times are estimates.
 
 ## Licensing
 
 Code is MIT licensed: see `LICENSE`. Original educational text and illustrations are CC BY 4.0: see `CONTENT-LICENSE.md`. External publications remain under their own licenses; they are linked rather than reproduced. Credit “Dental Care Guide contributors” with a link to the project and license when reusing original content, and identify changes.
 
-## Expanded learning and assessment
+## Everyday learning and assessment
 
-The course explains plaque metabolism between meals, uncertain dark spots, lesion activity versus cavitation, and progression, stabilization, and arrest. Eight shared SVG diagrams include non-diagnostic dark-spot examples and possible lesion depth. The progression lesson renders three diagrams; other lessons retain their existing diagram.
+The six lessons explain tooth care for readers with no dental background. Main text and diagram captions use everyday language; essential terms are explained when introduced. Technical explanations of bacterial activity and how damage changes over time are available in native expandable sections. Practical care and warning signs remain visible. All eight diagrams retain their existing geometry and step order.
 
-The quiz has 20 single-choice questions: 4 foundational, 10 application, and 6 challenging, with 14 realistic scenarios. Every question has an explanation addressing a misconception and a link to its lesson. The end-of-attempt review links back to missed topics and individual lessons. Version 2 discards incompatible previous attempts; lesson completion and preferences are unaffected.
+The quiz keeps 20 single-choice questions with four short options each. Questions check useful takeaways from the main lesson text, not the optional technical explanations. Each answer has a short explanation and a lesson link. The end-of-attempt review links back to missed topics and individual lessons. Version 3 discards incompatible previous quiz attempts; lesson completion and preferences are unaffected.
 
-All content is supplied in English, Russian, Ukrainian, and German. Estimated durations are 15–20 minutes for lessons, 10–15 minutes for the quiz, and 30–40 minutes overall; reader timing remains a human review task. Difficulty describes editorial intent, not measured psychometric performance.
+All content is supplied in English, Russian, Ukrainian, and German. The existing duration estimates remain 15–20 minutes for lessons, 10–15 minutes for the quiz, and 30–40 minutes overall; these have not been remeasured after simplification. Reader timing, independent language review, and learning efficacy remain human review tasks.

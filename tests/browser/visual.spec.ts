@@ -52,6 +52,10 @@ test('expanded diagrams and quiz visual inspection', async ({
         path: `artifacts/${locale}-${theme}-diagram-${index}.png`,
       });
     }
+    await page.locator('.lesson-content details summary').click();
+    await page.locator('.lesson-content details').screenshot({
+      path: `artifacts/${locale}-${theme}-optional-detail.png`,
+    });
     for (const lesson of [
       'prevention',
       'sugar-food-and-acids',

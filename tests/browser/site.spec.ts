@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
-import { questions } from '../../src/data/quiz';
+import { questions, quizVersion } from '../../src/data/quiz';
 import { locales } from '../../src/i18n/locales';
 import { lessonIds } from '../../src/data/course';
 
@@ -167,6 +167,34 @@ test('quiz preserves selection, feedback and position across refresh and languag
   );
 });
 
+test('an older quiz attempt restarts without clearing lesson progress', async ({
+  page,
+}) => {
+  await page.goto('en/learn/understanding-teeth/');
+  await page.locator('[data-mark-read]').click();
+  await page.goto('en/test/');
+  await page.locator('[data-start]').click();
+  await page.locator('input[value="a"]').check();
+  await page.locator('[data-check]').click();
+  await page.evaluate((version) => {
+    const key = Object.keys(sessionStorage).find(
+      (key) => key.startsWith('dental-care:') && key.endsWith(':quiz'),
+    )!;
+    const attempt = JSON.parse(sessionStorage.getItem(key)!);
+    sessionStorage.setItem(key, JSON.stringify({ ...attempt, version }));
+  }, quizVersion - 1);
+  await page.reload();
+  await expect(page.locator('[data-start]')).toBeVisible();
+  await expect(page.locator('[data-restored]')).toBeHidden();
+  await page.locator('[data-start]').click();
+  await expect(page.locator('[data-question-heading]')).toHaveText(
+    'Can a missing piece of enamel grow back?',
+  );
+  await expect(page.locator('input:checked')).toHaveCount(0);
+  await page.goto('en/learn/');
+  await expect(page.locator('[data-progress-count]')).toContainText('1 of 6');
+});
+
 test('progress, theme, resume and route anchor preferences', async ({
   page,
 }) => {
@@ -242,6 +270,37 @@ test('blocked and malformed storage do not break the app', async ({ page }) => {
 });
 
 for (const locale of locales) {
+  test(`${locale}: optional lesson detail works by keyboard without JavaScript`, async ({
+    browser,
+    baseURL,
+  }) => {
+    const context = await browser.newContext({
+      javaScriptEnabled: false,
+      baseURL,
+      viewport: { width: 320, height: 780 },
+    });
+    const page = await context.newPage();
+    for (const lesson of ['how-cavities-develop', 'when-problems-progress']) {
+      await page.goto(`${locale}/learn/${lesson}/`);
+      const details = page.locator('.lesson-content details');
+      const summary = details.locator('summary');
+      await expect(details).not.toHaveAttribute('open');
+      await expect(details.locator('p').first()).toBeHidden();
+      await summary.focus();
+      await page.keyboard.press('Enter');
+      await expect(details).toHaveAttribute('open', '');
+      await expect(details.locator('p').first()).toBeVisible();
+      expect(
+        await page.evaluate(
+          () => document.documentElement.scrollWidth <= innerWidth,
+        ),
+      ).toBe(true);
+      await page.keyboard.press('Space');
+      await expect(details).not.toHaveAttribute('open');
+    }
+    await context.close();
+  });
+
   test(`${locale}: 320px, enlarged text, no overflow and accessible page types`, async ({
     page,
     browserName,
@@ -268,6 +327,10 @@ for (const locale of locales) {
         ),
       ).toBe(true);
       if (path === 'test/') await page.locator('[data-start]').click();
+      for (const summary of await page
+        .locator('.lesson-content details summary')
+        .all())
+        await summary.click();
       for (const theme of ['light', 'dark']) {
         await page.locator('#theme-select').selectOption(theme);
         const result = await new AxeBuilder({ page })

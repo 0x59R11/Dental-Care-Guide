@@ -7,636 +7,581 @@ export interface DiagramCopy {
 export const diagrams: Record<Locale, Record<DiagramId, DiagramCopy>> = {
   en: {
     'dark-spots': {
-      title: 'One dark mark, different explanations',
+      title: 'A dark spot can have different causes',
       steps: [
         [
-          'Stained fissure',
-          'Pigment can sit in a natural groove while the enamel remains sound. This drawing cannot identify your tooth.',
+          'A stain',
+          'A natural groove can be stained even when the enamel is healthy.',
         ],
         [
-          'Early lesion',
-          'Minerals may be lost beneath an intact surface. Appearance alone does not establish activity.',
+          'Early damage',
+          'The surface may still be whole even though enamel has weakened.',
         ],
         [
-          'Cavitated lesion',
-          'The surface has broken down and structure is missing. Depth and cleaning access influence management.',
+          'A hole',
+          'Some tooth material is missing. A dentist needs to check what care is needed.',
         ],
         [
-          'Inactive lesion',
-          'An assessed lesion may stop progressing while discoloration remains. Inactivity can occur with or without a cavity; color does not prove it.',
+          'Damage that has stopped',
+          'A mark may remain after decay stops getting worse. Color alone cannot show this, and a hole may still be present.',
         ],
       ],
     },
     'lesion-depth': {
-      title: 'A possible route toward the pulp',
+      title: 'How damage can reach deeper layers',
       steps: [
         [
-          'Early enamel change',
-          'Mineral loss may begin beneath an intact, painless surface. It may arrest or remineralize.',
+          'Early damage',
+          'Enamel can weaken without pain. Early care may help it improve or stop getting worse.',
         ],
         [
-          'Surface breakdown',
-          'Further loss may create a cavity. Missing enamel does not regrow through saliva.',
+          'A hole forms',
+          'More damage can leave a hole. Saliva cannot replace the missing piece.',
         ],
         [
-          'Dentin involvement',
-          'Damage may extend beneath enamel, including under an apparently intact surface. These drawings show one possible course, not a required sequence.',
+          'Below the enamel',
+          'Damage can reach dentin, the layer beneath enamel, even under a surface that looks whole.',
         ],
         [
-          'Pulp involvement',
-          'Deep disease may inflame or infect living pulp. Further disease may cause an abscess; home care alone cannot treat this damage.',
+          'The soft center',
+          'Deep damage can affect nerves and blood vessels and lead to infection. Home care alone cannot treat it. This is a possible path, not a fixed sequence.',
         ],
       ],
     },
     'when-problems-progress': {
-      title: 'One early lesion, different possible outcomes',
+      title: 'Early damage can change in different ways',
       steps: [
         [
-          'Early lesion',
-          'Start with a mineral-weakened area whose surface is still intact.',
+          'A weakened area',
+          'Enamel has lost some minerals, but the surface is still whole.',
         ],
         [
-          'Progression',
-          'Repeated acid challenges can outweigh protection and allow deeper damage; speed varies.',
+          'Getting worse',
+          'Further damage can reach deeper into the tooth. The speed varies.',
         ],
         [
-          'Stabilization',
-          'Little or no detectable change over time does not mean microscopic mineral exchange has stopped.',
+          'Staying the same',
+          'Little or no change has been seen over time. This does not mean the tooth is fully repaired.',
         ],
         [
-          'Arrest',
-          'Better conditions and appropriate care can stop progression. A mark may remain, and prevention and monitoring continue.',
+          'Damage has stopped',
+          'Care may stop decay getting worse. A mark can remain, and daily care and dental checks still matter.',
         ],
       ],
     },
-
     'understanding-teeth': {
       title: 'Inside a tooth',
       steps: [
         [
           'Enamel',
-          'The hard outer covering protects the crown. It cannot regrow a missing piece.',
+          'The hard outside protects the crown. A missing piece cannot grow back.',
         ],
         [
           'Dentin',
-          'This supporting layer contains tiny channels; exposure can cause sensitivity.',
+          'The layer below enamel makes up much of the tooth. When exposed, it can be sensitive.',
         ],
-        [
-          'Pulp',
-          'Living tissue with nerves and blood vessels lies at the center.',
-        ],
+        ['Pulp', 'The soft center contains nerves and blood vessels.'],
         [
           'Roots',
-          'Roots anchor the tooth. Their surface is covered by cementum, not enamel.',
+          'Roots hold the tooth in the jaw. They have a different covering from enamel.',
         ],
       ],
     },
     'how-cavities-develop': {
-      title: 'From plaque to mineral loss',
+      title: 'From plaque to a weakened tooth',
       steps: [
+        ['Plaque', 'A sticky layer of bacteria builds up on the tooth.'],
         [
-          'Plaque',
-          'Bacteria live in an attached biofilm above the enamel, the tooth’s mineral-rich outer covering.',
+          'Sugar from food and drinks',
+          'Sugar gives some bacteria fuel. They can also use some starches.',
         ],
+        ['Acids', 'Bacteria make acids as they use this fuel.'],
         [
-          'Food exposure',
-          'Sugars and other fermentable carbohydrates supply fuel to bacteria.',
-        ],
-        [
-          'Bacterial acids',
-          'Some bacteria produce acids as they use this fuel. Lower pH means more acidic conditions.',
-        ],
-        [
-          'Mineral loss',
-          'Repeated acid challenges can outweigh repair. A cavity may eventually form.',
+          'Weakened enamel',
+          'Repeated acid attacks can weaken the tooth. A hole may eventually form.',
         ],
       ],
     },
     'sugar-food-and-acids': {
-      title: 'Two patterns, different exposures',
+      title: 'How you drink matters too',
       steps: [
         [
           'With a meal',
-          'The same sweet drink taken with a meal creates fewer separate exposures. Reducing the amount still matters.',
+          'You avoid spreading a sweet drink over hours. The total sugar amount still matters.',
         ],
         [
           'Sipping for hours',
-          'Repeated sips supply fresh sugar again and again. The dots show exposures, not a measured pH curve.',
+          'Each sip gives bacteria more sugar. The dots show separate sips, not measured acid levels.',
         ],
         [
           'Sugar-free but acidic',
-          'Direct drink acids can contribute to erosion even without sugar or bacterial acid production.',
+          "The drink's own acids can still wear away tooth surfaces.",
         ],
       ],
     },
     'saliva-and-fluoride': {
-      title: 'Mineral exchange at the surface',
+      title: 'Losing and regaining minerals',
       steps: [
         [
-          'Mineral loss',
-          'Acidic conditions can dissolve minerals from enamel.',
+          'Losing minerals',
+          'Acids can remove minerals that keep enamel strong.',
         ],
         [
-          'Mineral recovery',
-          'Saliva supplies minerals and buffers acids; fluoride supports recovery of early damage. This does not fill a hole.',
+          'Regaining minerals',
+          'Saliva and fluoride help early weakened areas regain minerals. They cannot fill a hole.',
         ],
       ],
     },
     prevention: {
-      title: 'Several habits, complementary protection',
+      title: 'Habits that work together',
       steps: [
         [
           'Clean',
-          'Brushing and suitable interdental cleaning disturb plaque and support gum health.',
+          'Brush and clean between teeth to remove plaque and care for gums.',
+        ],
+        ['Protect', 'Use fluoride toothpaste to help keep enamel strong.'],
+        [
+          'Choose',
+          'Have less sugar and avoid sipping acidic drinks for hours.',
         ],
         [
-          'Protect',
-          'Fluoride toothpaste helps reduce mineral loss and supports recovery.',
-        ],
-        [
-          'Reduce exposures',
-          'Less sugar and fewer prolonged acid exposures reduce challenges to teeth.',
-        ],
-        [
-          'Adapt care',
-          'Saliva and risk-based examinations support protection. Discuss persistent dry mouth and symptoms.',
+          'Get advice',
+          'Agree dental checks for your needs. Ask about ongoing dryness or discomfort.',
         ],
       ],
     },
   },
   ru: {
     'dark-spots': {
-      title: 'Тёмное пятно: разные объяснения',
+      title: 'У тёмного пятна бывают разные причины',
       steps: [
         [
-          'Окрашенная фиссура',
-          'Пигмент может находиться в естественной бороздке при здоровой эмали. По рисунку нельзя оценить ваш зуб.',
+          'Окрашивание',
+          'Естественная бороздка может окраситься, даже если эмаль здорова.',
         ],
         [
-          'Ранний очаг',
-          'Под целой поверхностью могут быть потеряны минералы. Внешний вид сам по себе не определяет активность.',
+          'Раннее повреждение',
+          'Поверхность может быть целой, хотя эмаль уже ослаблена.',
         ],
         [
-          'Очаг с полостью',
-          'Поверхность разрушена, часть ткани утрачена. Глубина и доступность для очищения влияют на тактику.',
+          'Дырка',
+          'Часть ткани зуба утрачена. Стоматолог проверит, какая помощь нужна.',
         ],
         [
-          'Неактивный очаг',
-          'Оценённый врачом очаг может перестать прогрессировать при сохранении окраски. Неактивность возможна с полостью и без неё; цвет её не доказывает.',
+          'Повреждение остановилось',
+          'Пятно может остаться, когда кариес больше не ухудшается. Цвет этого не доказывает; дырка тоже может оставаться.',
         ],
       ],
     },
     'lesion-depth': {
-      title: 'Возможный путь к пульпе',
+      title: 'Как повреждение достигает глубоких слоёв',
       steps: [
         [
-          'Раннее изменение эмали',
-          'Потеря минералов может начаться под целой безболезненной поверхностью. Очаг может остановиться или реминерализоваться.',
+          'Раннее повреждение',
+          'Эмаль может ослабевать без боли. Ранняя помощь может улучшить её состояние или остановить ухудшение.',
         ],
         [
-          'Разрушение поверхности',
-          'Дальнейшая потеря может создать полость. Слюна не отращивает утраченную эмаль.',
+          'Появляется дырка',
+          'Дальнейшее повреждение может оставить дырку. Слюна не заменит утраченную часть.',
         ],
         [
-          'Поражение дентина',
-          'Повреждение может распространяться под эмалью, в том числе под внешне целой поверхностью. Это возможный путь, а не обязательная последовательность.',
+          'Под эмалью',
+          'Повреждение может дойти до дентина — слоя под эмалью, даже если поверхность кажется целой.',
         ],
         [
-          'Поражение пульпы',
-          'Глубокое заболевание может вызвать воспаление или инфекцию живой пульпы. Возможно развитие абсцесса; одного домашнего ухода недостаточно.',
+          'Мягкая середина',
+          'Глубокое повреждение может затронуть нервы и сосуды и привести к инфекции. Домашний уход этого не вылечит. Это возможный путь, а не обязательная последовательность.',
         ],
       ],
     },
     'when-problems-progress': {
-      title: 'Один ранний очаг — разные исходы',
+      title: 'Раннее повреждение может меняться по-разному',
       steps: [
         [
-          'Ранний очаг',
-          'Исходная точка — участок с потерей минералов и ещё целой поверхностью.',
+          'Ослабленный участок',
+          'Эмаль потеряла часть минералов, но поверхность ещё целая.',
         ],
         [
-          'Прогрессирование',
-          'Повторные кислотные воздействия могут перевесить защиту и углубить поражение; скорость различается.',
+          'Ухудшение',
+          'Повреждение может проникать глубже. Скорость бывает разной.',
         ],
         [
-          'Стабилизация',
-          'Отсутствие заметных изменений со временем не означает остановку микроскопического обмена минералов.',
+          'Без изменений',
+          'За время наблюдения изменений мало или нет. Это не значит, что зуб полностью восстановился.',
         ],
         [
-          'Остановка',
-          'Улучшение условий и подходящая помощь могут остановить прогрессирование. Пятно может остаться; профилактика и наблюдение продолжаются.',
+          'Повреждение остановилось',
+          'Уход может остановить развитие кариеса. Пятно может остаться; ежедневный уход и осмотры всё равно нужны.',
         ],
       ],
     },
-
     'understanding-teeth': {
-      title: 'Внутри зуба',
+      title: 'Что внутри зуба',
       steps: [
         [
           'Эмаль',
-          'Твёрдое наружное покрытие защищает коронку. Утраченный фрагмент не отрастает.',
+          'Твёрдый наружный слой защищает коронку. Утраченный кусочек не отрастает.',
         ],
         [
           'Дентин',
-          'Опорный слой содержит мелкие канальцы; его обнажение может вызывать чувствительность.',
+          'Слой под эмалью составляет большую часть зуба. При обнажении он может быть чувствительным.',
         ],
-        [
-          'Пульпа',
-          'В центре находится живая ткань с нервами и кровеносными сосудами.',
-        ],
+        ['Пульпа', 'Мягкая середина содержит нервы и кровеносные сосуды.'],
         [
           'Корни',
-          'Корни удерживают зуб. Их поверхность покрыта цементом, а не эмалью.',
+          'Корни удерживают зуб в челюсти. Их покрытие отличается от эмали.',
         ],
       ],
     },
     'how-cavities-develop': {
-      title: 'От налёта к потере минералов',
+      title: 'От налёта к ослаблению зуба',
       steps: [
+        ['Налёт', 'На зубе накапливается липкий слой бактерий.'],
         [
-          'Налёт',
-          'Бактерии живут в прикреплённой биоплёнке над эмалью — богатым минералами наружным покрытием зуба.',
+          'Сахар из еды и напитков',
+          'Сахар питает некоторые бактерии. Они могут использовать и некоторые крахмалы.',
         ],
+        ['Кислоты', 'Используя это питание, бактерии выделяют кислоты.'],
         [
-          'Контакт с пищей',
-          'Сахара и другие ферментируемые углеводы служат питанием бактериям.',
-        ],
-        [
-          'Бактериальные кислоты',
-          'Используя это питание, некоторые бактерии образуют кислоты. Снижение pH означает более кислую среду.',
-        ],
-        [
-          'Потеря минералов',
-          'Повторные кислотные воздействия могут перевесить восстановление. Со временем может возникнуть полость.',
+          'Ослабленная эмаль',
+          'Частое действие кислот может ослабить зуб. Со временем может появиться дырка.',
         ],
       ],
     },
     'sugar-food-and-acids': {
-      title: 'Два режима — разные воздействия',
+      title: 'Как вы пьёте — тоже важно',
       steps: [
         [
-          'Во время еды',
-          'Тот же сладкий напиток во время еды создаёт меньше отдельных воздействий. Уменьшение количества тоже важно.',
+          'За едой',
+          'Вы не растягиваете сладкий напиток на часы. Общее количество сахара всё равно важно.',
         ],
         [
-          'По глотку часами',
-          'Каждый глоток вновь приносит сахар. Точки обозначают контакты, а не измеренную кривую pH.',
+          'Глотками несколько часов',
+          'Каждый глоток даёт бактериям ещё сахар. Точки обозначают глотки, а не измеренную кислотность.',
         ],
         [
-          'Без сахара, но с кислотой',
-          'Кислоты напитка могут вызывать эрозию даже без сахара и бактериальных кислот.',
+          'Без сахара, но с кислотами',
+          'Собственные кислоты напитка всё равно могут повреждать поверхность зубов.',
         ],
       ],
     },
     'saliva-and-fluoride': {
-      title: 'Обмен минералами на поверхности',
+      title: 'Потеря и возвращение минералов',
       steps: [
         [
           'Потеря минералов',
-          'В кислой среде минералы могут растворяться и выходить из эмали.',
+          'Кислоты могут удалять минералы, которые делают эмаль прочной.',
         ],
         [
-          'Восстановление минералов',
-          'Слюна доставляет минералы и нейтрализует кислоты; фториды помогают восстанавливать ранние повреждения. Полость так не заполнить.',
+          'Возвращение минералов',
+          'Слюна и фторид помогают вернуть минералы в участки с ранним повреждением. Дырку они не заполняют.',
         ],
       ],
     },
     prevention: {
-      title: 'Несколько привычек дополняют защиту',
+      title: 'Привычки, которые помогают вместе',
       steps: [
         [
-          'Очищать',
-          'Щётка и подходящий межзубный инструмент нарушают налёт и поддерживают здоровье дёсен.',
+          'Очищайте',
+          'Щётка и очищение между зубами удаляют налёт и помогают дёснам.',
         ],
+        ['Защищайте', 'Пользуйтесь пастой с фторидом для укрепления эмали.'],
+        ['Выбирайте', 'Меньше сахара; не растягивайте кислые напитки на часы.'],
         [
-          'Защищать',
-          'Паста с фтором помогает уменьшить потерю минералов и поддерживает восстановление.',
-        ],
-        [
-          'Сокращать воздействия',
-          'Меньше сахара и длительных контактов с кислотой — меньше нагрузки на зубы.',
-        ],
-        [
-          'Адаптировать уход',
-          'Слюна и осмотры с учётом риска поддерживают защиту. Обсуждайте постоянную сухость и симптомы.',
+          'Советуйтесь',
+          'Согласуйте осмотры с учётом своих потребностей. Обсудите постоянную сухость или дискомфорт.',
         ],
       ],
     },
   },
   uk: {
     'dark-spots': {
-      title: 'Темна пляма: різні пояснення',
+      title: 'У темної плями бувають різні причини',
       steps: [
         [
-          'Забарвлена фісура',
-          'Пігмент може міститися в природній борозенці за здорової емалі. За малюнком не можна оцінити ваш зуб.',
+          'Забарвлення',
+          'Природна борозенка може забарвитися, навіть якщо емаль здорова.',
         ],
         [
-          'Раннє вогнище',
-          'Під цілою поверхнею можуть бути втрачені мінерали. Сам зовнішній вигляд не визначає активності.',
+          'Раннє пошкодження',
+          'Поверхня може бути цілою, хоча емаль уже ослаблена.',
         ],
         [
-          'Вогнище з порожниною',
-          'Поверхня зруйнована, частину тканини втрачено. Глибина й доступність для очищення впливають на тактику.',
+          'Дірка',
+          'Частина тканини зуба втрачена. Стоматолог перевірить, яка допомога потрібна.',
         ],
         [
-          'Неактивне вогнище',
-          'Оцінене лікарем вогнище може перестати прогресувати зі збереженням кольору. Неактивність можлива з порожниною й без неї; колір її не доводить.',
+          'Пошкодження зупинилося',
+          'Пляма може залишитися, коли карієс більше не погіршується. Колір цього не доводить; дірка теж може залишатися.',
         ],
       ],
     },
     'lesion-depth': {
-      title: 'Можливий шлях до пульпи',
+      title: 'Як пошкодження дістається глибоких шарів',
       steps: [
         [
-          'Рання зміна емалі',
-          'Втрата мінералів може початися під цілою безболісною поверхнею. Вогнище може зупинитися або ремінералізуватися.',
+          'Раннє пошкодження',
+          'Емаль може слабшати без болю. Рання допомога може покращити її стан або зупинити погіршення.',
         ],
         [
-          'Руйнування поверхні',
-          'Подальша втрата може утворити порожнину. Слина не відрощує втрачену емаль.',
+          'З’являється дірка',
+          'Подальше пошкодження може залишити дірку. Слина не замінить втрачену частину.',
         ],
         [
-          'Ураження дентину',
-          'Пошкодження може поширюватися під емаллю, зокрема під зовні цілою поверхнею. Це можливий шлях, а не обов’язкова послідовність.',
+          'Під емаллю',
+          'Пошкодження може дістатися дентину — шару під емаллю, навіть якщо поверхня здається цілою.',
         ],
         [
-          'Ураження пульпи',
-          'Глибоке захворювання може спричинити запалення чи інфекцію живої пульпи. Можливий абсцес; самого домашнього догляду недостатньо.',
+          'М’яка середина',
+          'Глибоке пошкодження може зачепити нерви й судини та спричинити інфекцію. Домашній догляд цього не вилікує. Це можливий шлях, а не обов’язкова послідовність.',
         ],
       ],
     },
     'when-problems-progress': {
-      title: 'Одне раннє вогнище — різні наслідки',
+      title: 'Раннє пошкодження може змінюватися по-різному',
       steps: [
         [
-          'Раннє вогнище',
-          'Початкова точка — ділянка з утратою мінералів і ще цілою поверхнею.',
+          'Ослаблена ділянка',
+          'Емаль втратила частину мінералів, але поверхня ще ціла.',
         ],
         [
-          'Прогресування',
-          'Повторні кислотні впливи можуть переважити захист і поглибити ураження; швидкість різниться.',
+          'Погіршення',
+          'Пошкодження може проникати глибше. Швидкість буває різною.',
         ],
         [
-          'Стабілізація',
-          'Відсутність помітних змін із часом не означає зупинки мікроскопічного обміну мінералів.',
+          'Без змін',
+          'За час спостереження змін мало або немає. Це не означає, що зуб повністю відновився.',
         ],
         [
-          'Зупинка',
-          'Поліпшення умов і відповідна допомога можуть зупинити прогресування. Пляма може залишитися; профілактика та спостереження тривають.',
+          'Пошкодження зупинилося',
+          'Догляд може зупинити розвиток карієсу. Пляма може залишитися; щоденний догляд і огляди все одно потрібні.',
         ],
       ],
     },
-
     'understanding-teeth': {
-      title: 'Усередині зуба',
+      title: 'Що всередині зуба',
       steps: [
         [
           'Емаль',
-          'Тверде зовнішнє покриття захищає коронку. Утрачений фрагмент не відростає.',
+          'Твердий зовнішній шар захищає коронку. Втрачений шматочок не відростає.',
         ],
         [
           'Дентин',
-          'Опорний шар містить дрібні канальці; його оголення може спричиняти чутливість.',
+          'Шар під емаллю становить більшу частину зуба. За оголення він може бути чутливим.',
         ],
-        [
-          'Пульпа',
-          'У центрі міститься жива тканина з нервами та кровоносними судинами.',
-        ],
+        ['Пульпа', 'М’яка середина містить нерви та кровоносні судини.'],
         [
           'Корені',
-          'Корені утримують зуб. Їхня поверхня вкрита цементом, а не емаллю.',
+          'Корені утримують зуб у щелепі. Їхнє покриття відрізняється від емалі.',
         ],
       ],
     },
     'how-cavities-develop': {
-      title: 'Від нальоту до втрати мінералів',
+      title: 'Від нальоту до ослаблення зуба',
       steps: [
+        ['Наліт', 'На зубі накопичується липкий шар бактерій.'],
         [
-          'Наліт',
-          'Бактерії живуть у прикріпленій біоплівці над емаллю — багатим на мінерали зовнішнім покриттям зуба.',
+          'Цукор з їжі та напоїв',
+          'Цукор живить деякі бактерії. Вони можуть використовувати й деякі крохмалі.',
         ],
+        ['Кислоти', 'Використовуючи це живлення, бактерії утворюють кислоти.'],
         [
-          'Контакт з їжею',
-          'Цукри та інші ферментовані вуглеводи живлять бактерії.',
-        ],
-        [
-          'Бактеріальні кислоти',
-          'Використовуючи це живлення, деякі бактерії утворюють кислоти. Нижчий pH означає кисліше середовище.',
-        ],
-        [
-          'Втрата мінералів',
-          'Повторні кислотні впливи можуть переважити відновлення. Згодом може утворитися порожнина.',
+          'Ослаблена емаль',
+          'Часта дія кислот може послабити зуб. Із часом може з’явитися дірка.',
         ],
       ],
     },
     'sugar-food-and-acids': {
-      title: 'Два режими — різні впливи',
+      title: 'Як ви п’єте — теж важливо',
       steps: [
         [
-          'Під час їди',
-          'Той самий солодкий напій під час їди створює менше окремих впливів. Зменшення кількості теж важливе.',
+          'Під час їжі',
+          'Ви не розтягуєте солодкий напій на години. Загальна кількість цукру все одно важлива.',
         ],
         [
-          'По ковтку годинами',
-          'Кожен ковток знову приносить цукор. Крапки позначають контакти, а не виміряну криву pH.',
+          'Ковтками кілька годин',
+          'Кожен ковток дає бактеріям ще цукор. Крапки позначають ковтки, а не виміряну кислотність.',
         ],
         [
-          'Без цукру, але з кислотою',
-          'Кислоти напою можуть спричиняти ерозію навіть без цукру та бактеріальних кислот.',
+          'Без цукру, але з кислотами',
+          'Власні кислоти напою все одно можуть пошкоджувати поверхню зубів.',
         ],
       ],
     },
     'saliva-and-fluoride': {
-      title: 'Обмін мінералами на поверхні',
+      title: 'Втрата та повернення мінералів',
       steps: [
         [
           'Втрата мінералів',
-          'У кислому середовищі мінерали можуть розчинятися й виходити з емалі.',
+          'Кислоти можуть видаляти мінерали, які роблять емаль міцною.',
         ],
         [
-          'Відновлення мінералів',
-          'Слина постачає мінерали й нейтралізує кислоти; фториди підтримують відновлення ранніх ушкоджень. Порожнину так не заповнити.',
+          'Повернення мінералів',
+          'Слина й фторид допомагають повернути мінерали в ділянки з раннім ослабленням. Дірку вони не заповнюють.',
         ],
       ],
     },
     prevention: {
-      title: 'Кілька звичок доповнюють захист',
+      title: 'Звички, які допомагають разом',
       steps: [
         [
-          'Очищувати',
-          'Щітка й відповідний міжзубний інструмент руйнують наліт і підтримують здоров’я ясен.',
+          'Очищайте',
+          'Щітка й очищення між зубами видаляють наліт і допомагають яснам.',
         ],
+        ['Захищайте', 'Користуйтеся пастою з фторидом для зміцнення емалі.'],
+        ['Обирайте', 'Менше цукру; не розтягуйте кислі напої на години.'],
         [
-          'Захищати',
-          'Паста з фтором допомагає зменшити втрату мінералів і підтримує відновлення.',
-        ],
-        [
-          'Скорочувати впливи',
-          'Менше цукру й тривалих контактів із кислотою — менше навантаження на зуби.',
-        ],
-        [
-          'Адаптувати догляд',
-          'Слина й огляди з урахуванням ризику підтримують захист. Обговорюйте постійну сухість і симптоми.',
+          'Радьтеся',
+          'Узгодьте огляди відповідно до своїх потреб. Обговоріть постійну сухість або дискомфорт.',
         ],
       ],
     },
   },
   de: {
     'dark-spots': {
-      title: 'Ein dunkler Fleck, verschiedene Erklärungen',
+      title: 'Ein dunkler Fleck kann verschiedene Ursachen haben',
       steps: [
         [
-          'Verfärbte Fissur',
-          'Pigment kann bei gesundem Schmelz in einer natürlichen Furche liegen. Diese Zeichnung beurteilt deinen Zahn nicht.',
+          'Eine Verfärbung',
+          'Eine natürliche Rille kann verfärbt sein, obwohl der Schmelz gesund ist.',
         ],
         [
-          'Frühe Läsion',
-          'Unter intakter Oberfläche können Mineralien fehlen. Das Aussehen allein bestimmt die Aktivität nicht.',
+          'Früher Schaden',
+          'Die Oberfläche kann noch ganz sein, obwohl der Schmelz geschwächt ist.',
         ],
         [
-          'Kavitierte Läsion',
-          'Die Oberfläche ist eingebrochen, Substanz fehlt. Tiefe und Reinigungszugang beeinflussen die Behandlung.',
+          'Ein Loch',
+          'Zahnsubstanz fehlt. Lass zahnärztlich prüfen, welche Versorgung nötig ist.',
         ],
         [
-          'Inaktive Läsion',
-          'Eine untersuchte Läsion kann trotz bleibender Verfärbung zum Stillstand kommen. Inaktivität ist mit oder ohne Loch möglich; Farbe beweist sie nicht.',
+          'Gestoppter Schaden',
+          'Ein Fleck kann bleiben, obwohl Karies nicht mehr schlimmer wird. Die Farbe allein beweist das nicht; ein Loch kann weiterhin bestehen.',
         ],
       ],
     },
     'lesion-depth': {
-      title: 'Ein möglicher Weg zur Pulpa',
+      title: 'Wie Schäden tiefere Schichten erreichen können',
       steps: [
         [
-          'Frühe Schmelzveränderung',
-          'Mineralverlust kann unter intakter, schmerzloser Oberfläche beginnen. Die Läsion kann arretieren oder remineralisieren.',
+          'Früher Schaden',
+          'Schmelz kann ohne Schmerzen schwächer werden. Frühe Pflege kann helfen, den Schaden zu bessern oder zu stoppen.',
         ],
         [
-          'Oberflächeneinbruch',
-          'Weiterer Verlust kann ein Loch erzeugen. Speichel lässt fehlenden Schmelz nicht nachwachsen.',
+          'Ein Loch entsteht',
+          'Weitere Schäden können ein Loch hinterlassen. Speichel ersetzt das fehlende Stück nicht.',
         ],
         [
-          'Dentinbeteiligung',
-          'Schäden können sich unter dem Schmelz ausbreiten, auch bei scheinbar intakter Oberfläche. Die Bilder zeigen einen möglichen, keinen vorgeschriebenen Verlauf.',
+          'Unter dem Schmelz',
+          'Schäden können das Dentin unter dem Schmelz erreichen, auch unter einer scheinbar ganzen Oberfläche.',
         ],
         [
-          'Pulpabeteiligung',
-          'Tiefe Erkrankung kann lebende Pulpa entzünden oder infizieren. Ein Abszess ist möglich; häusliche Pflege allein behandelt diesen Schaden nicht.',
+          'Das weiche Innere',
+          'Tiefe Schäden können Nerven und Blutgefäße betreffen und Infektionen auslösen. Häusliche Pflege allein behandelt das nicht. Dies ist ein möglicher Weg, keine feste Reihenfolge.',
         ],
       ],
     },
     'when-problems-progress': {
-      title: 'Eine frühe Läsion, verschiedene mögliche Verläufe',
+      title: 'Frühe Schäden können sich unterschiedlich entwickeln',
       steps: [
         [
-          'Frühe Läsion',
-          'Ausgangspunkt ist eine mineralgeschwächte Stelle mit noch intakter Oberfläche.',
+          'Eine geschwächte Stelle',
+          'Dem Schmelz fehlen Mineralien, aber die Oberfläche ist noch ganz.',
         ],
         [
-          'Fortschreiten',
-          'Wiederholte Säurebelastung kann Schutz überwiegen und tiefere Schäden ermöglichen; die Geschwindigkeit variiert.',
+          'Es wird schlimmer',
+          'Weitere Schäden können tiefer in den Zahn reichen. Das Tempo ist unterschiedlich.',
         ],
         [
-          'Stabilisierung',
-          'Wenig oder keine erkennbare Veränderung über Zeit bedeutet keinen Stillstand des mikroskopischen Mineralaustauschs.',
+          'Es bleibt gleich',
+          'Über eine Zeit war wenig oder keine Veränderung zu sehen. Das bedeutet keine vollständige Reparatur.',
         ],
         [
-          'Arretierung',
-          'Bessere Bedingungen und passende Betreuung können Fortschreiten stoppen. Ein Fleck kann bleiben; Vorsorge und Kontrollen gehen weiter.',
+          'Der Schaden ist gestoppt',
+          'Pflege kann Karies zum Stillstand bringen. Ein Fleck kann bleiben; tägliche Pflege und Kontrollen bleiben wichtig.',
         ],
       ],
     },
-
     'understanding-teeth': {
       title: 'Im Inneren eines Zahns',
       steps: [
         [
           'Zahnschmelz',
-          'Die harte Außenschicht schützt die Krone. Ein fehlendes Stück wächst nicht nach.',
+          'Die harte Außenseite schützt die Krone. Ein fehlendes Stück wächst nicht nach.',
         ],
         [
           'Dentin',
-          'Diese tragende Schicht enthält feine Kanälchen; freiliegendes Dentin kann empfindlich sein.',
+          'Die Schicht unter dem Schmelz bildet einen großen Teil des Zahns. Freiliegend kann sie empfindlich sein.',
         ],
-        [
-          'Pulpa',
-          'Im Zentrum liegt lebendes Gewebe mit Nerven und Blutgefäßen.',
-        ],
+        ['Zahnmark', 'Das weiche Innere enthält Nerven und Blutgefäße.'],
         [
           'Wurzeln',
-          'Wurzeln verankern den Zahn. Ihre Oberfläche ist mit Zement bedeckt, nicht mit Schmelz.',
+          'Wurzeln halten den Zahn im Kiefer. Ihre Oberfläche hat eine andere Hülle als Zahnschmelz.',
         ],
       ],
     },
     'how-cavities-develop': {
-      title: 'Vom Belag zum Mineralverlust',
+      title: 'Vom Belag zum geschwächten Zahn',
       steps: [
         [
           'Zahnbelag',
-          'Bakterien leben im anhaftenden Biofilm über dem Schmelz, der mineralreichen Außenhülle des Zahns.',
+          'Eine klebrige Schicht aus Bakterien sammelt sich auf dem Zahn.',
         ],
         [
-          'Nahrungskontakt',
-          'Zucker und andere vergärbare Kohlenhydrate liefern Bakterien Nahrung.',
+          'Zucker aus Essen und Trinken',
+          'Zucker gibt manchen Bakterien Nahrung. Sie können auch manche Stärkearten nutzen.',
         ],
+        ['Säuren', 'Beim Nutzen dieser Nahrung bilden Bakterien Säuren.'],
         [
-          'Bakterielle Säuren',
-          'Manche Bakterien bilden beim Nutzen dieser Nahrung Säuren. Ein niedrigerer pH bedeutet ein saureres Milieu.',
-        ],
-        [
-          'Mineralverlust',
-          'Wiederholte Säureangriffe können die Erholung überwiegen. Schließlich kann ein Loch entstehen.',
+          'Geschwächter Schmelz',
+          'Wiederholte Säureangriffe können den Zahn schwächen. Schließlich kann ein Loch entstehen.',
         ],
       ],
     },
     'sugar-food-and-acids': {
-      title: 'Zwei Muster, unterschiedliche Einwirkungen',
+      title: 'Auch die Art des Trinkens zählt',
       steps: [
         [
-          'Zu einer Mahlzeit',
-          'Dasselbe süße Getränk zur Mahlzeit bedeutet weniger einzelne Kontakte. Die Gesamtmenge zu senken bleibt wichtig.',
+          'Zum Essen',
+          'Du verteilst ein süßes Getränk nicht über Stunden. Die gesamte Zuckermenge bleibt wichtig.',
         ],
         [
           'Stundenlanges Nippen',
-          'Wiederholte Schlucke liefern immer neuen Zucker. Die Punkte zeigen Kontakte, keine gemessene pH-Kurve.',
+          'Jeder Schluck liefert neuen Zucker. Die Punkte zeigen einzelne Schlucke, keine gemessenen Säurewerte.',
         ],
         [
           'Zuckerfrei, aber sauer',
-          'Getränkesäuren können auch ohne Zucker oder bakterielle Säurebildung zur Erosion beitragen.',
+          'Die eigenen Säuren des Getränks können die Zahnoberfläche weiterhin angreifen.',
         ],
       ],
     },
     'saliva-and-fluoride': {
-      title: 'Mineralaustausch an der Oberfläche',
+      title: 'Mineralien verlieren und zurückgewinnen',
       steps: [
         [
-          'Mineralverlust',
-          'Unter sauren Bedingungen können sich Mineralien aus dem Schmelz lösen.',
+          'Mineralien verlieren',
+          'Säuren können Mineralien herauslösen, die den Schmelz stark machen.',
         ],
         [
-          'Mineralgewinn',
-          'Speichel liefert Mineralien und puffert Säuren; Fluorid unterstützt die Erholung früher Schäden. Ein Loch wird dadurch nicht gefüllt.',
+          'Mineralien zurückgewinnen',
+          'Speichel und Fluorid helfen früh geschwächten Stellen, Mineralien zurückzugewinnen. Sie können kein Loch füllen.',
         ],
       ],
     },
     prevention: {
-      title: 'Mehrere Gewohnheiten ergänzen sich',
+      title: 'Gewohnheiten, die sich ergänzen',
       steps: [
         [
           'Reinigen',
-          'Putzen und passende Zwischenraumreinigung stören Beläge und unterstützen gesundes Zahnfleisch.',
+          'Putze und reinige Zwischenräume, um Belag zu entfernen und das Zahnfleisch zu pflegen.',
+        ],
+        ['Schützen', 'Nutze Fluoridzahnpasta, um den Schmelz stark zu halten.'],
+        [
+          'Auswählen',
+          'Weniger Zucker und kein stundenlanges Nippen an sauren Getränken helfen.',
         ],
         [
-          'Schützen',
-          'Fluoridzahnpasta hilft, Mineralverlust zu verringern und die Erholung zu unterstützen.',
-        ],
-        [
-          'Einwirkungen verringern',
-          'Weniger Zucker und weniger lange Säurekontakte entlasten die Zähne.',
-        ],
-        [
-          'Pflege anpassen',
-          'Speichel und risikogerechte Untersuchungen unterstützen den Schutz. Sprich anhaltende Trockenheit und Beschwerden an.',
+          'Rat holen',
+          'Vereinbare passende Kontrollen. Sprich anhaltende Trockenheit oder Beschwerden an.',
         ],
       ],
     },

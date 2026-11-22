@@ -30,11 +30,11 @@ const en = {
   modulesDescription:
     'Follow the journey, or jump straight to what you need today.',
   learnDescription:
-    'See what happens beneath the surface, from enamel to the everyday science of cavities.',
+    'Simple explanations of your teeth and the habits that protect them.',
   practiceDescription:
     'Simple, useful steps for your morning, your evening, and everything in between.',
   testDescription:
-    'Try 20 questions. Discover what you know and learn something from every answer.',
+    'Try 20 everyday questions, with a short explanation after each answer.',
   learnMeta: '6 illustrated lessons · 15–20 min',
   practiceMeta: 'A daily reference · 3–4 min',
   testMeta: '20 questions · 10–15 min',
@@ -48,7 +48,7 @@ const en = {
   saved: 'Saved in this browser',
   lessonsTitle: 'Understand what protects your teeth.',
   lessonsDescription:
-    'Six short lessons connect the science to the choices you make every day. Start anywhere; there is no required order.',
+    'Six short lessons for everyday life. No dental knowledge needed. Start anywhere.',
   lesson: 'Lesson',
   lessonOf: 'of',
   minutes: 'min',
@@ -74,7 +74,7 @@ const en = {
   diagramFallback: 'The full explanation',
   schematic: 'Simplified illustration, not to scale.',
   notDiagnostic:
-    'Schematic examples, not diagnostic references. These categories can overlap; color or a photograph cannot establish a diagnosis.',
+    'These drawings show possibilities, not a diagnosis. Some can occur together. Color or a photo alone cannot tell you what is wrong.',
   lessonSources: 'Sources for this lesson',
   updated: 'Content updated',
   practiceTitle: 'A little care, every day.',
@@ -90,12 +90,12 @@ const en = {
   'long-termNote': 'Care that adapts as you do.',
   routineNav: 'Daily care sections',
   why: 'Why this helps',
-  related: 'Explore the science',
+  related: 'Read the lesson',
   practiceEnd: 'Ready to connect the dots?',
   practiceEndText: 'Try a short quiz about the ideas behind these habits.',
   quizTitle: 'What have you learned?',
   quizIntro:
-    '20 questions. No timer, no pressure. Each answer comes with an explanation.',
+    '20 everyday questions. Take your time, and learn as you go. No dental knowledge needed.',
   quizStart: 'Start the quiz',
   quizNote:
     'Your attempt stays in this tab. You can change language without losing your place.',
@@ -104,7 +104,7 @@ const en = {
   nextQuestion: 'Next question',
   seeResults: 'See my results',
   correct: 'That’s right.',
-  incorrect: 'Not quite. Here is why.',
+  incorrect: 'Not quite. Let’s look at the answer.',
   correctAnswer: 'Correct answer',
   answerExplanation: 'Why this is the answer',
   resultTitle: 'Understanding is what counts.',
@@ -112,8 +112,7 @@ const en = {
   reviewTitle: 'A few ideas to revisit',
   allCorrect:
     'You have a good grasp of the basics. Keep your daily care guide close by.',
-  reviewDescription:
-    'These lessons explain the topics behind the answers you missed.',
+  reviewDescription: 'Revisit these lessons whenever you want a reminder.',
   answerReview: 'Review all answers',
   yourAnswer: 'Your answer',
   retry: 'Try again',
@@ -179,11 +178,11 @@ const ru: Dictionary = {
   modulesTitle: 'Забота о зубах — шаг за шагом.',
   modulesDescription: 'Пройдите весь путь или выберите то, что нужно сегодня.',
   learnDescription:
-    'Загляните под поверхность: от строения эмали до причин развития кариеса.',
+    'Простые объяснения о зубах и привычках, которые их защищают.',
   practiceDescription:
     'Простые и полезные действия утром, вечером и в течение дня.',
   testDescription:
-    'Ответьте на 20 вопросов. Проверьте себя и узнайте что-то новое из каждого объяснения.',
+    'Попробуйте 20 вопросов о повседневном уходе с коротким объяснением после каждого ответа.',
   learnMeta: '6 уроков с иллюстрациями · 15–20 мин',
   practiceMeta: 'Памятка на каждый день · 3–4 мин',
   testMeta: '20 вопросов · 10–15 мин',
@@ -197,7 +196,7 @@ const ru: Dictionary = {
   saved: 'Сохранено в этом браузере',
   lessonsTitle: 'Поймите, что защищает ваши зубы.',
   lessonsDescription:
-    'Шесть коротких уроков связывают научные знания с повседневными решениями. Начните с любого: порядок не обязателен.',
+    'Шесть коротких уроков для повседневной жизни. Знания стоматологии не нужны. Начните с любого.',
   lesson: 'Урок',
   lessonOf: 'из',
   minutes: 'мин',
@@ -223,7 +222,7 @@ const ru: Dictionary = {
   diagramFallback: 'Полное объяснение',
   schematic: 'Упрощённая иллюстрация, не в масштабе.',
   notDiagnostic:
-    'Схематические примеры, а не диагностические образцы. Категории могут пересекаться; цвет или фотография не устанавливают диагноз.',
+    'Рисунки показывают возможные варианты, а не диагноз. Некоторые могут сочетаться. По цвету или фото нельзя определить проблему.',
   lessonSources: 'Источники к уроку',
   updated: 'Материал обновлён',
   practiceTitle: 'Немного заботы каждый день.',
@@ -239,13 +238,13 @@ const ru: Dictionary = {
   'long-termNote': 'Уход меняется вместе с вашими потребностями.',
   routineNav: 'Разделы ежедневного ухода',
   why: 'Почему это помогает',
-  related: 'Узнать научное объяснение',
+  related: 'Прочитать урок',
   practiceEnd: 'Готовы связать всё воедино?',
   practiceEndText:
     'Пройдите небольшой тест о причинах, которые стоят за этими привычками.',
   quizTitle: 'Что вы узнали?',
   quizIntro:
-    '20 вопросов. Без таймера и спешки. У каждого ответа есть объяснение.',
+    '20 вопросов о повседневном уходе. Не спешите: учиться можно по ходу. Знания стоматологии не нужны.',
   quizStart: 'Начать тест',
   quizNote:
     'Результаты сохраняются в этой вкладке. Смена языка не сбросит текущую попытку.',
@@ -254,7 +253,7 @@ const ru: Dictionary = {
   nextQuestion: 'Следующий вопрос',
   seeResults: 'Посмотреть результат',
   correct: 'Верно.',
-  incorrect: 'Неверно. Разберём почему.',
+  incorrect: 'Не совсем. Давайте разберём ответ.',
   correctAnswer: 'Правильный ответ',
   answerExplanation: 'Почему этот ответ верный',
   resultTitle: 'Главное — понимание.',
@@ -262,8 +261,7 @@ const ru: Dictionary = {
   reviewTitle: 'Что стоит повторить',
   allCorrect:
     'Вы хорошо разобрались в основах. Держите памятку по ежедневному уходу под рукой.',
-  reviewDescription:
-    'Эти уроки помогут разобраться в темах вопросов, где были ошибки.',
+  reviewDescription: 'Вернитесь к этим урокам, когда захотите освежить знания.',
   answerReview: 'Посмотреть все ответы',
   yourAnswer: 'Ваш ответ',
   retry: 'Попробовать снова',
@@ -327,11 +325,10 @@ const uk: Dictionary = {
   modulesTitle: 'Турбота про зуби — крок за кроком.',
   modulesDescription:
     'Пройдіть увесь шлях або оберіть те, що потрібно сьогодні.',
-  learnDescription:
-    'Зазирніть під поверхню: від будови емалі до причин розвитку карієсу.',
+  learnDescription: 'Прості пояснення про зуби та звички, які їх захищають.',
   practiceDescription: 'Прості й корисні дії вранці, ввечері та протягом дня.',
   testDescription:
-    'Дайте відповіді на 20 запитань. Перевірте себе та дізнайтеся щось нове з кожного пояснення.',
+    'Спробуйте 20 запитань про щоденний догляд із коротким поясненням після кожної відповіді.',
   learnMeta: '6 ілюстрованих уроків · 15–20 хв',
   practiceMeta: 'Щоденна пам’ятка · 3–4 хв',
   testMeta: '20 запитань · 10–15 хв',
@@ -345,7 +342,7 @@ const uk: Dictionary = {
   saved: 'Збережено в цьому браузері',
   lessonsTitle: 'Зрозумійте, що захищає ваші зуби.',
   lessonsDescription:
-    'Шість коротких уроків пов’язують наукові знання зі щоденними рішеннями. Почніть із будь-якого: порядок не обов’язковий.',
+    'Шість коротких уроків для повсякденного життя. Знання стоматології не потрібні. Почніть із будь-якого.',
   lesson: 'Урок',
   lessonOf: 'із',
   minutes: 'хв',
@@ -371,7 +368,7 @@ const uk: Dictionary = {
   diagramFallback: 'Повне пояснення',
   schematic: 'Спрощена ілюстрація, не в масштабі.',
   notDiagnostic:
-    'Схематичні приклади, а не діагностичні зразки. Категорії можуть перетинатися; колір чи фотографія не встановлюють діагноз.',
+    'Малюнки показують можливі варіанти, а не діагноз. Деякі можуть поєднуватися. За кольором чи фото не можна визначити проблему.',
   lessonSources: 'Джерела до уроку',
   updated: 'Матеріал оновлено',
   practiceTitle: 'Трохи турботи щодня.',
@@ -387,13 +384,13 @@ const uk: Dictionary = {
   'long-termNote': 'Догляд змінюється разом із вашими потребами.',
   routineNav: 'Розділи щоденного догляду',
   why: 'Чому це допомагає',
-  related: 'Дізнатися наукове пояснення',
+  related: 'Прочитати урок',
   practiceEnd: 'Готові пов’язати все разом?',
   practiceEndText:
     'Пройдіть короткий тест про причини, що стоять за цими звичками.',
   quizTitle: 'Що ви дізналися?',
   quizIntro:
-    '20 запитань. Без таймера й поспіху. Кожна відповідь має пояснення.',
+    '20 запитань про щоденний догляд. Не поспішайте: навчатися можна в процесі. Знання стоматології не потрібні.',
   quizStart: 'Почати тест',
   quizNote:
     'Спроба зберігається в цій вкладці. Зміна мови не скине ваш поступ.',
@@ -402,7 +399,7 @@ const uk: Dictionary = {
   nextQuestion: 'Наступне запитання',
   seeResults: 'Переглянути результат',
   correct: 'Правильно.',
-  incorrect: 'Неправильно. Розберімо чому.',
+  incorrect: 'Не зовсім. Розгляньмо відповідь разом.',
   correctAnswer: 'Правильна відповідь',
   answerExplanation: 'Чому ця відповідь правильна',
   resultTitle: 'Головне — розуміння.',
@@ -410,7 +407,8 @@ const uk: Dictionary = {
   reviewTitle: 'Що варто повторити',
   allCorrect:
     'Ви добре розібралися в основах. Тримайте пам’ятку зі щоденного догляду під рукою.',
-  reviewDescription: 'Ці уроки пояснюють теми запитань, у яких були помилки.',
+  reviewDescription:
+    'Поверніться до цих уроків, коли захочете пригадати матеріал.',
   answerReview: 'Переглянути всі відповіді',
   yourAnswer: 'Ваша відповідь',
   retry: 'Спробувати знову',
@@ -476,11 +474,11 @@ const de: Dictionary = {
   modulesDescription:
     'Folge dem Lernpfad oder spring direkt zu dem, was du heute brauchst.',
   learnDescription:
-    'Schau unter die Oberfläche: vom Zahnschmelz bis zu den Ursachen von Karies.',
+    'Einfache Erklärungen zu deinen Zähnen und den Gewohnheiten, die sie schützen.',
   practiceDescription:
     'Einfache, hilfreiche Schritte für morgens, abends und die Zeit dazwischen.',
   testDescription:
-    'Beantworte 20 Fragen. Prüfe dein Wissen und lerne mit jeder Erklärung dazu.',
+    'Probiere 20 Fragen zum Alltag aus, mit einer kurzen Erklärung nach jeder Antwort.',
   learnMeta: '6 illustrierte Lektionen · 15–20 Min.',
   practiceMeta: 'Pflege im Alltag · 3–4 Min.',
   testMeta: '20 Fragen · 10–15 Min.',
@@ -494,7 +492,7 @@ const de: Dictionary = {
   saved: 'In diesem Browser gespeichert',
   lessonsTitle: 'Verstehe, was deine Zähne schützt.',
   lessonsDescription:
-    'Sechs kurze Lektionen verbinden die Wissenschaft mit deinen täglichen Entscheidungen. Du kannst überall anfangen; die Reihenfolge ist frei.',
+    'Sechs kurze Lektionen für den Alltag. Du brauchst kein Vorwissen über Zähne. Starte, wo du möchtest.',
   lesson: 'Lektion',
   lessonOf: 'von',
   minutes: 'Min.',
@@ -520,7 +518,7 @@ const de: Dictionary = {
   diagramFallback: 'Die vollständige Erklärung',
   schematic: 'Vereinfachte Darstellung, nicht maßstabsgetreu.',
   notDiagnostic:
-    'Schematische Beispiele, keine Diagnosevorlagen. Die Kategorien können sich überschneiden; Farbe oder ein Foto sichern keine Diagnose.',
+    'Diese Bilder zeigen Möglichkeiten, keine Diagnose. Manche können zusammen auftreten. Farbe oder Foto allein zeigen nicht, was mit einem Zahn los ist.',
   lessonSources: 'Quellen dieser Lektion',
   updated: 'Inhalt aktualisiert',
   practiceTitle: 'Ein wenig Pflege, jeden Tag.',
@@ -536,13 +534,13 @@ const de: Dictionary = {
   'long-termNote': 'Pflege, die sich mit dir verändert.',
   routineNav: 'Abschnitte zur täglichen Pflege',
   why: 'Warum das hilft',
-  related: 'Die Wissenschaft dahinter',
+  related: 'Lektion lesen',
   practiceEnd: 'Bereit, die Zusammenhänge zu prüfen?',
   practiceEndText:
     'Probiere ein kurzes Quiz über die Gründe hinter diesen Gewohnheiten.',
   quizTitle: 'Was hast du gelernt?',
   quizIntro:
-    '20 Fragen. Ohne Zeitdruck. Zu jeder Antwort gibt es eine Erklärung.',
+    '20 Fragen zum Alltag. Lass dir Zeit und lerne dabei. Du brauchst kein Vorwissen über Zähne.',
   quizStart: 'Quiz starten',
   quizNote:
     'Dein Versuch bleibt in diesem Tab gespeichert. Du kannst die Sprache wechseln, ohne deinen Fortschritt zu verlieren.',
@@ -551,7 +549,7 @@ const de: Dictionary = {
   nextQuestion: 'Nächste Frage',
   seeResults: 'Ergebnis ansehen',
   correct: 'Das stimmt.',
-  incorrect: 'Nicht richtig. Hier ist die Erklärung.',
+  incorrect: 'Noch nicht ganz. Schauen wir uns die Antwort an.',
   correctAnswer: 'Richtige Antwort',
   answerExplanation: 'Warum diese Antwort stimmt',
   resultTitle: 'Verständnis ist, was zählt.',
@@ -560,7 +558,7 @@ const de: Dictionary = {
   allCorrect:
     'Du kennst die Grundlagen gut. Halte deine Übersicht zur täglichen Pflege griffbereit.',
   reviewDescription:
-    'Diese Lektionen erklären die Themen hinter den Fragen, die du noch nicht richtig beantwortet hast.',
+    'Lies diese Lektionen noch einmal, wenn du etwas auffrischen möchtest.',
   answerReview: 'Alle Antworten ansehen',
   yourAnswer: 'Deine Antwort',
   retry: 'Erneut versuchen',

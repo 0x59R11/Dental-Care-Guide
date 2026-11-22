@@ -1,202 +1,202 @@
 {
   "tooth-enamel": {
-    "prompt": "Which explanation distinguishes early enamel repair from replacing a missing piece of enamel?",
+    "prompt": "Can a missing piece of enamel grow back?",
     "options": {
-      "a": "Minerals can return to weakened enamel, but a missing piece does not regrow.",
-      "b": "New enamel cells can replace weakened areas, but need more time to fill holes.",
-      "c": "Saliva can replace small missing pieces, but fluoride is needed for larger ones.",
-      "d": "Minerals can strengthen intact enamel, but cannot enter an early weakened area."
+      "a": "No, but early weakened areas can become stronger.",
+      "b": "Yes, if you brush harder.",
+      "c": "Yes, saliva can fill the gap.",
+      "d": "Yes, if the tooth does not hurt."
     },
-    "explanation": "Early mineral loss can sometimes be remineralized while the surface is intact. Enamel has no living cells that regrow a missing piece. Gaining minerals and restoring the original tooth shape are different processes; the size of a hole does not make saliva able to fill it."
+    "explanation": "Enamel is the hard outer covering of a tooth. Early damage can sometimes improve, but a missing piece cannot grow back."
   },
   "tooth-pulp": {
-    "prompt": "Why can deeper decay threaten the pulp differently from early enamel mineral loss?",
+    "prompt": "What is inside the soft center of a tooth?",
     "options": {
-      "a": "The pulp stores the minerals that acids first remove from enamel.",
-      "b": "The pulp contains living tissue that can become inflamed or infected.",
-      "c": "The pulp produces the biofilm that spreads outward through dentin.",
-      "d": "The pulp is the layer that first meets acids from food and drinks."
+      "a": "Only hard enamel.",
+      "b": "Nerves and blood vessels.",
+      "c": "Bits of food.",
+      "d": "A layer of plaque."
     },
-    "explanation": "The pulp contains nerves and blood vessels, protected by dentin and enamel. Deep disease may irritate or infect this living tissue. It is not a mineral store or a source of plaque. Early lesions can be painless, and deeper disease does not follow a fixed symptom timetable."
+    "explanation": "The soft center is called the pulp. The layers around it help protect these nerves and blood vessels."
   },
   "plaque-acids": {
-    "prompt": "Which sequence best explains caries-related mineral loss?",
+    "prompt": "How can plaque cause a cavity?",
     "options": {
-      "a": "Carbohydrates lower enamel pH directly, then bacteria collect in the weakened area.",
-      "b": "Plaque blocks mineral entry, then enamel breaks down mainly from chewing.",
-      "c": "Bacteria metabolize carbohydrates, producing acids that can dissolve enamel minerals.",
-      "d": "Bacteria consume enamel minerals, producing acids mainly after a hole forms."
+      "a": "It wears teeth down when you chew.",
+      "b": "It stops teeth from growing.",
+      "c": "Its bacteria use sugar and make acids that weaken teeth.",
+      "d": "It dries out the tooth."
     },
-    "explanation": "Some biofilm bacteria use fermentable carbohydrates for energy and produce acids. Lower pH favors mineral loss. This simplified chain does not mean every episode forms a cavity: saliva, fluoride, plaque control, and exposure patterns influence the balance. Direct dietary acid damage is a different mechanism."
+    "explanation": "Plaque is a sticky layer of bacteria. Some bacteria use sugar and make acids; repeated acid attacks can eventually cause a hole."
   },
   "early-minerals": {
-    "prompt": "A dentist identifies an early enamel lesion with an intact surface. The person improves cleaning, fluoride use, and eating habits. What is a reasonable expectation?",
+    "prompt": "A dentist finds early damage before a hole has formed. What may help?",
     "options": {
-      "a": "The lesion will need restoration if its color remains unchanged.",
-      "b": "The surface will recover once plaque bacteria have been eliminated.",
-      "c": "The lesion's future depends mainly on whether it becomes sensitive.",
-      "d": "The lesion may stop progressing and regain minerals, with monitoring."
+      "a": "Waiting until it hurts.",
+      "b": "Brushing only when the tooth feels rough.",
+      "c": "Avoiding all cold food.",
+      "d": "Fluoride toothpaste, daily cleaning, and less sugar."
     },
-    "explanation": "Better conditions may arrest an early lesion and allow remineralization, but neither outcome is guaranteed. A remaining mark does not by itself mean treatment failed. Monitoring assesses the lesion over time; eliminating all bacteria or waiting for pain is not the goal."
+    "explanation": "These habits can help an early weakened area become stronger or stop getting worse. Keep the follow-up visits your dentist recommends."
   },
   "plaque-between-meals": {
-    "prompt": "Someone has not eaten for several hours and still has plaque. Which explanation is most accurate?",
+    "prompt": "You have not eaten for a few hours. What happens to plaque?",
     "options": {
-      "a": "Bacterial metabolism can continue, while acid levels depend on fuel and protection.",
-      "b": "Acid production pauses until food supplies a new source of carbohydrates.",
-      "c": "Stored carbohydrates sustain the same acid output as frequent sugary sipping.",
-      "d": "Saliva clears bacterial fuel, so plaque mainly affects the gums between meals."
+      "a": "It can stay on your teeth, so regular cleaning still matters.",
+      "b": "It disappears on its own.",
+      "c": "It turns into healthy enamel.",
+      "d": "It can no longer affect your teeth or gums."
     },
-    "explanation": "Biofilm bacteria do not simply switch off between meals. Some can use carbohydrate reserves, although activity and acid output vary. Saliva buffers acids and supports mineral recovery. Neither a guaranteed pause nor unchanged high acid production can be inferred from time since eating."
+    "explanation": "Plaque does not disappear between meals. Brushing and cleaning between teeth help remove it."
   },
   "plaque-low-sugar": {
-    "prompt": "Why does reducing sugar intake not remove the need for plaque control?",
+    "prompt": "You eat fewer sweets. Why do you still need to brush?",
     "options": {
-      "a": "Cleaning is needed mainly to remove sugars that would otherwise remain until the next meal.",
-      "b": "Plaque can retain acid-producing communities and contribute to gum inflammation.",
-      "c": "With low sugar intake, bacterial acid exposure becomes negligible even when plaque accumulates.",
-      "d": "Cleaning matters chiefly because fluoride works after the tooth is free of bacteria."
+      "a": "Brushing is only needed after dessert.",
+      "b": "Plaque can still build up and harm teeth and gums.",
+      "c": "Brushing is only for fresh breath.",
+      "d": "Teeth only need cleaning if they hurt."
     },
-    "explanation": "Less sugar reduces a major challenge but does not make retained plaque harmless. Other fermentable carbohydrates and bacterial reserves can supply fuel, and plaque can inflame gums. Cleaning manages the biofilm rather than sterilizing teeth. Low sugar intake alone does not establish negligible acid activity."
+    "explanation": "Eating less sugar helps protect teeth, but it does not remove plaque. Keep brushing with fluoride toothpaste and cleaning between teeth."
   },
   "sipping-frequency": {
-    "prompt": "Two people drink the same sweet drink: one with lunch, the other in small sips all afternoon. What difference is reasonable to expect?",
+    "prompt": "Why is sipping a sugary drink all afternoon hard on teeth?",
     "options": {
-      "a": "Equal sugar amounts produce similar acid exposure regardless of drinking pattern.",
-      "b": "Repeated sips can prolong acid challenges, alongside other factors affecting risk.",
-      "c": "The lunch pattern reduces risk chiefly because food absorbs the drink's sugar.",
-      "d": "The sipping pattern gives saliva more recovery time between sugar exposures."
+      "a": "Only the total sugar amount matters.",
+      "b": "Each sip gives bacteria more sugar to make acid.",
+      "c": "Small sips protect teeth from sugar.",
+      "d": "Only the temperature of the drink matters."
     },
-    "explanation": "Repeated sips deliver fresh fuel and may leave less opportunity for recovery. Both quantity and frequency matter, along with saliva, fluoride, and plaque. Drinking with lunch does not neutralize the sugar or guarantee a lower individual risk when other factors differ."
+    "explanation": "Repeated sips mean repeated contact with sugar. Having a sweet drink with a meal avoids prolonged sipping, but the total amount of sugar still matters."
   },
   "sugar-free-acid": {
-    "prompt": "A person replaces a sweet acidic drink with a sugar-free acidic one but keeps sipping for hours. What remains relevant?",
+    "prompt": "Can a sugar-free drink still harm teeth if it is acidic?",
     "options": {
-      "a": "Acids in the drink can still cause erosion directly.",
-      "b": "Plaque must convert the drink's acids into sugar before damage occurs.",
-      "c": "Less bacterial fuel also removes the drink's potential for erosion.",
-      "d": "The remaining acid exposure primarily increases remineralization."
+      "a": "Yes, the drink's acids can wear away the tooth surface.",
+      "b": "No, sugar-free always means safe for teeth.",
+      "c": "Only if the drink is warm.",
+      "d": "No, acids make enamel stronger."
     },
-    "explanation": "Removing sugar reduces one source of bacterial fuel, but the drink's own acids can dissolve tooth minerals without bacteria. That is erosion. Sugar-free does not mean acid-free; avoiding prolonged acid exposure still matters."
+    "explanation": "Sugar-free does not mean acid-free. Acids in a drink can damage teeth directly, even without sugar."
   },
   "dual-exposure": {
-    "prompt": "A person often sips a drink containing both sugar and acids. Which explanation best separates the two possible mechanisms?",
+    "prompt": "A drink contains sugar and acids. Why can both be a problem?",
     "options": {
-      "a": "Sugar causes erosion directly; drink acids feed bacteria that cause caries.",
-      "b": "Both ingredients cause caries through bacterial fermentation of the drink.",
-      "c": "Drink acids can cause erosion; bacteria can use its sugar to produce caries-related acids.",
-      "d": "Both ingredients cause erosion, while plaque mostly changes where it appears."
+      "a": "Only the sugar can affect teeth.",
+      "b": "Only the acids already in the drink can affect teeth.",
+      "c": "Bacteria use the sugar to make acid, and the drink already contains acid.",
+      "d": "The sugar makes the acids harmless."
     },
-    "explanation": "The drink supplies direct acids and fermentable sugar. Direct acid dissolution is erosion; biofilm acid production contributes to caries. They can affect the same tooth, but they are not interchangeable names for one mechanism. Changing one ingredient does not necessarily remove both exposures."
+    "explanation": "Bacteria can turn sugar into acids that weaken teeth. The drink's own acids can also wear away the surface."
   },
   "saliva-role": {
-    "prompt": "Which combination best describes saliva's protective functions?",
+    "prompt": "How does saliva help protect your teeth?",
     "options": {
-      "a": "Removing attached plaque, rebuilding missing enamel, and buffering acids.",
-      "b": "Clearing residues, removing attached plaque, and supplying minerals.",
-      "c": "Supplying fluoride, removing plaque, and sealing early lesions.",
-      "d": "Clearing residues, buffering acids, and supplying calcium and phosphate."
+      "a": "It removes stuck-on plaque.",
+      "b": "It rebuilds chipped enamel.",
+      "c": "It replaces the fluoride in toothpaste.",
+      "d": "It makes acids less harmful and supplies minerals."
     },
-    "explanation": "Saliva clears residues, buffers acids, and supplies calcium and phosphate that support remineralization. It does not replace mechanical plaque removal or restore a missing piece. Fluoride toothpaste provides an additional protective contribution. Clearing loose residues is different from removing attached plaque."
+    "explanation": "Saliva helps wash away loose food and makes the mouth less acidic. Its minerals can help strengthen early weakened areas, but it cannot replace brushing."
   },
   "fluoride-role": {
-    "prompt": "A person brushes carefully but chooses toothpaste without fluoride, believing cleaning does the whole job. What benefit is missing?",
+    "prompt": "Why choose toothpaste with fluoride?",
     "options": {
-      "a": "Fluoride supplies the calcium that makes up most enamel.",
-      "b": "Fluoride removes plaque in places the brush cannot reach.",
-      "c": "Fluoride reduces mineral loss and supports early mineral recovery.",
-      "d": "Fluoride restores the original shape of damaged enamel."
+      "a": "It removes plaque without brushing.",
+      "b": "It replaces cleaning between teeth.",
+      "c": "It helps strengthen enamel and protect against decay.",
+      "d": "It fills a hole in a tooth."
     },
-    "explanation": "Mechanical cleaning and fluoride have complementary roles. Fluoride helps reduce demineralization and supports remineralization; it does not brush inaccessible surfaces or rebuild holes. Good cleaning does not make this additional mineral protection redundant."
+    "explanation": "Fluoride helps protect the hard outer surface of teeth. It supports repair of early damage, but cannot fill a hole."
   },
   "dry-mouth": {
-    "prompt": "Someone develops persistent dry mouth after starting a prescribed medicine, despite an unchanged cleaning routine. What is the best next step?",
+    "prompt": "Your mouth stays dry after starting a medicine. What should you do?",
     "options": {
-      "a": "Increase water intake and wait for pain before seeking further advice.",
-      "b": "Discuss dryness and dental protection with a clinician while continuing prescribed care.",
-      "c": "Stop the medicine briefly to see whether normal saliva flow returns.",
-      "d": "Replace evening brushing with gum to compensate for reduced saliva."
+      "a": "Stop the medicine yourself.",
+      "b": "Ask a dentist or doctor for advice.",
+      "c": "Stop brushing until it improves.",
+      "d": "Ignore it unless a tooth hurts."
     },
-    "explanation": "Reduced saliva can weaken acid buffering and mineral protection even when brushing is unchanged. Discuss the symptom and preventive needs with a clinician; do not stop prescribed medicine yourself. Water or sugar-free gum may help comfort or saliva flow, but do not replace assessment and cleaning."
+    "explanation": "Saliva helps protect teeth, so ongoing dry mouth is worth discussing. Do not stop a prescribed medicine without medical advice."
   },
   "early-detection": {
-    "prompt": "A person has no tooth pain and wants to postpone assessment of a new tooth change. Which reasoning best supports arranging a visit?",
+    "prompt": "A new mark on your tooth does not hurt. What should you do?",
     "options": {
-      "a": "Lesions may be painless, and assessment can identify appropriate early care.",
-      "b": "Pain mainly begins when a lesion is inactive, so absence of pain suggests activity.",
-      "c": "A painless lesion generally stays in enamel, but a visit can confirm its color.",
-      "d": "An examination is most useful after sensitivity reveals the lesion's depth."
+      "a": "Arrange a dental check rather than wait for pain.",
+      "b": "Wait until it becomes painful.",
+      "c": "Scrape it with a sharp tool.",
+      "d": "Assume the tooth is healthy."
     },
-    "explanation": "Neither absence nor intensity of pain reliably establishes whether caries is present or how deep it is. Early assessment can broaden care options. Waiting for sensitivity may allow disease to progress; examination does not mean that every painless tooth needs treatment."
+    "explanation": "Tooth decay can be painless at first. A dentist can check the change and explain whether care is needed."
   },
   "lost-structure": {
-    "prompt": "A dentist has confirmed a cavity. The person starts fluoride toothpaste and asks whether further assessment is needed. Which answer is best?",
+    "prompt": "Can fluoride toothpaste fill an existing hole in a tooth?",
     "options": {
-      "a": "Wait for the edges to refill before deciding whether treatment is needed.",
-      "b": "Judge success by whether the cavity becomes darker and less sensitive.",
-      "c": "Continue prevention and professional follow-up because missing structure will not regrow.",
-      "d": "Treat the cavity as inactive once regular fluoride use has begun."
+      "a": "Yes, after a few days.",
+      "b": "Yes, if you use a large amount.",
+      "c": "No, keep using it and get advice from a dentist.",
+      "d": "Only if the hole is dark."
     },
-    "explanation": "Fluoride and cleaning remain useful, and appropriate care may arrest a lesion. They do not regrow missing structure. Management depends on depth, activity, cleaning access, and professional findings; some lesions can be managed nonrestoratively. Neither darker color nor toothpaste use proves arrest."
+    "explanation": "Fluoride still helps protect teeth, but missing tooth material will not grow back. A dentist can advise how to care for the hole."
   },
   "dark-spot": {
-    "prompt": "A painless dark mark appears in a molar groove. What can be concluded from this observation alone?",
+    "prompt": "You notice a dark spot on a tooth. What does it mean?",
     "options": {
-      "a": "It is probably a stained fissure because no discomfort is present.",
-      "b": "It is probably inactive caries because active lesions are lighter.",
-      "c": "It is probably a cavity because pigment collects in lost structure.",
-      "d": "Its cause and activity remain uncertain without dental assessment."
+      "a": "It is always a cavity.",
+      "b": "It is harmless if there is no pain.",
+      "c": "It always needs a filling.",
+      "d": "Color alone cannot tell you; a dentist needs to check."
     },
-    "explanation": "A dark groove may be stained intact enamel, an early lesion, or a cavitated or inactive lesion. These possibilities overlap: a cavity can also be inactive. Color and absence of pain cannot distinguish them. Clinicians consider location, texture, plaque stagnation, and other findings; a photograph is not enough."
+    "explanation": "A dark spot may be a stain or a sign of decay. Its color alone does not show what is happening inside the tooth."
   },
   "lesion-arrest": {
-    "prompt": "After preventive care, a dentist judges a lesion inactive, but a dark mark remains. Which interpretation is justified?",
+    "prompt": "Your dentist says an area of decay has stopped getting worse. Must the mark disappear?",
     "options": {
-      "a": "The original enamel shape has returned even if the pigment remains.",
-      "b": "Progression has stopped for now; the mark can persist and monitoring still matters.",
-      "c": "The lesion has gained back all its lost minerals but retained its color.",
-      "d": "The tooth now has the same future risk regardless of changes in daily care."
+      "a": "Yes, otherwise the care has failed.",
+      "b": "No, a mark can remain even when the damage has stopped.",
+      "c": "Yes, it must turn white.",
+      "d": "No, because every dark mark is harmless."
     },
-    "explanation": "Arrest means that a lesion is no longer progressing, not that all minerals or missing structure have returned. Discoloration may remain. Future conditions can change, so prevention and monitoring continue. Activity and appearance are related clinical observations, not equivalent measures."
+    "explanation": "A mark can remain after decay stops getting worse. Keep up daily care and the checks your dentist recommends."
   },
   "stable-lesion": {
-    "prompt": "What does little or no detectable lesion progression over time establish?",
+    "prompt": "A weakened area has not worsened at recent dental checks. What should you do next?",
     "options": {
-      "a": "Mineral exchange has stopped at that location.",
-      "b": "The lesion has recovered its original mineral content.",
-      "c": "The lesion will stay inactive even if conditions change.",
-      "d": "The observed lesion is stable over that period, while mineral exchange may continue."
+      "a": "Stop using fluoride toothpaste.",
+      "b": "Cancel all future checks.",
+      "c": "Judge the tooth only by its color.",
+      "d": "Keep up daily care and agreed dental checks."
     },
-    "explanation": "Stability is an observation over time, not proof of a perfect microscopic balance, complete remineralization, or permanent protection. A clinician combines follow-up with activity findings. Arrest, mineral recovery, and restoring missing structure describe different outcomes."
+    "explanation": "No recent change is encouraging, but it does not guarantee the tooth will stay the same. Daily care and follow-up still matter."
   },
   "brushing-routine": {
-    "prompt": "Someone brushes twice daily with fluoride toothpaste but rushes over inner surfaces and rinses thoroughly afterward. Which change best addresses both gaps?",
+    "prompt": "What is a helpful everyday brushing routine?",
     "options": {
-      "a": "Brush more firmly to compensate for missed areas and retain the same rinse.",
-      "b": "Keep the same coverage but use mouthwash instead of the evening brushing.",
-      "c": "Extend the morning brushing and omit the evening brushing if teeth feel smooth.",
-      "d": "Clean all surfaces gently and spit out excess paste without immediately rinsing."
+      "a": "Brush once a day with plenty of pressure.",
+      "b": "Clean only the front surfaces.",
+      "c": "Use mouthwash instead of brushing.",
+      "d": "Brush gently twice daily with fluoride toothpaste; spit out the excess."
     },
-    "explanation": "Coverage matters alongside brushing twice daily for about two minutes, including before bed. Spitting without an immediate water rinse retains fluoride. Extra pressure does not compensate for missed surfaces, and mouthwash or a long morning session does not replace evening brushing."
+    "explanation": "Brush for about two minutes, including before bed, and cover every surface. Spit out excess paste without immediately rinsing with water, so fluoride stays on teeth longer."
   },
   "between-teeth": {
-    "prompt": "A person brushes well but notices plaque between teeth. A large interdental brush is difficult to insert. What is the best adjustment?",
+    "prompt": "A brush for cleaning between teeth feels too tight. What should you do?",
     "options": {
-      "a": "Use more pressure to make space for the brush over several days.",
-      "b": "Choose a comfortably fitting tool or floss, with advice on technique.",
-      "c": "Brush longer on the outer surfaces before trying interdental cleaning.",
-      "d": "Use water rinses for tight spaces and reserve tools for visible food."
+      "a": "Push it through harder.",
+      "b": "Try a comfortably fitting tool or floss, and ask for advice.",
+      "c": "Stop cleaning between teeth altogether.",
+      "d": "Use a sharp object instead."
     },
-    "explanation": "A toothbrush may not reach interdental surfaces well. Use a suitable tool gently; floss may suit tight contacts and interdental brushes suitably sized spaces. Do not force a brush. This supports plaque control and gum health, without guaranteeing that a particular device prevents every cavity."
+    "explanation": "Do not force a brush between teeth. A dental professional can help you choose a suitable size or show you how to use floss."
   },
   "tailored-care": {
-    "prompt": "Two friends with different dental histories want the same examination interval. What is the best approach?",
+    "prompt": "How often should you have a dental check?",
     "options": {
-      "a": "Agree individual intervals with a dentist based on findings and risk.",
-      "b": "Use the shorter interval until both report no tooth sensitivity.",
-      "c": "Use the same interval if both brush with fluoride toothpaste.",
-      "d": "Choose intervals chiefly by how much visible plaque each notices."
+      "a": "Agree a schedule with your dentist for your needs.",
+      "b": "Only when a tooth hurts.",
+      "c": "Use your friend's schedule.",
+      "d": "Never, if you brush twice a day."
     },
-    "explanation": "Preventive care is tailored to clinical findings and individual risks, including previous disease and saliva protection. A shared brushing routine or absence of symptoms does not establish equal needs. Professional examinations and everyday care complement each other."
+    "explanation": "People have different dental needs. Your dentist can suggest a schedule based on your teeth, gums, and risk of problems."
   }
 }

@@ -100,19 +100,35 @@ The revised content separates structural severity (including cavitation) from le
 | Noncavitated lesions may arrest and remineralize; missing tooth shape does not regrow. Some cavitated lesions can be managed nonrestoratively. | Management and monitoring depend on professional findings, depth, activity and cleaning access. Home fluoride is not a guarantee of arrest. No prescription-strength doses are recommended.                               | [NIDCR](https://www.nidcr.nih.gov/health-info/tooth-decay), [ADA management guidelines](https://www.ada.org/resources/research/science/evidence-based-dental-research/caries-management-clinical-practice-guidelines/) |
 | Less sugar does not remove the need for plaque control.                                                                                        | Other fermentable substrates and reserves can supply fuel; plaque also contributes to gingival inflammation. Do not claim inevitable active decay in retained plaque.                                                     | Existing ADA home-care source and biofilm study above                                                                                                                                                                  |
 
+## Everyday-language revision — 2026-11-22
+
+All six lessons, 20 questions, and eight diagram caption sets were rewritten together in English, Russian, Ukrainian, and German for readers without dental training. Necessary terms are explained immediately. Bacterial fuel reserves and clinical distinctions about progression, stability, arrest, and mineral recovery sit in optional native expandable sections. Practical advice and warning signs remain in the main text.
+
+Questions each check one useful idea, with four distinct answers and a short explanation. They do not require optional reading. The fixed difficulty/scenario quotas and unused metadata have been removed; all question IDs, option IDs, answer keys, lesson links, and per-lesson question counts are retained. Quiz version 3 invalidates earlier attempts because the assessment meaning has changed.
+
+The simplification was checked against [NIDCR tooth decay information](https://www.nidcr.nih.gov/health-info/tooth-decay), [NHS brushing advice](https://www.nhs.uk/live-well/healthy-teeth-and-gums/how-to-keep-your-teeth-clean/), [NHS abscess guidance](https://www.nhs.uk/conditions/dental-abscess/), and [ADA erosion guidance](https://www.ada.org/resources/ada-library/oral-health-topics/dental-erosion). This targeted source check on 2026-11-22 does not replace the full source review or imply clinical sign-off. No new treatment recommendations or doses were introduced.
+
 ### Learning objectives and assessment map
 
-Every objective below is taught in the mapped lesson; the question's shared `lessonId` is the navigation contract. Localized JSON provides prompt, identical option IDs and explanation. Correctness is defined once in the shared question data, never separately in a translation. The explanation includes the reasoning and a misconception, so a separate explanation/objective registry is unnecessary.
+Every objective below is taught in the main text of its linked lesson. Localized JSON supplies prompts, options, and explanations; the shared question data defines correctness once for all languages. The main reading and quiz avoid testing terminology from the optional sections.
 
-| Lesson                 | Question IDs                                                             | Learning objective                                                                                             | Foundational / application / challenging | Scenarios |
-| ---------------------- | ------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------- | ---------------------------------------- | --------- |
-| understanding-teeth    | tooth-enamel, tooth-pulp                                                 | Distinguish mineral recovery from regrowth; relate tissue function to vulnerability.                           | 2 / 0 / 0                                | 0         |
-| how-cavities-develop   | plaque-acids, early-minerals, plaque-between-meals, plaque-low-sugar     | Explain the acid pathway, early recovery, variable intermeal metabolism and continued need for plaque control. | 1 / 1 / 2                                | 2         |
-| sugar-food-and-acids   | sipping-frequency, sugar-free-acid, dual-exposure                        | Apply exposure patterns and distinguish direct erosion from biofilm-mediated acid damage.                      | 0 / 2 / 1                                | 3         |
-| saliva-and-fluoride    | saliva-role, fluoride-role, dry-mouth                                    | Explain protective functions and respond appropriately to reduced saliva or absent fluoride.                   | 1 / 2 / 0                                | 2         |
-| when-problems-progress | early-detection, lost-structure, dark-spot, lesion-arrest, stable-lesion | Recognize diagnostic uncertainty, structural limits and the meaning of arrest versus stability.                | 0 / 2 / 3                                | 4         |
-| prevention             | brushing-routine, between-teeth, tailored-care                           | Apply coverage and fluoride retention, safe interdental tool choice and individualized examination intervals.  | 0 / 3 / 0                                | 3         |
-| Total                  | 20 questions                                                             | Existing and new learning content                                                                              | 4 / 10 / 6                               | 14        |
+| Lesson                 | Question IDs                                                             | Main-reading takeaway                                                                                                                                      |
+| ---------------------- | ------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| understanding-teeth    | tooth-enamel, tooth-pulp                                                 | Early weakened enamel can improve, but missing pieces do not regrow; the soft center contains nerves and blood vessels.                                    |
+| how-cavities-develop   | plaque-acids, early-minerals, plaque-between-meals, plaque-low-sugar     | Plaque bacteria make acids from sugar; early care can help; plaque remains between meals and still needs cleaning when sugar intake falls.                 |
+| sugar-food-and-acids   | sipping-frequency, sugar-free-acid, dual-exposure                        | Repeated sugary sips matter; sugar-free can still be acidic; a drink can bring both sugar and acids.                                                       |
+| saliva-and-fluoride    | saliva-role, fluoride-role, dry-mouth                                    | Saliva and fluoride protect teeth; neither fills a hole; ongoing dry mouth needs advice without stopping prescribed medicine independently.                |
+| when-problems-progress | early-detection, lost-structure, dark-spot, lesion-arrest, stable-lesion | Do not wait for pain; toothpaste cannot fill holes; color cannot diagnose a tooth; marks can persist after improvement and follow-up still matters.        |
+| prevention             | brushing-routine, between-teeth, tailored-care                           | Brush gently twice daily with fluoride, spit without an immediate rinse, choose a comfortable cleaning tool, and agree dental checks for individual needs. |
+
+### Plain-language review criteria
+
+- Each question asks about one idea and has one clearly correct answer in every language.
+- Wrong answers represent understandable misconceptions, not fine clinical distinctions or word games.
+- Explanations are brief, respectful, and point to something taught in the main lesson.
+- The main reading defines essential terms, keeps medical qualifications, and never uses color or absence of pain as a diagnosis.
+- Optional details, diagrams, introductions, and feedback use consistent wording across all four languages.
+- Native-speaker review and a trial with everyday readers remain unchecked human reviews. Automated tests do not establish readability or medical accuracy.
 
 ### Added terminology
 

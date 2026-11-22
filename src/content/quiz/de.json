@@ -1,202 +1,202 @@
 {
   "tooth-enamel": {
-    "prompt": "Welche Erklärung unterscheidet frühe Schmelzreparatur vom Ersatz eines fehlenden Schmelzstücks?",
+    "prompt": "Kann ein fehlendes Stück Zahnschmelz nachwachsen?",
     "options": {
-      "a": "Mineralien können in geschwächten Schmelz zurückkehren; ein fehlendes Stück wächst nicht nach.",
-      "b": "Neue Schmelzzellen können geschwächte Stellen ersetzen, brauchen für Löcher aber mehr Zeit.",
-      "c": "Speichel kann kleine fehlende Stücke ersetzen; für größere ist Fluorid nötig.",
-      "d": "Mineralien können intakten Schmelz stärken, gelangen aber nicht in frühe geschwächte Stellen."
+      "a": "Nein, aber früh geschwächte Stellen können wieder stärker werden.",
+      "b": "Ja, wenn du kräftiger putzt.",
+      "c": "Ja, Speichel kann die Lücke füllen.",
+      "d": "Ja, wenn der Zahn nicht wehtut."
     },
-    "explanation": "Früher Mineralverlust lässt sich bei noch intakter Oberfläche manchmal remineralisieren. Zahnschmelz enthält keine lebenden Zellen, die ein fehlendes Stück nachbilden. Mineralgewinn und die Wiederherstellung der Zahnform sind verschiedene Vorgänge; auch ein kleines Loch wird nicht durch Speichel aufgefüllt."
+    "explanation": "Zahnschmelz ist die harte Außenschicht des Zahns. Frühe Schäden können sich manchmal bessern, aber ein fehlendes Stück wächst nicht nach."
   },
   "tooth-pulp": {
-    "prompt": "Warum gefährdet tiefe Karies die Pulpa anders als früher Mineralverlust im Schmelz?",
+    "prompt": "Was liegt im weichen Inneren eines Zahns?",
     "options": {
-      "a": "Die Pulpa speichert die Mineralien, die Säuren zuerst aus dem Schmelz lösen.",
-      "b": "Die Pulpa enthält lebendes Gewebe, das sich entzünden oder infizieren kann.",
-      "c": "Die Pulpa bildet den Biofilm, der sich durch das Dentin nach außen ausbreitet.",
-      "d": "Die Pulpa kommt zuerst mit Säuren aus Lebensmitteln und Getränken in Kontakt."
+      "a": "Nur harter Zahnschmelz.",
+      "b": "Nerven und Blutgefäße.",
+      "c": "Essensreste.",
+      "d": "Eine Schicht Zahnbelag."
     },
-    "explanation": "Die Pulpa enthält Nerven und Blutgefäße und wird durch Dentin und Schmelz geschützt. Tiefe Schäden können dieses lebende Gewebe reizen oder infizieren. Sie ist weder Mineralspeicher noch Quelle von Zahnbelag. Frühe Läsionen können schmerzlos sein; Beschwerden folgen keinem festen Zeitplan."
+    "explanation": "Das weiche Innere heißt Zahnmark oder Pulpa. Die Schichten darum schützen die Nerven und Blutgefäße."
   },
   "plaque-acids": {
-    "prompt": "Welche Abfolge erklärt kariesbedingten Mineralverlust am besten?",
+    "prompt": "Wie kann Zahnbelag ein Loch verursachen?",
     "options": {
-      "a": "Kohlenhydrate senken den pH am Schmelz direkt; danach sammeln sich Bakterien an der geschwächten Stelle.",
-      "b": "Belag verhindert die Mineralzufuhr; danach bricht Schmelz hauptsächlich durch Kauen ein.",
-      "c": "Bakterien verstoffwechseln Kohlenhydrate und bilden Säuren, die Schmelzmineralien lösen können.",
-      "d": "Bakterien verbrauchen Schmelzmineralien und bilden Säuren vorwiegend nach Entstehung eines Lochs."
+      "a": "Er reibt die Zähne beim Kauen ab.",
+      "b": "Er verhindert, dass Zähne wachsen.",
+      "c": "Seine Bakterien nutzen Zucker und bilden Säuren, die Zähne schwächen.",
+      "d": "Er trocknet den Zahn aus."
     },
-    "explanation": "Manche Biofilmbakterien gewinnen Energie aus fermentierbaren Kohlenhydraten und bilden dabei Säuren. Ein niedrigerer pH begünstigt Mineralverlust. Dieses vereinfachte Modell bedeutet nicht, dass jeder Vorgang ein Loch erzeugt: Speichel, Fluorid, Reinigung und Essgewohnheiten beeinflussen die Bilanz. Direkte Nahrungssäuren wirken über einen anderen Mechanismus."
+    "explanation": "Zahnbelag ist eine klebrige Schicht aus Bakterien. Manche nutzen Zucker und bilden Säuren; wiederholte Säureangriffe können schließlich ein Loch verursachen."
   },
   "early-minerals": {
-    "prompt": "Eine Zahnärztin stellt eine frühe Schmelzläsion mit intakter Oberfläche fest. Die Person verbessert Reinigung, Fluoridanwendung und Essgewohnheiten. Was ist realistisch?",
+    "prompt": "Bei einer Untersuchung fällt ein früher Schaden ohne Loch auf. Was kann helfen?",
     "options": {
-      "a": "Die Stelle muss restauriert werden, wenn ihre Farbe unverändert bleibt.",
-      "b": "Die Oberfläche erholt sich, sobald die Belagbakterien beseitigt sind.",
-      "c": "Die weitere Entwicklung hängt vor allem davon ab, ob die Stelle empfindlich wird.",
-      "d": "Die Läsion kann zum Stillstand kommen und Mineralien gewinnen; Kontrollen bleiben nötig."
+      "a": "Warten, bis es wehtut.",
+      "b": "Nur putzen, wenn sich der Zahn rau anfühlt.",
+      "c": "Auf alle kalten Speisen verzichten.",
+      "d": "Fluoridzahnpasta, tägliches Reinigen und weniger Zucker."
     },
-    "explanation": "Günstigere Bedingungen können eine frühe Läsion anhalten und Remineralisation ermöglichen, garantieren aber beides nicht. Eine bleibende Verfärbung bedeutet für sich genommen keinen Misserfolg. Kontrollen beurteilen Veränderungen; alle Bakterien zu beseitigen oder auf Schmerzen zu warten ist nicht das Ziel."
+    "explanation": "Diese Gewohnheiten können eine geschwächte Stelle stärken oder die Verschlechterung stoppen. Halte auch die empfohlenen Kontrolltermine ein."
   },
   "plaque-between-meals": {
-    "prompt": "Jemand hat seit mehreren Stunden nichts gegessen, hat aber noch Zahnbelag. Welche Erklärung trifft am besten zu?",
+    "prompt": "Du hast seit einigen Stunden nichts gegessen. Was passiert mit Zahnbelag?",
     "options": {
-      "a": "Bakterieller Stoffwechsel kann weiterlaufen; die Säurebelastung hängt von Nahrung und Schutzfaktoren ab.",
-      "b": "Die Säurebildung pausiert, bis neue Kohlenhydrate aus Nahrung eintreffen.",
-      "c": "Gespeicherte Kohlenhydrate halten die Säurebildung genauso hoch wie häufiges süßes Trinken.",
-      "d": "Speichel entfernt die Bakteriennahrung; zwischen Mahlzeiten betrifft Belag deshalb vor allem das Zahnfleisch."
+      "a": "Er kann auf den Zähnen bleiben; regelmäßiges Reinigen bleibt wichtig.",
+      "b": "Er verschwindet von selbst.",
+      "c": "Er wird zu gesundem Zahnschmelz.",
+      "d": "Er kann Zähnen und Zahnfleisch nicht mehr schaden."
     },
-    "explanation": "Biofilmbakterien werden zwischen Mahlzeiten nicht einfach ausgeschaltet. Manche nutzen Kohlenhydratreserven, wobei Stoffwechsel und Säurebildung schwanken. Speichel puffert Säuren und unterstützt Mineralgewinn. Aus der Zeit seit dem Essen folgt weder eine sichere Pause noch eine gleichbleibend hohe Säureproduktion."
+    "explanation": "Zahnbelag verschwindet nicht zwischen den Mahlzeiten. Putzen und das Reinigen der Zahnzwischenräume helfen, ihn zu entfernen."
   },
   "plaque-low-sugar": {
-    "prompt": "Warum macht weniger Zucker die Belagentfernung nicht überflüssig?",
+    "prompt": "Du isst weniger Süßes. Warum musst du trotzdem putzen?",
     "options": {
-      "a": "Reinigung dient vor allem dazu, Zucker zu entfernen, der sonst bis zur nächsten Mahlzeit bleibt.",
-      "b": "Belag kann säurebildende Gemeinschaften beherbergen und Zahnfleischentzündungen fördern.",
-      "c": "Bei wenig Zucker wird die bakterielle Säurebelastung vernachlässigbar, selbst wenn sich Belag ansammelt.",
-      "d": "Reinigung ist vor allem wichtig, weil Fluorid erst auf bakterienfreien Zähnen wirkt."
+      "a": "Putzen ist nur nach dem Nachtisch nötig.",
+      "b": "Belag kann sich weiter ansammeln und Zähnen und Zahnfleisch schaden.",
+      "c": "Putzen ist nur für frischen Atem da.",
+      "d": "Zähne müssen nur bei Schmerzen gereinigt werden."
     },
-    "explanation": "Weniger Zucker verringert eine wichtige Belastung, macht verbleibenden Belag aber nicht harmlos. Andere fermentierbare Kohlenhydrate und bakterielle Reserven können Nahrung liefern; Belag kann außerdem das Zahnfleisch entzünden. Reinigung kontrolliert den Biofilm, statt Zähne zu sterilisieren. Wenig Zucker allein belegt keine vernachlässigbare Säureaktivität."
+    "explanation": "Weniger Zucker hilft den Zähnen, entfernt aber keinen Belag. Putze weiter mit Fluoridzahnpasta und reinige die Zahnzwischenräume."
   },
   "sipping-frequency": {
-    "prompt": "Zwei Personen trinken dieselbe Menge eines süßen Getränks: eine zum Mittagessen, die andere schluckweise über den Nachmittag. Welcher Unterschied ist plausibel?",
+    "prompt": "Warum belastet ständiges Nippen an einem süßen Getränk die Zähne?",
     "options": {
-      "a": "Gleiche Zuckermengen erzeugen unabhängig vom Trinkmuster eine ähnliche Säurebelastung.",
-      "b": "Wiederholte Schlucke können Säurebelastungen verlängern; weitere Risikofaktoren spielen ebenfalls mit.",
-      "c": "Trinken zum Essen senkt das Risiko vor allem, weil die Nahrung den Getränkezucker aufnimmt.",
-      "d": "Schluckweises Trinken gibt dem Speichel mehr Erholungszeit zwischen Zuckerkontakten."
+      "a": "Nur die gesamte Zuckermenge zählt.",
+      "b": "Jeder Schluck gibt Bakterien neuen Zucker für die Säurebildung.",
+      "c": "Kleine Schlucke schützen Zähne vor Zucker.",
+      "d": "Nur die Temperatur des Getränks zählt."
     },
-    "explanation": "Wiederholte Schlucke liefern neue Nahrung und können weniger Gelegenheit zur Erholung lassen. Menge und Häufigkeit zählen ebenso wie Speichel, Fluorid und Belag. Das Mittagessen neutralisiert Zucker nicht und garantiert bei unterschiedlichen übrigen Faktoren kein niedrigeres individuelles Risiko."
+    "explanation": "Häufige Schlucke bedeuten häufigen Kontakt mit Zucker. Ein süßes Getränk zur Mahlzeit vermeidet stundenlanges Nippen; die gesamte Zuckermenge bleibt trotzdem wichtig."
   },
   "sugar-free-acid": {
-    "prompt": "Jemand ersetzt ein süßes saures Getränk durch ein zuckerfreies saures Getränk, trinkt es aber weiterhin stundenlang schluckweise. Was bleibt relevant?",
+    "prompt": "Kann ein zuckerfreies Getränk den Zähnen schaden, wenn es sauer ist?",
     "options": {
-      "a": "Die Getränkesäuren können weiterhin direkt Erosion verursachen.",
-      "b": "Belag muss die Getränkesäuren vor einer Schädigung zunächst in Zucker umwandeln.",
-      "c": "Weniger Bakteriennahrung beseitigt zugleich das Erosionspotenzial des Getränks.",
-      "d": "Die verbleibende Säurebelastung verstärkt hauptsächlich die Remineralisation."
+      "a": "Ja, seine Säuren können die Zahnoberfläche angreifen.",
+      "b": "Nein, zuckerfrei heißt immer zahnschonend.",
+      "c": "Nur wenn das Getränk warm ist.",
+      "d": "Nein, Säuren stärken den Zahnschmelz."
     },
-    "explanation": "Ohne Zucker entfällt eine Quelle bakterieller Nahrung. Die eigenen Säuren des Getränks können Zahnmineralien jedoch ohne Bakterien lösen: Das ist Erosion. Zuckerfrei heißt nicht säurefrei; lang anhaltende Säurekontakte zu vermeiden bleibt sinnvoll."
+    "explanation": "Zuckerfrei heißt nicht säurefrei. Die Säuren im Getränk können Zähne direkt schädigen, auch ohne Zucker."
   },
   "dual-exposure": {
-    "prompt": "Jemand trinkt häufig schluckweise ein Getränk mit Zucker und Säuren. Welche Erklärung trennt die beiden möglichen Mechanismen am besten?",
+    "prompt": "Ein Getränk enthält Zucker und Säuren. Warum kann beides problematisch sein?",
     "options": {
-      "a": "Zucker verursacht direkt Erosion; Getränkesäuren ernähren kariesverursachende Bakterien.",
-      "b": "Beide Zutaten verursachen Karies durch bakterielle Vergärung des Getränks.",
-      "c": "Getränkesäuren können Erosion verursachen; Bakterien können aus dem Zucker kariesrelevante Säuren bilden.",
-      "d": "Beide Zutaten verursachen Erosion; Belag verändert hauptsächlich deren Lage."
+      "a": "Nur der Zucker kann Zähne angreifen.",
+      "b": "Nur die Säuren im Getränk können Zähne angreifen.",
+      "c": "Bakterien bilden aus Zucker Säuren, und das Getränk enthält bereits Säuren.",
+      "d": "Der Zucker macht die Säuren harmlos."
     },
-    "explanation": "Das Getränk liefert direkte Säuren und fermentierbaren Zucker. Direkte Säureauflösung ist Erosion; Säurebildung im Biofilm trägt zu Karies bei. Beide Vorgänge können denselben Zahn betreffen, sind aber nicht dasselbe. Eine veränderte Zutat beseitigt nicht unbedingt beide Belastungen."
+    "explanation": "Bakterien können Zucker in Säuren umwandeln, die Zähne schwächen. Die eigenen Säuren des Getränks können die Oberfläche ebenfalls angreifen."
   },
   "saliva-role": {
-    "prompt": "Welche Kombination beschreibt die Schutzfunktionen des Speichels am besten?",
+    "prompt": "Wie schützt Speichel deine Zähne?",
     "options": {
-      "a": "Anhaftenden Belag entfernen, fehlenden Schmelz ersetzen und Säuren puffern.",
-      "b": "Speisereste und anhaftenden Belag entfernen sowie Mineralien liefern.",
-      "c": "Fluorid liefern, Belag entfernen und frühe Läsionen versiegeln.",
-      "d": "Speisereste entfernen, Säuren puffern sowie Kalzium und Phosphat liefern."
+      "a": "Er entfernt fest sitzenden Belag.",
+      "b": "Er baut abgebrochenen Schmelz wieder auf.",
+      "c": "Er ersetzt das Fluorid in Zahnpasta.",
+      "d": "Er schwächt die Wirkung von Säuren ab und liefert Mineralien."
     },
-    "explanation": "Speichel hilft, Reste zu beseitigen, puffert Säuren und liefert Kalzium und Phosphat für die Remineralisation. Er ersetzt weder mechanische Belagentfernung noch fehlende Zahnsubstanz. Fluoridzahnpasta bietet zusätzlichen Schutz. Lose Reste wegzuspülen ist etwas anderes, als anhaftenden Belag zu entfernen."
+    "explanation": "Speichel hilft, lose Essensreste wegzuspülen, und macht den Mund weniger sauer. Seine Mineralien können geschwächte Stellen stärken, aber er ersetzt das Putzen nicht."
   },
   "fluoride-role": {
-    "prompt": "Jemand putzt sorgfältig, wählt aber Zahnpasta ohne Fluorid, weil Reinigung angeblich alles erledigt. Welcher Nutzen fehlt?",
+    "prompt": "Warum solltest du Zahnpasta mit Fluorid wählen?",
     "options": {
-      "a": "Fluorid liefert das Kalzium, das den größten Teil des Schmelzes bildet.",
-      "b": "Fluorid entfernt Belag an Stellen, die die Bürste nicht erreicht.",
-      "c": "Fluorid vermindert Mineralverlust und unterstützt frühen Mineralgewinn.",
-      "d": "Fluorid stellt die ursprüngliche Form geschädigten Schmelzes wieder her."
+      "a": "Sie entfernt Belag ohne Putzen.",
+      "b": "Sie ersetzt die Reinigung der Zahnzwischenräume.",
+      "c": "Sie stärkt den Zahnschmelz und hilft, Karies vorzubeugen.",
+      "d": "Sie füllt ein Loch im Zahn."
     },
-    "explanation": "Mechanische Reinigung und Fluorid ergänzen sich. Fluorid vermindert Demineralisation und unterstützt Remineralisation; es reinigt keine unerreichbaren Flächen und füllt keine Löcher. Gute Reinigung macht diesen zusätzlichen Mineralschutz nicht überflüssig."
+    "explanation": "Fluorid schützt die harte Außenschicht der Zähne. Es unterstützt die Erholung früher Schäden, kann aber kein Loch füllen."
   },
   "dry-mouth": {
-    "prompt": "Nach Beginn eines verschriebenen Medikaments entsteht anhaltende Mundtrockenheit, obwohl die Pflege gleich bleibt. Was ist der beste nächste Schritt?",
+    "prompt": "Seit einem neuen Medikament bleibt dein Mund trocken. Was solltest du tun?",
     "options": {
-      "a": "Mehr Wasser trinken und erst bei Schmerzen weiteren Rat suchen.",
-      "b": "Trockenheit und Zahnschutz ärztlich besprechen und die verordnete Behandlung fortsetzen.",
-      "c": "Das Medikament kurz absetzen und prüfen, ob der Speichelfluss zurückkehrt.",
-      "d": "Abendliches Putzen durch Kaugummi ersetzen, um weniger Speichel auszugleichen."
+      "a": "Das Medikament selbst absetzen.",
+      "b": "In der Zahnarztpraxis oder Arztpraxis um Rat fragen.",
+      "c": "Bis zur Besserung nicht mehr putzen.",
+      "d": "Es ignorieren, solange kein Zahn wehtut."
     },
-    "explanation": "Weniger Speichel kann Säurepufferung und Mineralschutz trotz unveränderter Reinigung schwächen. Besprich Beschwerden und Vorsorge mit einer Fachperson; setze verordnete Medikamente nicht eigenständig ab. Wasser oder zuckerfreier Kaugummi können Wohlbefinden oder Speichelfluss unterstützen, ersetzen aber weder Untersuchung noch Reinigung."
+    "explanation": "Speichel schützt die Zähne. Besprich anhaltende Trockenheit deshalb mit einer Fachperson und setze verschriebene Medikamente nicht selbst ab."
   },
   "early-detection": {
-    "prompt": "Jemand hat keine Zahnschmerzen und möchte die Untersuchung einer neuen Zahnveränderung verschieben. Welcher Grund spricht am besten für einen Termin?",
+    "prompt": "Ein neuer Fleck am Zahn tut nicht weh. Was solltest du tun?",
     "options": {
-      "a": "Läsionen können schmerzlos sein; eine Untersuchung kann passende frühe Hilfe ermöglichen.",
-      "b": "Schmerzen beginnen meist bei inaktiven Läsionen; Schmerzfreiheit spricht daher für Aktivität.",
-      "c": "Eine schmerzlose Läsion bleibt meist im Schmelz; ein Termin kann aber ihre Farbe bestätigen.",
-      "d": "Eine Untersuchung ist am nützlichsten, nachdem Empfindlichkeit die Tiefe der Läsion erkennen lässt."
+      "a": "Einen Zahnarzttermin vereinbaren, statt auf Schmerzen zu warten.",
+      "b": "Warten, bis es wehtut.",
+      "c": "Den Fleck mit einem spitzen Gegenstand abkratzen.",
+      "d": "Davon ausgehen, dass der Zahn gesund ist."
     },
-    "explanation": "Weder fehlende noch starke Schmerzen bestimmen zuverlässig, ob Karies vorliegt oder wie tief sie reicht. Frühe Beurteilung kann mehr Behandlungsmöglichkeiten eröffnen. Auf Empfindlichkeit zu warten kann Fortschreiten zulassen; eine Untersuchung bedeutet nicht, dass jeder schmerzlose Zahn behandelt werden muss."
+    "explanation": "Karies kann anfangs schmerzlos sein. In der Zahnarztpraxis lässt sich prüfen, was sich verändert hat und ob eine Behandlung nötig ist."
   },
   "lost-structure": {
-    "prompt": "Ein Zahnarzt hat ein Loch bestätigt. Die Person beginnt mit Fluoridzahnpasta und fragt, ob weitere Kontrollen nötig sind. Welche Antwort passt am besten?",
+    "prompt": "Kann Fluoridzahnpasta ein vorhandenes Loch im Zahn füllen?",
     "options": {
-      "a": "Abwarten, bis sich die Ränder auffüllen, und dann über eine Behandlung entscheiden.",
-      "b": "Den Erfolg daran beurteilen, ob das Loch dunkler und weniger empfindlich wird.",
-      "c": "Vorsorge und professionelle Kontrolle fortsetzen, weil fehlende Substanz nicht nachwächst.",
-      "d": "Das Loch als inaktiv betrachten, sobald Fluorid regelmäßig angewendet wird."
+      "a": "Ja, nach wenigen Tagen.",
+      "b": "Ja, wenn du viel davon nimmst.",
+      "c": "Nein, nutze sie weiter und lass dich zahnärztlich beraten.",
+      "d": "Nur wenn das Loch dunkel ist."
     },
-    "explanation": "Fluorid und Reinigung bleiben sinnvoll; passende Maßnahmen können eine Läsion anhalten. Sie ersetzen keine fehlende Substanz. Das Vorgehen hängt von Tiefe, Aktivität, Reinigungszugang und Befunden ab; manche Läsionen lassen sich ohne Füllung behandeln. Dunklere Farbe oder Zahnpastanutzung beweisen keinen Stillstand."
+    "explanation": "Fluorid schützt die Zähne weiterhin, aber fehlende Zahnsubstanz wächst nicht nach. Lass dir erklären, welche Versorgung das Loch braucht."
   },
   "dark-spot": {
-    "prompt": "In einer Backenzahnfurche fällt ein schmerzloser dunkler Fleck auf. Was lässt sich allein daraus schließen?",
+    "prompt": "Du bemerkst einen dunklen Fleck am Zahn. Was bedeutet das?",
     "options": {
-      "a": "Es ist wahrscheinlich eine verfärbte Fissur, weil Beschwerden fehlen.",
-      "b": "Es ist wahrscheinlich inaktive Karies, weil aktive Läsionen heller sind.",
-      "c": "Es ist wahrscheinlich ein Loch, weil sich Pigment in fehlender Substanz sammelt.",
-      "d": "Ursache und Aktivität bleiben ohne zahnärztliche Beurteilung unklar."
+      "a": "Es ist immer ein Loch.",
+      "b": "Ohne Schmerzen ist er harmlos.",
+      "c": "Eine Füllung ist immer nötig.",
+      "d": "Die Farbe allein reicht nicht; lass ihn zahnärztlich prüfen."
     },
-    "explanation": "Die Furche kann verfärbten intakten Schmelz, eine frühe, kavitierte oder inaktive Läsion zeigen. Diese Möglichkeiten überschneiden sich: Auch ein Loch kann inaktiv sein. Farbe und Schmerzfreiheit unterscheiden sie nicht. Fachpersonen berücksichtigen Lage, Oberflächenbeschaffenheit, Belagansammlung und weitere Befunde; ein Foto reicht nicht."
+    "explanation": "Ein dunkler Fleck kann eine Verfärbung oder ein Zeichen von Karies sein. Seine Farbe allein zeigt nicht, was im Zahn passiert."
   },
   "lesion-arrest": {
-    "prompt": "Nach vorbeugender Behandlung beurteilt eine Zahnärztin eine Läsion als inaktiv, ein dunkler Fleck bleibt aber sichtbar. Welche Deutung ist begründet?",
+    "prompt": "Deine Zahnärztin sagt, dass eine Kariesstelle nicht mehr schlimmer wird. Muss der Fleck verschwinden?",
     "options": {
-      "a": "Die ursprüngliche Schmelzform ist wiederhergestellt, obwohl Pigment bleibt.",
-      "b": "Das Fortschreiten ist derzeit gestoppt; der Fleck kann bleiben und Kontrollen sind weiter wichtig.",
-      "c": "Die Läsion hat alle verlorenen Mineralien zurückgewonnen, aber ihre Farbe behalten.",
-      "d": "Das künftige Risiko des Zahns bleibt nun unabhängig von Änderungen der täglichen Pflege gleich."
+      "a": "Ja, sonst hat die Pflege nicht geholfen.",
+      "b": "Nein, ein Fleck kann bleiben, obwohl der Schaden gestoppt ist.",
+      "c": "Ja, er muss weiß werden.",
+      "d": "Nein, weil jeder dunkle Fleck harmlos ist."
     },
-    "explanation": "Arretierung bedeutet, dass die Läsion nicht weiter fortschreitet, nicht dass alle Mineralien oder fehlende Substanz zurückgekehrt sind. Verfärbungen können bleiben. Bedingungen können sich ändern; deshalb bleiben Vorsorge und Kontrollen wichtig. Aktivität und Aussehen sind keine gleichwertigen Messgrößen."
+    "explanation": "Ein Fleck kann bleiben, nachdem Karies zum Stillstand gekommen ist. Pflege deine Zähne weiter und halte die empfohlenen Kontrollen ein."
   },
   "stable-lesion": {
-    "prompt": "Was belegt wenig oder kein erkennbares Fortschreiten einer Läsion über einen Zeitraum?",
+    "prompt": "Eine geschwächte Stelle ist bei den letzten Kontrollen unverändert geblieben. Was nun?",
     "options": {
-      "a": "Der Mineralaustausch an dieser Stelle hat aufgehört.",
-      "b": "Die Läsion hat ihren ursprünglichen Mineralgehalt wieder erreicht.",
-      "c": "Die Läsion bleibt auch bei veränderten Bedingungen inaktiv.",
-      "d": "Die Läsion ist im beobachteten Zeitraum stabil; Mineralaustausch kann weiterlaufen."
+      "a": "Keine Fluoridzahnpasta mehr nutzen.",
+      "b": "Alle weiteren Kontrollen absagen.",
+      "c": "Den Zahn nur nach seiner Farbe beurteilen.",
+      "d": "Tägliche Pflege und vereinbarte Kontrollen fortsetzen."
     },
-    "explanation": "Stabilität ist eine Beobachtung über Zeit, kein Beweis für ein perfektes mikroskopisches Gleichgewicht, vollständige Remineralisation oder dauerhaften Schutz. Fachpersonen verbinden Verlaufskontrollen mit Aktivitätsbefunden. Stillstand, Mineralgewinn und Ersatz fehlender Substanz beschreiben verschiedene Ergebnisse."
+    "explanation": "Keine Verschlechterung ist erfreulich, aber keine Garantie für die Zukunft. Tägliche Pflege und weitere Kontrollen bleiben wichtig."
   },
   "brushing-routine": {
-    "prompt": "Jemand putzt zweimal täglich mit Fluoridzahnpasta, übergeht aber Innenflächen hastig und spült danach gründlich. Welche Änderung behebt beide Lücken am besten?",
+    "prompt": "Wie sieht eine hilfreiche tägliche Putzroutine aus?",
     "options": {
-      "a": "Fester putzen, um ausgelassene Stellen auszugleichen, und gleich weiter spülen.",
-      "b": "Die gleiche Flächenabdeckung beibehalten, aber abendliches Putzen durch Mundspülung ersetzen.",
-      "c": "Morgens länger putzen und abends auslassen, wenn sich die Zähne glatt anfühlen.",
-      "d": "Alle Flächen sanft reinigen und überschüssige Paste ausspucken, ohne sofort nachzuspülen."
+      "a": "Einmal täglich mit viel Druck putzen.",
+      "b": "Nur die Vorderseiten reinigen.",
+      "c": "Mundspülung statt Zahnbürste verwenden.",
+      "d": "Zweimal täglich sanft mit Fluoridzahnpasta putzen; Reste ausspucken."
     },
-    "explanation": "Neben zweimal täglich etwa zwei Minuten Putzen, auch vor dem Schlafen, zählt die vollständige Flächenabdeckung. Ausspucken ohne sofortiges Wasserspülen erhält Fluorid. Mehr Druck gleicht ausgelassene Flächen nicht aus; Mundspülung oder langes morgendliches Putzen ersetzen die abendliche Reinigung nicht."
+    "explanation": "Putze etwa zwei Minuten, auch vor dem Schlafengehen, und erreiche alle Flächen. Spucke Zahnpastareste aus, ohne sofort mit Wasser nachzuspülen, damit Fluorid länger auf den Zähnen bleibt."
   },
   "between-teeth": {
-    "prompt": "Jemand putzt gut, bemerkt aber Belag zwischen den Zähnen. Eine große Interdentalbürste lässt sich schwer einführen. Welche Anpassung ist am besten?",
+    "prompt": "Eine Zahnzwischenraumbürste sitzt zu eng. Was solltest du tun?",
     "options": {
-      "a": "Mehr Druck ausüben, damit über einige Tage Platz für die Bürste entsteht.",
-      "b": "Ein bequem passendes Hilfsmittel oder Zahnseide wählen und die Technik klären.",
-      "c": "Vor der Zwischenraumreinigung die Außenflächen länger putzen.",
-      "d": "Enge Zwischenräume mit Wasser spülen und Hilfsmittel für sichtbare Speisereste aufheben."
+      "a": "Sie mit mehr Druck durchschieben.",
+      "b": "Eine passende Bürste oder Zahnseide wählen und um Rat fragen.",
+      "c": "Die Zahnzwischenräume gar nicht mehr reinigen.",
+      "d": "Einen spitzen Gegenstand verwenden."
     },
-    "explanation": "Eine Zahnbürste erreicht Zwischenraumflächen oft nicht gut. Nutze ein passendes Hilfsmittel sanft: Zahnseide kann für enge Kontakte, passend große Interdentalbürsten für andere Zwischenräume geeignet sein. Nicht mit Gewalt einführen. Das unterstützt Belagkontrolle und Zahnfleischgesundheit, garantiert aber keine vollständige Kariesvermeidung."
+    "explanation": "Drücke eine Bürste nicht mit Gewalt durch. In der Zahnarztpraxis hilft man dir bei der Größe oder zeigt dir den Umgang mit Zahnseide."
   },
   "tailored-care": {
-    "prompt": "Zwei Freunde mit unterschiedlicher Zahngeschichte wünschen denselben Untersuchungsabstand. Welches Vorgehen ist am besten?",
+    "prompt": "Wie oft solltest du zur Zahnkontrolle gehen?",
     "options": {
-      "a": "Individuelle Abstände anhand von Befunden und Risiko mit der Zahnarztpraxis vereinbaren.",
-      "b": "Den kürzeren Abstand wählen, bis beide keine Empfindlichkeit mehr bemerken.",
-      "c": "Denselben Abstand nutzen, wenn beide mit Fluoridzahnpasta putzen.",
-      "d": "Abstände hauptsächlich nach der Menge selbst bemerkten sichtbaren Belags wählen."
+      "a": "Einen passenden Abstand mit deiner Zahnarztpraxis vereinbaren.",
+      "b": "Nur wenn ein Zahn wehtut.",
+      "c": "Den gleichen Abstand wie ein Freund wählen.",
+      "d": "Nie, wenn du zweimal täglich putzt."
     },
-    "explanation": "Vorsorge richtet sich nach klinischen Befunden und individuellen Risiken, etwa früheren Erkrankungen und Speichelschutz. Gleiche Putzgewohnheiten oder fehlende Symptome bedeuten nicht gleiche Bedürfnisse. Professionelle Untersuchungen und tägliche Pflege ergänzen sich."
+    "explanation": "Menschen haben unterschiedliche Bedürfnisse. Deine Zahnarztpraxis kann einen Abstand empfehlen, der zu deinen Zähnen, deinem Zahnfleisch und deinem Risiko passt."
   }
 }

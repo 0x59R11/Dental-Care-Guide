@@ -37,16 +37,6 @@ it('has unique, valid sources and balanced quiz definitions', () => {
       questions.filter((question) => question.lessonId === id),
     ).toHaveLength(counts[index]),
   );
-  for (const [difficulty, count] of [
-    ['foundational', 4],
-    ['application', 10],
-    ['challenging', 6],
-  ] as const) {
-    expect(
-      questions.filter((question) => question.difficulty === difficulty),
-    ).toHaveLength(count);
-  }
-  expect(questions.filter((question) => question.scenario)).toHaveLength(14);
 });
 for (const locale of locales)
   describe(locale, () => {
