@@ -310,14 +310,6 @@ const t = ui(locale);
                 region.getAttribute('data-region') === button.dataset.step,
               ),
             );
-          figure
-            .querySelectorAll('.diagram-steps li')
-            .forEach((item) =>
-              item.classList.toggle(
-                'selected-step',
-                item === button.parentElement,
-              ),
-            );
         });
       });
   });

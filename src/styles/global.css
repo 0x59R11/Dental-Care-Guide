@@ -15,7 +15,9 @@
   --pulp: #d98578;
   --gum: #e7b6aa;
   --root: #ead5b1;
-  --focus: #985712;
+  --focus: var(--accent);
+  --feedback-accent: #985712;
+  --diagram-highlight: #985712;
   --peach: #f8e8df;
   --illustration-line: #365f56;
   --motif-line: #365f56;
@@ -39,7 +41,8 @@
   --pulp: #b86f68;
   --gum: #925f59;
   --root: #c0a179;
-  --focus: #f2c37e;
+  --feedback-accent: #f2c37e;
+  --diagram-highlight: #f2c37e;
   --peach: #46362f;
   --illustration-line: #b5d3c5;
   --motif-line: #294c40;
@@ -64,7 +67,8 @@
     --pulp: #b86f68;
     --gum: #925f59;
     --root: #c0a179;
-    --focus: #f2c37e;
+    --feedback-accent: #f2c37e;
+    --diagram-highlight: #f2c37e;
     --peach: #46362f;
     --illustration-line: #b5d3c5;
     --motif-line: #294c40;
@@ -123,9 +127,6 @@ a {
   color: var(--accent);
   text-underline-offset: 4px;
 }
-a:hover {
-  color: var(--accent-strong);
-}
 button,
 input,
 select {
@@ -155,8 +156,8 @@ select:focus-visible,
 input:focus-visible,
 summary:focus-visible,
 [tabindex]:focus-visible {
-  outline: 3px solid var(--focus);
-  outline-offset: 4px;
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
 }
 button:disabled {
   cursor: default;
@@ -243,13 +244,11 @@ img {
   display: flex;
   gap: 4px;
   padding: 4px;
-  border-radius: 20px;
-  background: var(--surface);
-  border: 1px solid var(--line);
 }
 .module-nav a {
+  position: relative;
   padding: 8px 14px;
-  border-radius: 10px;
+  border-radius: 4px;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -260,9 +259,13 @@ img {
 }
 .module-nav a[aria-current='page'] {
   color: var(--accent);
-  background: var(--soft);
-  font-weight: 700;
-  box-shadow: inset 0 -3px var(--accent);
+}
+.module-nav a[aria-current='page']::after {
+  content: '';
+  position: absolute;
+  inset-inline: 14px;
+  bottom: 6px;
+  border-bottom: 2px solid currentColor;
 }
 .nav-number {
   font-size: 0.68rem;
@@ -276,10 +279,19 @@ img {
   display: flex;
   align-items: center;
   gap: 4px;
+  border-radius: 4px;
+}
+.select-control:has(select:focus-visible) {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+.select-control select:focus-visible {
+  outline: none;
 }
 .select-control select {
   max-width: 155px;
   border: 0;
+  border-radius: 4px;
   background: transparent;
   color: var(--text);
   padding: 5px;
@@ -360,10 +372,6 @@ img {
   font-weight: 600;
   text-decoration: none;
   min-height: 48px;
-}
-.button:hover {
-  background: var(--accent-strong);
-  color: var(--bg);
 }
 .subtle-link {
   display: inline-flex;
@@ -638,11 +646,10 @@ progress::-webkit-progress-value {
   width: 100%;
 }
 .diagram-steps button[aria-pressed='true'] {
-  background: var(--soft);
   border-color: var(--accent);
-}
-.selected-step {
-  border-left-color: var(--accent) !important;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
 }
 .tooth-halo {
   fill: var(--soft);
@@ -713,9 +720,9 @@ progress::-webkit-progress-value {
   font-weight: 600;
 }
 .selected-region {
-  stroke: var(--focus);
+  stroke: var(--diagram-highlight);
   stroke-width: 5;
-  filter: drop-shadow(0 0 2px var(--focus));
+  filter: drop-shadow(0 0 2px var(--diagram-highlight));
 }
 .example,
 .takeaway {
@@ -914,8 +921,9 @@ details ul {
 }
 .quiz-options label:has(:checked) {
   border-color: var(--accent);
-  box-shadow: inset 4px 0 var(--accent);
-  background: var(--soft);
+}
+.quiz-options label:has(:disabled) {
+  cursor: default;
 }
 .quiz-options input {
   margin-top: 5px;
@@ -933,7 +941,7 @@ details ul {
 }
 .quiz-panel [data-feedback].incorrect {
   background: var(--amber);
-  border-color: var(--focus);
+  border-color: var(--feedback-accent);
 }
 .quiz-panel [data-feedback] h2 {
   font-size: 1.2rem;
@@ -1000,7 +1008,7 @@ details ul {
   border-top-color: var(--illustration-peach);
 }
 .button-secondary {
-  background: var(--soft);
+  background: transparent;
   color: var(--accent);
 }
 .resume {
@@ -1050,11 +1058,6 @@ details ul {
   text-decoration: none;
   min-height: 44px;
 }
-.lesson-contents a:hover,
-.lesson-pagination a:hover,
-.lesson-card h2 a:hover {
-  text-decoration: underline;
-}
 .lesson-content > :not(.diagram) {
   max-width: 68ch;
   margin-inline: auto;
@@ -1096,10 +1099,6 @@ details ul {
 .routine-nav a span {
   color: var(--muted);
   font-size: 0.75rem;
-}
-.routine-nav a:hover {
-  border-color: var(--accent);
-  background: var(--soft);
 }
 .practice-card-heading {
   display: flex;
@@ -1162,8 +1161,39 @@ details ul {
   width: min(260px, 100%);
 }
 @media (hover: hover) {
-  .quiz-options label:hover {
+  a:hover {
+    color: var(--accent-strong);
+  }
+  .module-nav a:hover {
+    color: var(--accent-strong);
+  }
+  .select-control:has(select:hover:not(:disabled)) {
+    background: var(--soft);
+  }
+  .button:hover:not(:disabled) {
+    background: var(--accent-strong);
+    border-color: var(--accent-strong);
+    color: var(--bg);
+  }
+  .button-secondary:hover:not(:disabled) {
+    background: var(--soft);
+    color: var(--accent-strong);
+  }
+  .subtle-link:hover,
+  .module-card > a:hover,
+  .lesson-contents a:hover,
+  .lesson-pagination a:hover,
+  .lesson-card h2 a:hover,
+  .routine-nav a:hover,
+  summary:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  .routine-nav a:hover,
+  .diagram-steps button:hover:not(:disabled),
+  .quiz-options label:hover:has(:enabled) {
     border-color: var(--accent);
+    background: var(--soft);
   }
 }
 @media (min-width: 1400px) {
